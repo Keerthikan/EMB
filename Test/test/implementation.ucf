@@ -1,0 +1,8 @@
+NET "Led<0>" LOC = "J14" ;
+NET "Led<1>" LOC = "J15" ;
+NET "Led<2>" LOC = "K15" ;
+NET "Led<3>" LOC = "K14" ;
+NET "Led<4>" LOC = "E17" ;
+NET "Led<5>" LOC = "P15" ;
+NET "Led<6>" LOC = "F4" ;
+NET "Led<7>" LOC = "R4" ;

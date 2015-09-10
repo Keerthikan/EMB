@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_1/project_1.runs/impl_1/main_routed.ncd
+OUTFILE=/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_1/project_1.runs/impl_1/main.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s50an-4tqg144
+WORKINGDIR=/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_1/project_1.runs/impl_1
+LICENSE=ISE
+USER_INFO=210779069_174157381_210595800_267

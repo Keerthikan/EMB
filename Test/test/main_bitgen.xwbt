@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/student/Embedded/Test/test/main.ncd
+OUTFILE=/home/student/Embedded/Test/test/main.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/home/student/Embedded/Test/test
+LICENSE=ISE
+USER_INFO=210779069_174157381_210595800_267

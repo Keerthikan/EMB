@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="8">
+	<Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc3s50antqg144-4" LaunchPart="xc3s50antqg144-4" ConstrsSet="constrs_1" Description="PlanAhead Defaults (XST defaults with hierarchy)" State="current" Dir="$PRUNDIR/synth_1" LaunchTime="1441871492">
+		<File Type="XST-NGC" Name="main.ngc"/>
+		<File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
+		<File Type="XST-SRP" Name="main.srp"/>
+		<File Type="PA-XST" Name="main.xst"/>
+		<File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
+		<File Type="PA-XSTPRJ" Name="main.prj"/>
+		<File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
+	</Run>
+	<Run Id="impl_1" Type="Ft2:EntireDesign" SynthRun="synth_1" Part="xc3s50antqg144-4" LaunchPart="xc3s50antqg144-4" ConstrsSet="constrs_1" Description="ISE Defaults, including packing registers in IOs off" State="current" Dir="$PRUNDIR/impl_1" LaunchTime="1441872687">
+		<File Type="PA-EDIF" Name="main.edf"/>
+		<File Type="MAP-PSR" Name="main.psr"/>
+		<File Type="PA-UCF" Name="main.ucf"/>
+		<File Type="PAR-NCD" Name="main_routed.ncd"/>
+		<File Type="PAR-PAD" Name="main_routed_pad.txt"/>
+		<File Type="PAR-PAR" Name="main_routed.par"/>
+		<File Type="PAR-UNR" Name="main_routed.unroutes"/>
+		<File Type="BG-BIT" Name="main.bit"/>
+		<File Type="BG-DRC" Name="main.drc"/>
+		<File Type="PA-CONSTRSDIR" Name=".constrs"/>
+		<File Type="BG-BGN" Name="main.bgn"/>
+		<File Type="TRCE-TWR" Name="main.twr"/>
+		<File Type="TRCE-TWX" Name="main.twx"/>
+		<File Type="XDL-XDL" Name="main_routed.xdl"/>
+		<File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+		<File Type="WBT-LOG" Name="webtalk.log"/>
+		<File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+		<File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+		<File Type="NGDB-NGD" Name="main.ngd"/>
+		<File Type="NGDB-BLD" Name="main.bld"/>
+		<File Type="MAP-NCD" Name="main.ncd"/>
+		<File Type="MAP-PCF" Name="main.pcf"/>
+		<File Type="MAP-MRP" Name="main.mrp"/>
+		<File Type="MAP-MAP" Name="main.map"/>
+	</Run>
+</Runs>
+
