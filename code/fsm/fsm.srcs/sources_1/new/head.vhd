@@ -32,12 +32,44 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity head is
-    Port ( input : in STD_LOGIC);
+    Port (  forward_i   : in std_logic;
+            reset_i     : in std_logic;
+            clk_50mhz   : in std_logic;
+            led_o       : out std_logic_vector(5 downto 0));
 end head;
 
 architecture Behavioral of head is
-
+    component debounce
+        Port ( clk_50mhz    : in std_logic;
+               btn          : in std_logic;
+               result       : out std_logic);
+    end component;
+    
+    component fsm
+        Port ( forward_i    : in std_logic;
+               reset_i      : in std_logic;
+               clk_50mhz    : in std_logic;
+               led_o        : out std_logic_vector(5 downto 0));
+    end component;
+    
+    signal res_sig0,res_sig1 : std_logic := '1';
+    
 begin
+    
+    db0 : debounce port map (
+            btn => forward_i,
+            clk_50mhz => clk_50mhz,
+            result => res_sig0);
 
-
+    db1 : debounce port map (
+            btn => reset_i,
+            clk_50mhz => clk_50mhz,
+            result => res_sig1);
+            
+    fsm0 : fsm port map (
+             led_o => led_o,
+             clk_50mhz => clk_50mhz,
+             forward_i => res_sig0,
+             reset_i => res_sig1); 
+    
 end Behavioral;

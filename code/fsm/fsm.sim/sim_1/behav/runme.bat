@@ -10,7 +10,7 @@ set PATH=$XILINX/lib/$PLATFORM:$XILINX/bin/$PLATFORM;/opt/Xilinx/14.7/ISE_DS/EDK
 
 set XILINX_PLANAHEAD=/opt/Xilinx/14.7/ISE_DS/PlanAhead
 
-fuse -intstyle pa -incremental -L work -o debounce_tb.exe --prj /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.sim/sim_1/behav/debounce_tb.prj -top work.debounce_tb
+fuse -intstyle pa -incremental -L work -o fsm_tb.exe --prj /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.sim/sim_1/behav/fsm_tb.prj -top work.fsm_tb
 if errorlevel 1 (
    cmd /c exit /b %errorlevel%
 )

@@ -6,4 +6,4 @@
 # Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
 #
 
-xst -ifn "debounce.xst" -ofn "debounce.srp" -intstyle ise
+xst -ifn "head.xst" -ofn "head.srp" -intstyle ise

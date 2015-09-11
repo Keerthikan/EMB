@@ -32,66 +32,89 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity fsm is
-    Port ( forward_i : in STD_LOGIC;
-           reset_i : in STD_LOGIC;
+    Port ( forward_i : in std_logic;
+           reset_i : in std_logic;
            clk_50mhz : in std_logic;
-           led_o : out STD_LOGIC_VECTOR (5 downto 0));
+           led_o : out std_logic_vector (5 downto 0));
 end fsm;
 
 architecture Behavioral of fsm is
     type machine_state is (reset, led0, led1, led2, led3, led4, led5);
     signal state, next_state : machine_state := reset;
+    signal in_old, in_new : std_logic := '1';
+    signal state_change : std_logic := '0';
 begin
-    statecase: process(clk_50mhz, state, forward_i)
+    
+    statecase: process(clk_50mhz, state, next_state, forward_i, reset_i)
     begin
-        case state is
-            when reset => 
-                led_o <= "000000";
-                if(forward_i = '1') then
-                    next_state <= led0;
-                end if;    
-            when led0 =>
-                led_o <= "000001";
-                if(forward_i = '1') then
-                    next_state <= led1;
-                end if;
-            when led1 =>
-                led_o <= "000010";
-                if(forward_i = '1') then
-                    next_state <= led2;
-                end if;
-            when led2 =>
-                led_o <= "000100";
-                if(forward_i = '1') then
-                    next_state <= led3;
-                end if;
-            when led3 =>
-                led_o <= "001000";
-                if(forward_i = '1') then
-                    next_state <= led4;
-                end if;
-            when led4 =>
-                led_o <= "010000";
-               if(forward_i = '1') then
-                    next_state <= led5;
-                end if;
-            when led5 =>
-                led_o <= "100000";
-                if(forward_i = '1') then
-                    next_state <= reset;
-                end if;                    
-        end case;
+        if(rising_edge(clk_50mhz)) then
+            case state is
+                when reset => 
+                    led_o <= "000000";
+                    if(state_change = '1') then
+                        next_state <= led0;
+                    elsif(reset_i = '0') then
+                        next_state <= reset;
+                    end if;    
+                when led0 =>
+                    led_o <= "000001";
+                    if(state_change = '1') then
+                        next_state <= led1;
+                    elsif(reset_i = '0') then
+                        next_state <= reset;
+                    end if;
+                when led1 =>
+                    led_o <= "000010";
+                    if(state_change = '1') then
+                        next_state <= led2;
+                    elsif(reset_i = '0') then
+                        next_state <= reset;                   
+                    end if;
+                when led2 =>
+                    led_o <= "000100";
+                    if(state_change = '1') then
+                        next_state <= led3;
+                    elsif(reset_i = '0') then
+                        next_state <= reset;
+                    end if;
+                when led3 =>
+                    led_o <= "001000";
+                    if(state_change = '1') then
+                        next_state <= led4;
+                    elsif(reset_i = '0') then
+                        next_state <= reset;                   
+                    end if;
+                when led4 =>
+                    led_o <= "010000";
+                    if(state_change = '1') then
+                       next_state <= led5;
+                    elsif(reset_i = '0') then
+                       next_state <= reset;
+                    end if;
+                when led5 =>
+                    led_o <= "100000";
+                    if(state_change = '1') then
+                        next_state <= reset;
+                    elsif(reset_i = '0') then
+                        next_state <= reset;
+                    end if;                    
+            end case;
+        end if;
     end process;
     
     state_check : process(clk_50mhz) 
     begin
+        in_old <= in_new;
+        in_new <= forward_i;
+        if(in_old /= in_new and in_new = '0') then
+            state_change <= '1';
+        elsif(in_old = in_new) then
+            state_change <= '0';
+        end if;
+        
         if(rising_edge(clk_50mhz)) then
-            if(reset_i = '1') then
-                state <= reset;
-            else
-                state <= next_state;
-            end if;
+            state <= next_state;
         end if;
     end process;
-      
+    
 end Behavioral;

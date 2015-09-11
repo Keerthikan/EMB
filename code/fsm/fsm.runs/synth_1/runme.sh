@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep xst -ifn "debounce.xst" -ofn "debounce.srp" -intstyle ise
+EAStep xst -ifn "head.xst" -ofn "head.srp" -intstyle ise

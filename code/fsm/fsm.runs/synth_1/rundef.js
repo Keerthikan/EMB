@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "xst",
-         "-ifn \"debounce.xst\" -ofn \"debounce.srp\" -intstyle ise" );
+         "-ifn \"head.xst\" -ofn \"head.srp\" -intstyle ise" );
 
 
 

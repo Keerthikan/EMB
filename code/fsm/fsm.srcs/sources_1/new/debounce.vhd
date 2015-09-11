@@ -25,7 +25,7 @@ use ieee.std_logic_unsigned.all;
 
 entity debounce is
     GENERIC(
-           counter_size  :  INTEGER := 4); --sets debounce time 19 bits = 10.5 ms
+           counter_size  :  INTEGER := 19); --sets debounce time 19 bits = 10.5 ms
            
     Port ( clk_50mhz    : in STD_LOGIC;
            btn          : in STD_LOGIC;

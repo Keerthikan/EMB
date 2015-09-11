@@ -1,5 +1,5 @@
 ISim log file
-Running: debounce_tb.exe -intstyle pa -gui -tclbatch isim.cmd -wdb debounce_tb.wdb 
+Running: fsm_tb.exe -intstyle pa -gui -tclbatch isim.cmd -wdb fsm_tb.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 This is a Full version of ISim.
 Time resolution is 1 ps
