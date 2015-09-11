@@ -1,0 +1,299 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: blinkyled.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "blinkyled.prj"
+
+---- Target Parameters
+Target Device                      : xc3s50antqg144-4
+Output File Name                   : "blinkyled.ngc"
+
+---- Source Options
+Top Module Name                    : blinkyled
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 1
+Netlist Hierarchy                  : rebuilt
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/blinkyled/blinkyled.srcs/sources_1/new/blinkyled.vhd" in Library work.
+Entity <blinkyled> compiled.
+Entity <blinkyled> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <blinkyled> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <blinkyled> in library <work> (Architecture <Behavioral>).
+Entity <blinkyled> analyzed. Unit <blinkyled> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <blinkyled>.
+    Related source file is "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/blinkyled/blinkyled.srcs/sources_1/new/blinkyled.vhd".
+    Found 26-bit up counter for signal <divider>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <blinkyled> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <blinkyled> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 26
+ Flip-Flops                                            : 26
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+Top Level Output File Name         : blinkyled.ngc
+Output Format                      : ngc
+Optimization Goal                  : speed
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 3
+
+Cell Usage :
+# BELS                             : 79
+#      GND                         : 1
+#      INV                         : 1
+#      LUT1                        : 25
+#      MUXCY                       : 25
+#      VCC                         : 1
+#      XORCY                       : 26
+# FlipFlops/Latches                : 26
+#      FD                          : 26
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 2
+#      OBUF                        : 2
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50antqg144-4 
+
+ Number of Slices:                       14  out of    704     1%  
+ Number of Slice Flip Flops:             26  out of   1408     1%  
+ Number of 4 input LUTs:                 26  out of   1408     1%  
+ Number of IOs:                           3
+ Number of bonded IOBs:                   3  out of    108     2%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_50mhz                          | BUFGP                  | 26    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.025ns (Maximum Frequency: 199.005MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 5.558ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_50mhz'
+  Clock period: 5.025ns (frequency: 199.005MHz)
+  Total number of paths / destination ports: 351 / 26
+-------------------------------------------------------------------------
+Delay:               5.025ns (Levels of Logic = 26)
+  Source:            divider_1 (FF)
+  Destination:       divider_25 (FF)
+  Source Clock:      clk_50mhz rising
+  Destination Clock: clk_50mhz rising
+
+  Data Path: divider_1 to divider_25
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.591   0.563  divider_1 (divider_1)
+     LUT1:I0->O            1   0.648   0.000  Mcount_divider_cy<1>_rt (Mcount_divider_cy<1>_rt)
+     MUXCY:S->O            1   0.632   0.000  Mcount_divider_cy<1> (Mcount_divider_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<2> (Mcount_divider_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<3> (Mcount_divider_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<4> (Mcount_divider_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<5> (Mcount_divider_cy<5>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<6> (Mcount_divider_cy<6>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<7> (Mcount_divider_cy<7>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<8> (Mcount_divider_cy<8>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<9> (Mcount_divider_cy<9>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<10> (Mcount_divider_cy<10>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<11> (Mcount_divider_cy<11>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<12> (Mcount_divider_cy<12>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<13> (Mcount_divider_cy<13>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<14> (Mcount_divider_cy<14>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<15> (Mcount_divider_cy<15>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<16> (Mcount_divider_cy<16>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<17> (Mcount_divider_cy<17>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<18> (Mcount_divider_cy<18>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<19> (Mcount_divider_cy<19>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<20> (Mcount_divider_cy<20>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<21> (Mcount_divider_cy<21>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<22> (Mcount_divider_cy<22>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_divider_cy<23> (Mcount_divider_cy<23>)
+     MUXCY:CI->O           0   0.065   0.000  Mcount_divider_cy<24> (Mcount_divider_cy<24>)
+     XORCY:CI->O           1   0.844   0.000  Mcount_divider_xor<25> (Result<25>)
+     FD:D                      0.252          divider_25
+    ----------------------------------------
+    Total                      5.025ns (4.462ns logic, 0.563ns route)
+                                       (88.8% logic, 11.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_50mhz'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              5.558ns (Levels of Logic = 1)
+  Source:            divider_24 (FF)
+  Destination:       led1_o (PAD)
+  Source Clock:      clk_50mhz rising
+
+  Data Path: divider_24 to led1_o
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.591   0.447  divider_24 (divider_24)
+     OBUF:I->O                 4.520          led1_o_OBUF (led1_o)
+    ----------------------------------------
+    Total                      5.558ns (5.111ns logic, 0.447ns route)
+                                       (92.0% logic, 8.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.54 secs
+ 
+--> 
+
+
+Total memory usage is 514744 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

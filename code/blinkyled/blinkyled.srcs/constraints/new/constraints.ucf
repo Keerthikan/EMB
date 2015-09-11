@@ -1,0 +1,8 @@
+# This is the .ucf file that defines constraints for the design.
+# In the .ucf file, you can specify many diffent constraints,
+# for instance which pins your signals should be routed to
+# First we define pins for the onboard devices
+NET "led1_o" LOC = P47;
+NET "led2_o" LOC = P48;
+NET "clk_50mhz" LOC = P60;
+# There are no external connections in this design

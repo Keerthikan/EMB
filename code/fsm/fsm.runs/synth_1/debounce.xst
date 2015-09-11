@@ -1,0 +1,9 @@
+set -loop_iteration_limit 1000
+run
+-ifn debounce.prj
+-top debounce
+-p xc3s50antqg144-4
+-ofn debounce.ngc
+-opt_mode speed
+-opt_level 1
+-netlist_hierarchy rebuilt

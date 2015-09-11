@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DARoots Version="1" Minor="26">
+  <FileSet Name="constraints" Type="Constrs" RelSrcDir="$PSRCDIR/constraints">
+    <File Path="$PSRCDIR/constraints/new/constraints.ucf">
+      <FileInfo RelPath="constraints.ucf">
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="UCF"/>
+    </Config>
+  </FileSet>
+</DARoots>

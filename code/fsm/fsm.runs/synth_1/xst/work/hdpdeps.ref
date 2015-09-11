@@ -1,0 +1,8 @@
+V3 3
+FL /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/debounce.vhd 2015/09/10.20:32:32 P.20131013
+EN work/debounce 1441910172 \
+      FL /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/debounce.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/debounce/Behavioral 1441910173 \
+      FL /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/debounce.vhd \
+      EN work/debounce 1441910172
