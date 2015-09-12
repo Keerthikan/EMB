@@ -26,8 +26,16 @@ var ISEJScriptLib = RDScrDir + "/ISEWrap.js";
 eval( EAInclude(ISEJScriptLib) );
 
 
-ISEStep( "bitgen",
-         "\"head_routed.ncd\" \"head.bit\" \"head.pcf\" -w -intstyle pa" );
+ISEStep( "ngdbuild",
+         "-intstyle ise -p xc3s500efg320-4 -dd _ngo -uc \"head.ucf\" \"head.edf\"" );
+ISEStep( "map",
+         "-intstyle pa -w \"head.ngd\"" );
+ISEStep( "par",
+         "-intstyle pa \"head.ncd\" -w \"head_routed.ncd\"" );
+ISEStep( "trce",
+         "-intstyle ise -o \"head.twr\" -v 30 -l 30 \"head_routed.ncd\" \"head.pcf\"" );
+ISEStep( "xdl",
+         "-secure -ncd2xdl -nopips \"head_routed.ncd\" \"head_routed.xdl\"" );
 
 
 

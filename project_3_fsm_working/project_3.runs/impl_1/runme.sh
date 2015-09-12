@@ -36,4 +36,8 @@ EAStep()
      fi
 }
 
-EAStep bitgen "head_routed.ncd" "head.bit" "head.pcf" -w -intstyle pa
+EAStep ngdbuild -intstyle ise -p xc3s500efg320-4 -dd _ngo -uc "head.ucf" "head.edf"
+EAStep map -intstyle pa -w "head.ngd"
+EAStep par -intstyle pa "head.ncd" -w "head_routed.ncd"
+EAStep trce -intstyle ise -o "head.twr" -v 30 -l 30 "head_routed.ncd" "head.pcf"
+EAStep xdl -secure -ncd2xdl -nopips "head_routed.ncd" "head_routed.xdl"

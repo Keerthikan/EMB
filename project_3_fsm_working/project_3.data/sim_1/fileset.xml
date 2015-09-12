@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DARoots Version="1" Minor="26">
   <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sim_1/imports/behav/head_tb.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../code/fsm/fsm.sim/sim_1/behav/head_tb.vhd"/>
+        <Attr Name="ImportTime" Val="1442053219"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="head"/>
+      <Option Name="TopModule" Val="head_tb"/>
       <Option Name="TopLib" Val="work"/>
       <Option Name="TopArchitecture" Val="Behavioral"/>
-      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/imports/new/head.vhd"/>
+      <Option Name="TopRTLFile" Val="$PSRCDIR/sim_1/imports/behav/head_tb.vhd"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="SimulationRunTime" Val="100ms"/>
       <Option Name="SrcSet" Val="sources_1"/>
     </Config>
   </FileSet>
