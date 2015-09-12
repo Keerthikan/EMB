@@ -1,8 +1,0 @@
-INTSTYLE=pa
-INFILE=/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.runs/impl_1/head_routed.ncd
-OUTFILE=/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.runs/impl_1/head.bit
-FAMILY=Spartan3E
-PART=xc3s500e-4fg320
-WORKINGDIR=/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.runs/impl_1
-LICENSE=ISE
-USER_INFO=210779069_174157381_210595800_267

@@ -1,22 +1,22 @@
 V3 11
-FL /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/debounce.vhd 2015/09/11.17:33:58 P.20131013
-EN work/debounce 1442050922 \
-      FL /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/debounce.vhd \
+FL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd 2015/09/11.17:33:58 P.20131013
+EN work/debounce 1442052368 \
+      FL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/debounce/Behavioral 1442050923 \
-      FL /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/debounce.vhd \
-      EN work/debounce 1442050922
-FL /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/fsm.vhd 2015/09/12.11:41:46 P.20131013
-EN work/fsm 1442050924 \
-      FL /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/fsm.vhd \
+AR work/debounce/Behavioral 1442052369 \
+      FL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd \
+      EN work/debounce 1442052368
+FL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd 2015/09/12.11:44:04 P.20131013
+EN work/fsm 1442052370 \
+      FL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/fsm/Behavioral 1442050925 \
-      FL /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/fsm.vhd \
-      EN work/fsm 1442050924
-FL /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/head.vhd 2015/09/11.17:33:58 P.20131013
-EN work/head 1442050926 \
-      FL /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/head.vhd \
+AR work/fsm/Behavioral 1442052371 \
+      FL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd \
+      EN work/fsm 1442052370
+FL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/head.vhd 2015/09/11.17:33:58 P.20131013
+EN work/head 1442052372 \
+      FL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/head.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/head/Behavioral 1442050927 \
-      FL /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/head.vhd \
-      EN work/head 1442050926 CP debounce CP fsm
+AR work/head/Behavioral 1442052373 \
+      FL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/head.vhd \
+      EN work/head 1442052372 CP debounce CP fsm
