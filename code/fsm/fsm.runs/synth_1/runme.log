@@ -39,8 +39,6 @@ Analyzing generic Entity <debounce> in library <work> (Architecture <Behavioral>
 Entity <debounce> analyzed. Unit <debounce> generated.
 
 Analyzing Entity <fsm> in library <work> (Architecture <Behavioral>).
-WARNING:Xst:819 - "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/fsm.vhd" line 105: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <in_new>, <forward_i>
 Entity <fsm> analyzed. Unit <fsm> generated.
 
 
@@ -64,12 +62,11 @@ Unit <debounce> synthesized.
 
 Synthesizing Unit <fsm>.
     Related source file is "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/fsm.vhd".
-WARNING:Xst:737 - Found 1-bit latch for signal <state_change>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Using one-hot encoding for signal <state>.
     Found 6-bit register for signal <led_o>.
     Found 7-bit register for signal <next_state>.
     Found 7-bit register for signal <state>.
-    Found 1-bit xor2 for signal <state_change$xor0000> created at line 110.
+    Found 1-bit xor2 for signal <state_change$xor0000> created at line 108.
     Summary:
 	inferred  20 D-type flip-flop(s).
 Unit <fsm> synthesized.
@@ -90,8 +87,6 @@ Macro Statistics
  1-bit register                                        : 6
  6-bit register                                        : 1
  7-bit register                                        : 2
-# Latches                                              : 1
- 1-bit latch                                           : 1
 # Xors                                                 : 3
  1-bit xor2                                            : 3
 
@@ -110,8 +105,6 @@ Macro Statistics
  20-bit up counter                                     : 2
 # Registers                                            : 26
  Flip-Flops                                            : 26
-# Latches                                              : 1
- 1-bit latch                                           : 1
 # Xors                                                 : 3
  1-bit xor2                                            : 3
 
@@ -120,25 +113,24 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <state_change> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_6> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_5> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_4> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_3> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <next_state_1> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_2> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_1> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_1> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_2> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_3> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_4> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_5> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_3> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_4> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_5> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <next_state_6> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_6> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_o_0> (without init value) has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_o_1> (without init value) has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_o_2> (without init value) has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_o_3> (without init value) has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_o_4> (without init value) has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_o_5> (without init value) has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_5> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_4> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_3> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_2> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_1> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_o_0> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_o_1> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_o_2> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_o_3> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_o_4> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <led_o_5> has a constant value of 0 in block <fsm>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <next_state_0> of sequential type is unconnected in block <fsm>.
 WARNING:Xst:2677 - Node <state_0> of sequential type is unconnected in block <fsm>.
 WARNING:Xst:2677 - Node <db1/result> of sequential type is unconnected in block <head>.

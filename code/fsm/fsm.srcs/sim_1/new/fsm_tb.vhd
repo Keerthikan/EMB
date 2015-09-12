@@ -36,10 +36,10 @@ end fsm_tb;
 
 architecture behavioral of fsm_tb is
     component fsm
-        Port ( forward_i    : in STD_LOGIC;
-               reset_i      : in STD_LOGIC;
+        Port ( forward_i    : in std_logic;
+               reset_i      : in std_logic;
                clk_50mhz    : in std_logic;
-               led_o        : out STD_LOGIC_VECTOR (5 downto 0));
+               led_o        : out std_logic_vector (5 downto 0));
     end component;
     
     signal forward_i    : std_logic := '0';
@@ -59,26 +59,10 @@ begin
             
     stim_proc: process
     begin
-        wait for 50 ns;
+        wait for 1 ms;
         forward_i <= '1';
-        wait for 5 ns;
-        forward_i <= '0';
-        wait for 50 ns;
-        forward_i <= '1';
-        wait for 5 ns;
-        forward_i <= '0';
-        wait for 50 ns;
-        forward_i <= '1';
-        wait for 5 ns;
-        forward_i <= '0';
-        wait for 50 ns;
-        forward_i <= '1';
-        wait for 5 ns;
-        forward_i <= '0';
-        wait for 50 ns;
-        reset_i <= '1';
-        wait for 5 ns;
-        reset_i <= '0';
-                      
+        wait for 11 ms;
+        forward_i <= '0';  
+        wait for 11 ms;                    
     end process;
 end behavioral;

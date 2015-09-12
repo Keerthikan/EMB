@@ -24,18 +24,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
 
 entity debounce is
-    GENERIC(
-           counter_size  :  INTEGER := 19); --sets debounce time 19 bits = 10.5 ms
+    generic(
+           counter_size : integer := 19); --sets debounce time 19 bits = 10.5 ms
            
-    Port ( clk_50mhz    : in STD_LOGIC;
-           btn          : in STD_LOGIC;
-           result       : out STD_LOGIC);
+    Port ( clk_50mhz    : in std_logic;
+           btn          : in std_logic;
+           result       : out std_logic);
 end debounce;
 
 architecture Behavioral of debounce is
     signal flipflop     : std_logic_vector(1 downto 0);
     signal count        : std_logic_vector(counter_size downto 0) := (others => '0');
-    signal counter_set  : std_logic;  
+    signal counter_set  : std_logic;
 begin
     
     counter_set <= flipflop(0) xor flipflop(1);

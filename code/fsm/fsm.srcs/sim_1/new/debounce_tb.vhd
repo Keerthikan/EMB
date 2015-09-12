@@ -56,13 +56,14 @@ begin
 
     stim_proc: process
     begin
-        wait for 50 ns;
+        wait for 1 ms;
         btn <= '1';
-        wait for 380 ns;
+        wait for 9 ms;
         btn <= '0';
-        wait for 500 ns;
+        wait for 1 ms;
         btn <= '1';
-        wait for 350 ns;
+        wait for 11 ms;
         btn <= '0';
+        wait for 11 ms;
     end process;
 end Behavioral;
