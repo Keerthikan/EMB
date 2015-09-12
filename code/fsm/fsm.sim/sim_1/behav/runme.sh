@@ -34,4 +34,4 @@ ExecStep()
 }
 
 
-ExecStep fuse -intstyle pa -incremental -L work -o fsm_tb.exe --prj /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.sim/sim_1/behav/fsm_tb.prj -top work.fsm_tb
+ExecStep fuse -intstyle pa -incremental -L work -o debounce_tb.exe --prj /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.sim/sim_1/behav/debounce_tb.prj -top work.debounce_tb

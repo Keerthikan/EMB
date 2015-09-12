@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="8">
+<<<<<<< HEAD
 	<Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc3s500efg320-4" LaunchPart="xc3s500efg320-4" ConstrsSet="constrs_1" Description="PlanAhead Defaults (XST defaults with hierarchy)" State="current" Dir="$PRUNDIR/synth_1" LaunchTime="1442052361">
+=======
+	<Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc3s500efg320-4" LaunchPart="xc3s500efg320-4" ConstrsSet="constrs_1" Description="PlanAhead Defaults (XST defaults with hierarchy)" State="current" Dir="$PRUNDIR/synth_1" LaunchTime="1442054624">
+>>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
 		<File Type="XST-NGC" Name="head.ngc"/>
 		<File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
 		<File Type="XST-SRP" Name="head.srp"/>
@@ -9,6 +13,35 @@
 		<File Type="PA-XSTPRJ" Name="head.prj"/>
 		<File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
 	</Run>
+<<<<<<< HEAD
 	<Run Id="impl_1" Type="Ft2:EntireDesign" SynthRun="synth_1" Part="xc3s500efg320-4" ConstrsSet="constrs_1" Description="ISE Defaults, including packing registers in IOs off" State="current"/>
+=======
+	<Run Id="impl_1" Type="Ft2:EntireDesign" SynthRun="synth_1" Part="xc3s500efg320-4" LaunchPart="xc3s500efg320-4" ConstrsSet="constrs_1" Description="ISE Defaults, including packing registers in IOs off" State="current" Dir="$PRUNDIR/impl_1" LaunchTime="1442054648">
+		<File Type="PA-EDIF" Name="head.edf"/>
+		<File Type="MAP-PSR" Name="head.psr"/>
+		<File Type="PA-UCF" Name="head.ucf"/>
+		<File Type="PAR-NCD" Name="head_routed.ncd"/>
+		<File Type="PAR-PAD" Name="head_routed_pad.txt"/>
+		<File Type="PAR-PAR" Name="head_routed.par"/>
+		<File Type="PAR-UNR" Name="head_routed.unroutes"/>
+		<File Type="BG-BIT" Name="head.bit"/>
+		<File Type="BG-DRC" Name="head.drc"/>
+		<File Type="PA-CONSTRSDIR" Name=".constrs"/>
+		<File Type="BG-BGN" Name="head.bgn"/>
+		<File Type="TRCE-TWR" Name="head.twr"/>
+		<File Type="TRCE-TWX" Name="head.twx"/>
+		<File Type="XDL-XDL" Name="head_routed.xdl"/>
+		<File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+		<File Type="WBT-LOG" Name="webtalk.log"/>
+		<File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+		<File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+		<File Type="NGDB-NGD" Name="head.ngd"/>
+		<File Type="NGDB-BLD" Name="head.bld"/>
+		<File Type="MAP-NCD" Name="head.ncd"/>
+		<File Type="MAP-PCF" Name="head.pcf"/>
+		<File Type="MAP-MRP" Name="head.mrp"/>
+		<File Type="MAP-MAP" Name="head.map"/>
+	</Run>
+>>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
 </Runs>
 

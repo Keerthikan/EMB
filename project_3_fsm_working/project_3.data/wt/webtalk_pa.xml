@@ -3,7 +3,11 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
+<<<<<<< HEAD
 <application name="pa" timeStamp="Sat Sep 12 12:09:55 2015">
+=======
+<application name="pa" timeStamp="Sat Sep 12 12:44:08 2015">
+>>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="44f940870e72401792d637614b2a7129" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -17,21 +21,36 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="ISE Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
+<property name="AddSrc" value="1" type="JavaHandler"/>
 <property name="LaunchImpact" value="8" type="JavaHandler"/>
+<property name="LaunchSimulatorWizard" value="1" type="JavaHandler"/>
 <property name="NewProject" value="3" type="JavaHandler"/>
 <property name="OpenProject" value="1" type="JavaHandler"/>
 <property name="ProjectSettings" value="1" type="JavaHandler"/>
 <property name="RunBitgen" value="8" type="JavaHandler"/>
+<<<<<<< HEAD
 <property name="RunImplementation" value="14" type="JavaHandler"/>
 <property name="RunSynthesis" value="23" type="JavaHandler"/>
+=======
+<property name="RunImplementation" value="15" type="JavaHandler"/>
+<property name="RunSynthesis" value="25" type="JavaHandler"/>
+>>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
 <property name="ShowView" value="15" type="JavaHandler"/>
+<property name="SimLauncher" value="1" type="JavaHandler"/>
 <property name="ViewTaskSynthesis" value="1" type="JavaHandler"/>
 </item>
 <item name="Other">
+<<<<<<< HEAD
 <property name="GuiMode" value="19" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
 <property name="TclMode" value="7" type="TclMode"/>
 <property name="ISEMode" value="6" type="ISEMode"/>
+=======
+<property name="GuiMode" value="16" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="7" type="TclMode"/>
+<property name="ISEMode" value="0" type="ISEMode"/>
+>>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
 </item>
 </section>
 </application>

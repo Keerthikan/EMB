@@ -44,7 +44,7 @@ architecture Behavioral of fsm is
     signal state : state_type;
 begin
     
-    statecase: process(state, forward_i, reset_i)
+    statecase: process(forward_i, reset_i)
     begin
         if (reset_i  = '1') then 
                 state <= reset;
@@ -62,7 +62,7 @@ begin
     end process;
 
 
-    led: process(clk_50mhz,state)
+    led: process(state)
     begin
         case state is 
             when reset => led_o<= "000000";
