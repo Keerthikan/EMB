@@ -1,0 +1,194 @@
+
+*** Running xst
+    with args -ifn head.xst -ofn head.srp -intstyle ise
+
+Reading design: head.prj
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/debounce.vhd" in Library work.
+Entity <debounce> compiled.
+Entity <debounce> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/fsm.vhd" in Library work.
+Entity <fsm> compiled.
+Entity <fsm> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/head.vhd" in Library work.
+Entity <head> compiled.
+Entity <head> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <head> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <debounce> in library <work> (architecture <Behavioral>) with generics.
+	counter_size = 19
+
+Analyzing hierarchy for entity <fsm> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <head> in library <work> (Architecture <Behavioral>).
+Entity <head> analyzed. Unit <head> generated.
+
+Analyzing generic Entity <debounce> in library <work> (Architecture <Behavioral>).
+	counter_size = 19
+Entity <debounce> analyzed. Unit <debounce> generated.
+
+Analyzing Entity <fsm> in library <work> (Architecture <Behavioral>).
+Entity <fsm> analyzed. Unit <fsm> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <debounce>.
+    Related source file is "/home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/debounce.vhd".
+    Found 1-bit register for signal <result>.
+    Found 20-bit up counter for signal <count>.
+    Found 1-bit xor2 for signal <counter_set>.
+    Found 2-bit register for signal <flipflop>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   3 D-type flip-flop(s).
+Unit <debounce> synthesized.
+
+
+Synthesizing Unit <fsm>.
+    Related source file is "/home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/fsm.vhd".
+WARNING:Xst:737 - Found 6-bit latch for signal <state>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 6-bit register for signal <led_o>.
+    Found 6-bit adder for signal <state$addsub0000> created at line 52.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <fsm> synthesized.
+
+
+Synthesizing Unit <head>.
+    Related source file is "/home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/head.vhd".
+Unit <head> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 2
+ 20-bit up counter                                     : 2
+# Registers                                            : 7
+ 1-bit register                                        : 6
+ 6-bit register                                        : 1
+# Latches                                              : 1
+ 6-bit latch                                           : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 2
+ 20-bit up counter                                     : 2
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+# Latches                                              : 1
+ 6-bit latch                                           : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <head> ...
+
+Optimizing unit <fsm> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 52
+ Flip-Flops                                            : 52
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+db1/result                         | NONE(fsm0/state_5)     | 6     |
+clk_50mhz                          | BUFGP                  | 52    |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------+------------------------+-------+
+Control Signal                                 | Buffer(FF name)        | Load  |
+-----------------------------------------------+------------------------+-------+
+fsm0/state_0__and0000(fsm0/state_0__and00001:O)| NONE(fsm0/state_0)     | 1     |
+fsm0/state_1__and0000(fsm0/state_1__and00001:O)| NONE(fsm0/state_1)     | 1     |
+fsm0/state_2__and0000(fsm0/state_2__and00001:O)| NONE(fsm0/state_2)     | 1     |
+fsm0/state_3__and0000(fsm0/state_3__and00001:O)| NONE(fsm0/state_3)     | 1     |
+fsm0/state_4__and0000(fsm0/state_4__and00001:O)| NONE(fsm0/state_4)     | 1     |
+fsm0/state_5__and0000(fsm0/state_5__and00001:O)| NONE(fsm0/state_5)     | 1     |
+fsm0/state_mux0001<0>(fsm0/state_0__and00011:O)| NONE(fsm0/state_0)     | 1     |
+fsm0/state_mux0001<1>(fsm0/state_1__and00011:O)| NONE(fsm0/state_1)     | 1     |
+fsm0/state_mux0001<2>(fsm0/state_2__and00011:O)| NONE(fsm0/state_2)     | 1     |
+fsm0/state_mux0001<3>(fsm0/state_3__and00011:O)| NONE(fsm0/state_3)     | 1     |
+fsm0/state_mux0001<4>(fsm0/state_4__and00011:O)| NONE(fsm0/state_4)     | 1     |
+fsm0/state_mux0001<5>(fsm0/state_5__and00011:O)| NONE(fsm0/state_5)     | 1     |
+-----------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 4.635ns (Maximum Frequency: 215.750MHz)
+   Minimum input arrival time before clock: 1.521ns
+   Maximum output required time after clock: 5.531ns
+   Maximum combinational path delay: No path found
+
+=========================================================================

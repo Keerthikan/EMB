@@ -1,0 +1,197 @@
+
+*** Running xst
+    with args -ifn head.xst -ofn head.srp -intstyle ise
+
+Reading design: head.prj
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/debounce.vhd" in Library work.
+Entity <debounce> compiled.
+Entity <debounce> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/fsm.vhd" in Library work.
+Entity <fsm> compiled.
+Entity <fsm> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/head.vhd" in Library work.
+Entity <head> compiled.
+Entity <head> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <head> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <debounce> in library <work> (architecture <Behavioral>) with generics.
+	counter_size = 19
+
+Analyzing hierarchy for entity <fsm> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <head> in library <work> (Architecture <Behavioral>).
+Entity <head> analyzed. Unit <head> generated.
+
+Analyzing generic Entity <debounce> in library <work> (Architecture <Behavioral>).
+	counter_size = 19
+Entity <debounce> analyzed. Unit <debounce> generated.
+
+Analyzing Entity <fsm> in library <work> (Architecture <Behavioral>).
+Entity <fsm> analyzed. Unit <fsm> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <debounce>.
+    Related source file is "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/debounce.vhd".
+    Found 1-bit register for signal <result>.
+    Found 20-bit up counter for signal <count>.
+    Found 1-bit xor2 for signal <counter_set>.
+    Found 2-bit register for signal <flipflop>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   3 D-type flip-flop(s).
+Unit <debounce> synthesized.
+
+
+Synthesizing Unit <fsm>.
+    Related source file is "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/fsm.vhd".
+WARNING:Xst:647 - Input <clk_50mhz> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 6                                              |
+    | Clock              | forward_i                 (rising_edge)        |
+    | Reset              | reset_i                   (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | reset                                          |
+    | Power Up State     | reset                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <fsm> synthesized.
+
+
+Synthesizing Unit <head>.
+    Related source file is "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_3/project_3.srcs/sources_1/imports/new/head.vhd".
+Unit <head> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 20-bit up counter                                     : 2
+# Registers                                            : 6
+ 1-bit register                                        : 6
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <fsm0/state/FSM> on signal <state[1:7]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ reset | 0000001
+ led_1 | 0000010
+ led_2 | 0000100
+ led_3 | 0001000
+ led_4 | 0010000
+ led_5 | 0100000
+ led_6 | 1000000
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Counters                                             : 2
+ 20-bit up counter                                     : 2
+# Registers                                            : 6
+ Flip-Flops                                            : 6
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <head> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 53
+ Flip-Flops                                            : 53
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Clock Information:
+------------------
+-----------------------------------+--------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)    | Load  |
+-----------------------------------+--------------------------+-------+
+db0/result                         | NONE(fsm0/state_FSM_FFd1)| 7     |
+clk_50mhz                          | BUFGP                    | 46    |
+-----------------------------------+--------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+--------------------------+-------+
+Control Signal                     | Buffer(FF name)          | Load  |
+-----------------------------------+--------------------------+-------+
+db1/result(db1/result:Q)           | NONE(fsm0/state_FSM_FFd1)| 7     |
+-----------------------------------+--------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 4.469ns (Maximum Frequency: 223.764MHz)
+   Minimum input arrival time before clock: 1.946ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+=========================================================================

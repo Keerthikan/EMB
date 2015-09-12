@@ -1,0 +1,22 @@
+V3 11
+FL /home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/debounce.vhd 2015/09/11.17:33:58 P.20131013
+EN work/debounce 1441987807 \
+      FL /home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/debounce.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/debounce/Behavioral 1441987808 \
+      FL /home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/debounce.vhd \
+      EN work/debounce 1441987807
+FL /home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/fsm.vhd 2015/09/11.18:07:55 P.20131013
+EN work/fsm 1441987809 \
+      FL /home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/fsm.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/fsm/Behavioral 1441987810 \
+      FL /home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/fsm.vhd \
+      EN work/fsm 1441987809
+FL /home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/head.vhd 2015/09/11.17:33:58 P.20131013
+EN work/head 1441987811 \
+      FL /home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/head.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/head/Behavioral 1441987812 \
+      FL /home/student/Embedded/project_2/project_2.srcs/sources_1/imports/new/head.vhd \
+      EN work/head 1441987811 CP debounce CP fsm

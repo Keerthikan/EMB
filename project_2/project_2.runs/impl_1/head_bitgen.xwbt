@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=/home/student/Embedded/project_2/project_2.runs/impl_1/head_routed.ncd
+OUTFILE=/home/student/Embedded/project_2/project_2.runs/impl_1/head.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s50an-4tqg144
+WORKINGDIR=/home/student/Embedded/project_2/project_2.runs/impl_1
+LICENSE=ISE
+USER_INFO=210779069_174157381_210595800_267
