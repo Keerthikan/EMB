@@ -1,8 +1,8 @@
 INTSTYLE=impact
 INFILE=/home/student/Embedded/Test/test/impact.xsl
 OUTFILE=/home/student/Embedded/Test/test/impact.xsl
-FAMILY=Single
-PART=Single
+FAMILY=None
+PART=None
 WORKINGDIR=/home/student/Embedded/Test/test
 LICENSE=iMPACT
 USER_INFO=iMPACT

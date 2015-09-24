@@ -48,7 +48,7 @@ architecture Behavioral of head is
     component fsm
         Port ( forward_i    : in std_logic;
                reset_i      : in std_logic;
-               clk_50mhz    : in std_logic;
+               --clk_50mhz    : in std_logic;
                led_o        : out std_logic_vector(5 downto 0));
     end component;
     
@@ -68,7 +68,7 @@ begin
             
     fsm0 : fsm port map (
              led_o => led_o,
-             clk_50mhz => clk_50mhz,
+            -- clk_50mhz => clk_50mhz,
              forward_i => res_sig0,
              reset_i => res_sig1); 
     

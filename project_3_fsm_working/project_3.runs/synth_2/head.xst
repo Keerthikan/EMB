@@ -1,0 +1,9 @@
+set -loop_iteration_limit 1000
+run
+-ifn head.prj
+-top head
+-p xc3s50antqg144-4
+-ofn head.ngc
+-opt_mode speed
+-opt_level 1
+-netlist_hierarchy rebuilt

@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Sep 24 08:55:54 2015">
+<application name="pa" timeStamp="Thu Sep 24 09:49:21 2015">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="ad834335a9ae470abca9b4e0af536bbb" type="ProjectID"/>
-<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+<property name="ProjectIteration" value="2" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -17,20 +17,23 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="ISE Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="LaunchImpact" value="1" type="JavaHandler"/>
-<property name="OpenProject" value="3" type="JavaHandler"/>
+<property name="LaunchImpact" value="6" type="JavaHandler"/>
+<property name="OpenProject" value="4" type="JavaHandler"/>
 <property name="ProjectSettings" value="2" type="JavaHandler"/>
-<property name="RunBitgen" value="4" type="JavaHandler"/>
-<property name="RunImplementation" value="4" type="JavaHandler"/>
-<property name="RunSynthesis" value="4" type="JavaHandler"/>
-<property name="ShowView" value="1" type="JavaHandler"/>
+<property name="RunBitgen" value="14" type="JavaHandler"/>
+<property name="RunDRC" value="4" type="JavaHandler"/>
+<property name="RunImplementation" value="9" type="JavaHandler"/>
+<property name="RunSchematic" value="38" type="JavaHandler"/>
+<property name="RunSynthesis" value="10" type="JavaHandler"/>
+<property name="SetTopNode" value="6" type="JavaHandler"/>
+<property name="ShowSource" value="1" type="JavaHandler"/>
+<property name="ShowView" value="4" type="JavaHandler"/>
 <property name="ViewTaskImplementation" value="1" type="JavaHandler"/>
-</item>
-<item name="Other">
-<property name="GuiMode" value="23" type="GuiMode"/>
-<property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="10" type="TclMode"/>
-<property name="ISEMode" value="6" type="ISEMode"/>
+<property name="ViewTaskRTLAnalysis" value="1" type="JavaHandler"/>
+<property name="ViewTaskSynthesis" value="1" type="JavaHandler"/>
+<property name="ZoomFit" value="3" type="JavaHandler"/>
+<property name="ZoomIn" value="2" type="JavaHandler"/>
+<property name="ZoomOut" value="7" type="JavaHandler"/>
 </item>
 </section>
 </application>

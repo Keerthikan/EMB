@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=/home/student/Embedded/project_3_fsm_working/project_3.runs/impl_2/head_routed.ncd
+OUTFILE=/home/student/Embedded/project_3_fsm_working/project_3.runs/impl_2/head.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s50an-4tqg144
+WORKINGDIR=/home/student/Embedded/project_3_fsm_working/project_3.runs/impl_2
+LICENSE=ISE
+USER_INFO=210779069_174157381_210595800_267

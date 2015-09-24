@@ -10,6 +10,12 @@
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sim_1/new/fsm_simu.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="head"/>
@@ -18,6 +24,7 @@
       <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/imports/new/head.vhd"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
       <Option Name="SimulationRunTime" Val="100ms"/>
+      <Option Name="SimMode" Val="post-implementation"/>
       <Option Name="SrcSet" Val="sources_1"/>
       <Option Name="NGOutputHDLFormat" Val="vhdl"/>
     </Config>

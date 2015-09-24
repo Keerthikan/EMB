@@ -35,7 +35,7 @@ use IEEE.numeric_std.all;
 entity fsm is
     Port ( forward_i : in std_logic;
            reset_i : in std_logic;
-           clk_50mhz : in std_logic;
+           --clk_50mhz : in std_logic;
            led_o : out std_logic_vector (5 downto 0));
 end fsm;
 
