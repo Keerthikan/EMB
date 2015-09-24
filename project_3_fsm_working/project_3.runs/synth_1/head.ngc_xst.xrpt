@@ -5,11 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-<<<<<<< HEAD
-  <application stringID="Xst" timeStamp="Sat Sep 12 12:06:07 2015">
-=======
-  <application stringID="Xst" timeStamp="Sat Sep 12 12:43:48 2015">
->>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
+  <application stringID="Xst" timeStamp="Thu Sep 24 08:43:10 2015">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -45,15 +41,15 @@
       </table>
       <item stringID="User_EnvOs" value="OS Information">
         <item stringID="User_EnvOsname" value="Ubuntu"/>
-        <item stringID="User_EnvOsrelease" value="Ubuntu 15.04"/>
+        <item stringID="User_EnvOsrelease" value="Ubuntu 14.04.3 LTS"/>
       </item>
-      <item stringID="User_EnvHost" value="Lenovo-G580"/>
+      <item stringID="User_EnvHost" value="ubuntu"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i3-3110M CPU @ 2.40GHz"/>
-          <item stringID="speed" value="2400.000 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-4558U CPU @ 2.80GHz"/>
+          <item stringID="speed" value="2799.993 MHz"/>
         </row>
       </table>
     </section>
@@ -106,9 +102,9 @@
         <item stringID="XST_IOS" value="9"/>
       </section>
       <section stringID="XST_CELL_USAGE">
-        <item dataType="int" stringID="XST_BELS" value="128">
+        <item dataType="int" stringID="XST_BELS" value="129">
           <item dataType="int" stringID="XST_GND" value="2"/>
-          <item dataType="int" stringID="XST_INV" value="4"/>
+          <item dataType="int" stringID="XST_INV" value="5"/>
           <item dataType="int" stringID="XST_LUT1" value="38"/>
           <item dataType="int" stringID="XST_LUT2" value="2"/>
           <item dataType="int" stringID="XST_LUT3" value="2"/>
@@ -118,9 +114,9 @@
         </item>
         <item dataType="int" stringID="XST_FLIPFLOPSLATCHES" value="53">
           <item dataType="int" stringID="XST_FD" value="4"/>
-          <item dataType="int" stringID="XST_FDC" value="6"/>
+          <item dataType="int" stringID="XST_FDC1" value="6"/>
           <item dataType="int" stringID="XST_FDE" value="2"/>
-          <item dataType="int" stringID="XST_FDP" value="1"/>
+          <item dataType="int" stringID="XST_FDP1" value="1"/>
           <item dataType="int" stringID="XST_FDRE" value="40"/>
         </item>
         <item dataType="int" stringID="XST_CLOCK_BUFFERS" value="1">
@@ -136,7 +132,7 @@
       <item stringID="XST_SELECTED_DEVICE" value="3s500efg320-4"/>
       <item AVAILABLE="4656" dataType="int" label="Number of Slices" stringID="XST_NUMBER_OF_SLICES" value="28"/>
       <item AVAILABLE="9312" dataType="int" label="Number of Slice Flip Flops" stringID="XST_NUMBER_OF_SLICE_FLIP_FLOPS" value="53"/>
-      <item AVAILABLE="9312" dataType="int" label="Number of 4 input LUTs" stringID="XST_NUMBER_OF_4_INPUT_LUTS" value="46"/>
+      <item AVAILABLE="9312" dataType="int" label="Number of 4 input LUTs" stringID="XST_NUMBER_OF_4_INPUT_LUTS" value="47"/>
       <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="9"/>
       <item AVAILABLE="232" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="9"/>
       <item AVAILABLE="24" dataType="int" label="Number of GCLKs" stringID="XST_NUMBER_OF_GCLKS" value="1"/>

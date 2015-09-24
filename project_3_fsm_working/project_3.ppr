@@ -9,9 +9,9 @@
 	<DefaultPromote Dir="$PROMOTEDIR"/>
 	<Config>
 		<Option Name="Id" Val="4826a72b32f446a3854da5b27785bfb3"/>
-		<Option Name="Part" Val="xc3s500efg320-4"/>
+		<Option Name="Part" Val="xc3s50antqg144-4"/>
 		<Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
-		<Option Name="TargetLanguage" Val="Verilog"/>
+		<Option Name="TargetLanguage" Val="VHDL"/>
 		<Option Name="TargetSimulator" Val="ISim"/>
 		<Option Name="Board" Val=""/>
 		<Option Name="SourceMgmtMode" Val="All"/>

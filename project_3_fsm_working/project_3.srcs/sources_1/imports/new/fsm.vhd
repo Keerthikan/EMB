@@ -46,9 +46,9 @@ begin
     
     statecase: process(forward_i, reset_i)
     begin
-        if (reset_i  = '1') then 
+        if (reset_i  = '0') then 
                 state <= reset;
-        elsif (rising_edge(forward_i)) then 
+        elsif (falling_edge(forward_i)) then 
                 case state is
                     when reset => state <= led_1;                                     
                     when led_1 => state <= led_2;
@@ -56,7 +56,7 @@ begin
                     when led_3 => state <= led_4;
                     when led_4 => state <= led_5;
                     when led_5 => state <= led_6;
-                    when led_6 => state <= reset;
+                    when led_6 => state <= led_1;
                 end case;
          end if;
     end process;

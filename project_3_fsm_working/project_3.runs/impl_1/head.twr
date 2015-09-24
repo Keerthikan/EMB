@@ -44,8 +44,8 @@ Setup/Hold to clock clk_50mhz
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-forward_i   |    0.480(R)|    0.827(R)|clk_50mhz_BUFGP   |   0.000|
-reset_i     |    0.981(R)|    0.426(R)|clk_50mhz_BUFGP   |   0.000|
+forward_i   |    0.195(R)|    1.052(R)|clk_50mhz_BUFGP   |   0.000|
+reset_i     |    0.320(R)|    0.950(R)|clk_50mhz_BUFGP   |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk_50mhz
@@ -53,11 +53,11 @@ Clock to Setup on destination clock clk_50mhz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_50mhz      |    4.067|         |         |         |
+clk_50mhz      |    4.101|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sat Sep 12 12:44:44 2015 
+Analysis completed Thu Sep 24 08:45:11 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:

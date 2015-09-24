@@ -1,10 +1,10 @@
-NET "forward_i" LOC = D18; 
-NET "reset_i"   LOC = B18;
-NET "clk_50mhz" LOC = B8;
+NET "forward_i" LOC = P42; 
+NET "reset_i"   LOC = P43;
+NET "clk_50mhz" LOC = P60;
 
-NET "led_o<0>" LOC = J14;
-NET "led_o<1>" LOC = J15;
-NET "led_o<2>" LOC = K15;
-NET "led_o<3>" LOC = K14;
-NET "led_o<4>" LOC = E17;
-NET "led_o<5>" LOC = P15;
+NET "led_o<0>" LOC = P44;
+NET "led_o<1>" LOC = P45;
+NET "led_o<2>" LOC = P49;
+NET "led_o<3>" LOC = P50;
+NET "led_o<4>" LOC = P51;
+NET "led_o<5>" LOC = P54;

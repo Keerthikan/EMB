@@ -4,11 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-<<<<<<< HEAD
-Total CPU time to Xst completion: 0.04 secs
-=======
-Total CPU time to Xst completion: 0.08 secs
->>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: head.prj
@@ -54,7 +50,6 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-<<<<<<< HEAD
 Compiling vhdl file "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd" in Library work.
 Entity <debounce> compiled.
 Entity <debounce> (Architecture <Behavioral>) compiled.
@@ -62,15 +57,6 @@ Compiling vhdl file "/home/student/Embedded/project_3_fsm_working/project_3.srcs
 Entity <fsm> compiled.
 Entity <fsm> (Architecture <Behavioral>) compiled.
 Compiling vhdl file "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/head.vhd" in Library work.
-=======
-Compiling vhdl file "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd" in Library work.
-Entity <debounce> compiled.
-Entity <debounce> (Architecture <Behavioral>) compiled.
-Compiling vhdl file "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd" in Library work.
-Entity <fsm> compiled.
-Entity <fsm> (Architecture <Behavioral>) compiled.
-Compiling vhdl file "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/project_3_fsm_working/project_3.srcs/sources_1/imports/new/head.vhd" in Library work.
->>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
 Entity <head> compiled.
 Entity <head> (Architecture <Behavioral>) compiled.
 
@@ -106,11 +92,7 @@ Entity <fsm> analyzed. Unit <fsm> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <debounce>.
-<<<<<<< HEAD
     Related source file is "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd".
-=======
-    Related source file is "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd".
->>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
     Found 1-bit register for signal <result>.
     Found 20-bit up counter for signal <count>.
     Found 1-bit xor2 for signal <counter_set>.
@@ -122,11 +104,7 @@ Unit <debounce> synthesized.
 
 
 Synthesizing Unit <fsm>.
-<<<<<<< HEAD
     Related source file is "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd".
-=======
-    Related source file is "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd".
->>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
 WARNING:Xst:647 - Input <clk_50mhz> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
@@ -134,8 +112,8 @@ WARNING:Xst:647 - Input <clk_50mhz> is never used. This port will be preserved a
     | Transitions        | 7                                              |
     | Inputs             | 0                                              |
     | Outputs            | 6                                              |
-    | Clock              | forward_i                 (rising_edge)        |
-    | Reset              | reset_i                   (positive)           |
+    | Clock              | forward_i                 (falling_edge)       |
+    | Reset              | reset_i                   (negative)           |
     | Reset type         | asynchronous                                   |
     | Reset State        | reset                                          |
     | Power Up State     | reset                                          |
@@ -148,11 +126,7 @@ Unit <fsm> synthesized.
 
 
 Synthesizing Unit <head>.
-<<<<<<< HEAD
     Related source file is "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/head.vhd".
-=======
-    Related source file is "/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/project_3_fsm_working/project_3.srcs/sources_1/imports/new/head.vhd".
->>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
 Unit <head> synthesized.
 
 
@@ -245,9 +219,9 @@ Design Statistics
 # IOs                              : 9
 
 Cell Usage :
-# BELS                             : 128
+# BELS                             : 129
 #      GND                         : 2
-#      INV                         : 4
+#      INV                         : 5
 #      LUT1                        : 38
 #      LUT2                        : 2
 #      LUT3                        : 2
@@ -256,9 +230,9 @@ Cell Usage :
 #      XORCY                       : 40
 # FlipFlops/Latches                : 53
 #      FD                          : 4
-#      FDC                         : 6
+#      FDC_1                       : 6
 #      FDE                         : 2
-#      FDP                         : 1
+#      FDP_1                       : 1
 #      FDRE                        : 40
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -274,7 +248,7 @@ Selected Device : 3s500efg320-4
 
  Number of Slices:                       28  out of   4656     0%  
  Number of Slice Flip Flops:             53  out of   9312     0%  
- Number of 4 input LUTs:                 46  out of   9312     0%  
+ Number of 4 input LUTs:                 47  out of   9312     0%  
  Number of IOs:                           9
  Number of bonded IOBs:                   9  out of    232     3%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -300,18 +274,18 @@ Clock Information:
 -----------------------------------+--------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)    | Load  |
 -----------------------------------+--------------------------+-------+
-db0/result                         | NONE(fsm0/state_FSM_FFd1)| 7     |
+db0/result                         | NONE(fsm0/state_FSM_FFd7)| 7     |
 clk_50mhz                          | BUFGP                    | 46    |
 -----------------------------------+--------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------+--------------------------+-------+
-Control Signal                     | Buffer(FF name)          | Load  |
------------------------------------+--------------------------+-------+
-db1/result(db1/result:Q)           | NONE(fsm0/state_FSM_FFd1)| 7     |
------------------------------------+--------------------------+-------+
+-----------------------------------------------------------------+--------------------------+-------+
+Control Signal                                                   | Buffer(FF name)          | Load  |
+-----------------------------------------------------------------+--------------------------+-------+
+fsm0/state_FSM_Acst_FSM_inv(fsm0/state_FSM_Acst_FSM_inv1_INV_0:O)| NONE(fsm0/state_FSM_FFd1)| 7     |
+-----------------------------------------------------------------+--------------------------+-------+
 
 Timing Summary:
 ---------------
@@ -332,17 +306,17 @@ Timing constraint: Default period analysis for Clock 'db0/result'
   Total number of paths / destination ports: 7 / 7
 -------------------------------------------------------------------------
 Delay:               1.346ns (Levels of Logic = 0)
-  Source:            fsm0/state_FSM_FFd2 (FF)
-  Destination:       fsm0/state_FSM_FFd1 (FF)
-  Source Clock:      db0/result rising
-  Destination Clock: db0/result rising
+  Source:            fsm0/state_FSM_FFd1 (FF)
+  Destination:       fsm0/state_FSM_FFd7 (FF)
+  Source Clock:      db0/result falling
+  Destination Clock: db0/result falling
 
-  Data Path: fsm0/state_FSM_FFd2 to fsm0/state_FSM_FFd1
+  Data Path: fsm0/state_FSM_FFd1 to fsm0/state_FSM_FFd7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.591   0.447  state_FSM_FFd2 (state_FSM_FFd2)
-     FDC:D                     0.308          state_FSM_FFd1
+     FDC_1:C->Q            2   0.591   0.447  state_FSM_FFd1 (state_FSM_FFd1)
+     FDP_1:D                   0.308          state_FSM_FFd7
     ----------------------------------------
     Total                      1.346ns (0.899ns logic, 0.447ns route)
                                        (66.8% logic, 33.2% route)
@@ -415,13 +389,13 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'db0/result'
 Offset:              4.310ns (Levels of Logic = 2)
   Source:            fsm0/state_FSM_FFd1 (FF)
   Destination:       led_o<5> (PAD)
-  Source Clock:      db0/result rising
+  Source Clock:      db0/result falling
 
   Data Path: fsm0/state_FSM_FFd1 to led_o<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.591   0.447  state_FSM_FFd1 (state_FSM_FFd1)
+     FDC_1:C->Q            2   0.591   0.447  state_FSM_FFd1 (state_FSM_FFd1)
      end scope: 'fsm0'
      OBUF:I->O                 3.272          led_o_5_OBUF (led_o<5>)
     ----------------------------------------
@@ -431,18 +405,13 @@ Offset:              4.310ns (Levels of Logic = 2)
 =========================================================================
 
 
-<<<<<<< HEAD
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.80 secs
-=======
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.27 secs
->>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 3.72 secs
  
 --> 
 
 
-Total memory usage is 521668 kilobytes
+Total memory usage is 521624 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

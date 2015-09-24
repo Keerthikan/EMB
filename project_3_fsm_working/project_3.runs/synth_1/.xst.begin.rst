@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-<<<<<<< HEAD
-    <Process Command="xst" Owner="root" Host="" Pid="23238">
-=======
-    <Process Command="xst" Owner="root" Host="" Pid="18917">
->>>>>>> 6b90e7df6324215584a467a075b704da6fa72f30
+    <Process Command="xst" Owner="root" Host="" Pid="37301">
     </Process>
 </ProcessHandle>

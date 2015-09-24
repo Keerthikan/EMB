@@ -8,8 +8,8 @@ Executing edif2ngd -quiet "head.edf" "_ngo/head.ngo"
 Release 14.7 - edif2ngd P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Reading NGO file
-"/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/project_3_fsm_working/
-project_3.runs/impl_1/_ngo/head.ngo" ...
+"/home/student/Embedded/project_3_fsm_working/project_3.runs/impl_1/_ngo/head.ng
+o" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -31,10 +31,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 394536 kilobytes
+Total memory usage is 394308 kilobytes
 
 Writing NGD file "head.ngd" ...
-Total REAL time to NGDBUILD completion:  9 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total REAL time to NGDBUILD completion:  11 sec
+Total CPU time to NGDBUILD completion:   2 sec
 
 Writing NGDBUILD log file "head.bld"...
