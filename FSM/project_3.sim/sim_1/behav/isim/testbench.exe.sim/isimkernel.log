@@ -1,0 +1,10 @@
+Command line:
+   testbench.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  47767
+
+Thu Sep 24 15:38:28 2015
+
+
+ Elaboration Time: 0.02 sec

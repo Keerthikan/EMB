@@ -1,0 +1,4 @@
+vhdl work "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd"
+vhdl work "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd"
+vhdl work "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sim_1/new/testbc.vhd"
+verilog work /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/verilog/src/glbl.v
