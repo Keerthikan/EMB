@@ -1,6 +1,0 @@
-AR head behavioral /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/head.vhd sub00/vhpl05 1442053074
-EN debounce NULL /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/debounce.vhd sub00/vhpl00 1442053069
-EN head NULL /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/head.vhd sub00/vhpl04 1442053073
-AR fsm behavioral /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/fsm.vhd sub00/vhpl03 1442053072
-AR debounce behavioral /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/debounce.vhd sub00/vhpl01 1442053070
-EN fsm NULL /home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/fsm/fsm.srcs/sources_1/new/fsm.vhd sub00/vhpl02 1442053071
