@@ -34,4 +34,4 @@ ExecStep()
 }
 
 
-ExecStep fuse -intstyle pa -incremental -L work -o testbench.exe --prj /home/student/Embedded/project_3_fsm_working/project_3.sim/sim_1/behav/testbench.prj -top work.testbench
+ExecStep fuse -intstyle pa -incremental -L work -o testbench.exe --prj /home/student/Embedded/FSM/project_3.sim/sim_1/behav/testbench.prj -top work.testbench

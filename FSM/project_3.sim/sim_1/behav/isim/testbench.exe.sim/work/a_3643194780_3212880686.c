@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd";
+static const char *ng0 = "/home/student/Embedded/FSM/project_3.srcs/sources_1/imports/new/fsm.vhd";
 extern char *IEEE_P_2592010699;
 
 unsigned char ieee_p_2592010699_sub_13554554585326073636_503743352(char *, char *, unsigned int , unsigned int );
@@ -176,7 +176,7 @@ LAB2:    t1 = (t0 + 3248);
 
 LAB1:    return;
 LAB3:    xsi_set_current_line(68, ng0);
-    t4 = (t0 + 5635);
+    t4 = (t0 + 5491);
     t6 = (t0 + 3392);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);
@@ -187,7 +187,7 @@ LAB3:    xsi_set_current_line(68, ng0);
     goto LAB2;
 
 LAB4:    xsi_set_current_line(69, ng0);
-    t1 = (t0 + 5641);
+    t1 = (t0 + 5497);
     t4 = (t0 + 3392);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -198,7 +198,7 @@ LAB4:    xsi_set_current_line(69, ng0);
     goto LAB2;
 
 LAB5:    xsi_set_current_line(70, ng0);
-    t1 = (t0 + 5647);
+    t1 = (t0 + 5503);
     t4 = (t0 + 3392);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -209,7 +209,7 @@ LAB5:    xsi_set_current_line(70, ng0);
     goto LAB2;
 
 LAB6:    xsi_set_current_line(71, ng0);
-    t1 = (t0 + 5653);
+    t1 = (t0 + 5509);
     t4 = (t0 + 3392);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -220,7 +220,7 @@ LAB6:    xsi_set_current_line(71, ng0);
     goto LAB2;
 
 LAB7:    xsi_set_current_line(72, ng0);
-    t1 = (t0 + 5659);
+    t1 = (t0 + 5515);
     t4 = (t0 + 3392);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -231,7 +231,7 @@ LAB7:    xsi_set_current_line(72, ng0);
     goto LAB2;
 
 LAB8:    xsi_set_current_line(73, ng0);
-    t1 = (t0 + 5665);
+    t1 = (t0 + 5521);
     t4 = (t0 + 3392);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -242,7 +242,7 @@ LAB8:    xsi_set_current_line(73, ng0);
     goto LAB2;
 
 LAB9:    xsi_set_current_line(74, ng0);
-    t1 = (t0 + 5671);
+    t1 = (t0 + 5527);
     t4 = (t0 + 3392);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);

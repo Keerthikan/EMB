@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd";
+static const char *ng0 = "/home/student/Embedded/FSM/project_3.srcs/sources_1/imports/new/debounce.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_3620187407;
 
@@ -207,7 +207,7 @@ LAB5:    xsi_set_current_line(49, ng0);
 LAB8:    xsi_set_current_line(51, ng0);
     t4 = (t0 + 1672U);
     t6 = *((char **)t4);
-    t4 = (t0 + 6376U);
+    t4 = (t0 + 6176U);
     t7 = ieee_p_3620187407_sub_2255506239096166994_3965413181(IEEE_P_3620187407, t15, t6, t4, 1);
     t8 = (t15 + 12U);
     t16 = *((unsigned int *)t8);

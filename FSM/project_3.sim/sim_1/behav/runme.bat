@@ -10,7 +10,7 @@ set PATH=$XILINX/lib/$PLATFORM:$XILINX/bin/$PLATFORM;/opt/Xilinx/14.7/ISE_DS/EDK
 
 set XILINX_PLANAHEAD=/opt/Xilinx/14.7/ISE_DS/PlanAhead
 
-fuse -intstyle pa -incremental -L work -o testbench.exe --prj /home/student/Embedded/project_3_fsm_working/project_3.sim/sim_1/behav/testbench.prj -top work.testbench
+fuse -intstyle pa -incremental -L work -o testbench.exe --prj /home/student/Embedded/FSM/project_3.sim/sim_1/behav/testbench.prj -top work.testbench
 if errorlevel 1 (
    cmd /c exit /b %errorlevel%
 )

@@ -2,9 +2,27 @@ Command line:
    testbench.exe
      -simmode  gui
      -simrunnum  0
-     -socket  47767
+     -socket  38074
 
-Thu Sep 24 15:38:28 2015
+Thu Sep 24 15:57:23 2015
 
 
- Elaboration Time: 0.02 sec
+ Elaboration Time: 0.04 sec
+
+ Current Memory Usage: 227.992 Meg
+
+ Total Signals          : 22
+ Total Nets             : 58
+ Total Signal Drivers   : 13
+ Total Blocks           : 8
+ Total Primitive Blocks : 7
+ Total Processes        : 9
+ Total Traceable Variables  : 18
+ Total Scalar Nets and Variables : 562
+
+ Total Simulation Time: 113.83 sec
+
+ Current Memory Usage: 303.493 Meg
+
+Thu Sep 24 16:34:11 2015
+
