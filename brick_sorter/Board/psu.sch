@@ -10253,93 +10253,6 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="inductor-neosid">
-<description>&lt;b&gt;Neosid Chokes and Transformers&lt;/b&gt;&lt;p&gt;
-
-Based on the following sources:
-&lt;ul&gt;
-&lt;li&gt;Electronic Component Book, Part 2 : Chokes, Fixed Value Inductors
-&lt;li&gt;Part 3 : Filters, Coil Assemblies, Thermoplastic Parts
-&lt;li&gt;Part 4 : SMD Filters, Coils, Fixed Value Inductors
-&lt;li&gt;www.neosid.de
-&lt;/ul&gt;
- &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="BS11">
-<description>NOMINAL &lt;b&gt;INDUCTANCE&lt;/b&gt;&lt;p&gt;
-grid 5 mm, diameter 10.5 mm, height 13.5 mm</description>
-<circle x="0" y="0" radius="5.15" width="0.2032" layer="21"/>
-<pad name="1" x="-2.5" y="0" drill="0.7" shape="long" rot="R90"/>
-<pad name="2" x="2.5" y="0" drill="0.7" shape="long" rot="R90"/>
-<text x="3.854" y="4.032" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.25" y="-3" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="BS75">
-<description>NOMINAL &lt;b&gt;INDUCTANCE&lt;/b&gt;&lt;p&gt;
-grid 5 mm, 8.5 x 6 x 11.4 mm</description>
-<wire x1="3.75" y1="2.9" x2="-3.75" y2="2.9" width="0.2032" layer="21"/>
-<wire x1="-4.15" y1="2.5" x2="-3.75" y2="2.9" width="0.2032" layer="21" curve="-90"/>
-<wire x1="-4.15" y1="2.5" x2="-4.15" y2="-2.5" width="0.2032" layer="21"/>
-<wire x1="-3.75" y1="-2.9" x2="3.75" y2="-2.9" width="0.2032" layer="21"/>
-<wire x1="4.15" y1="-2.5" x2="4.15" y2="2.5" width="0.2032" layer="21"/>
-<wire x1="3.75" y1="-2.9" x2="4.15" y2="-2.5" width="0.2032" layer="21" curve="90"/>
-<wire x1="-4.15" y1="-2.5" x2="-3.75" y2="-2.9" width="0.2032" layer="21" curve="90"/>
-<wire x1="3.75" y1="2.9" x2="4.15" y2="2.5" width="0.2032" layer="21" curve="-90"/>
-<pad name="1" x="-2.5" y="0" drill="0.6" shape="long" rot="R90"/>
-<pad name="2" x="2.5" y="0" drill="0.6" shape="long" rot="R90"/>
-<text x="-4" y="3.25" size="1.27" layer="25">&gt;NAME</text>
-<text x="-4" y="-4.5" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="L">
-<text x="-3.81" y="1.778" size="1.778" layer="95">&gt;NAME</text>
-<text x="-3.81" y="-3.556" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-3.81" y1="-1.27" x2="3.81" y2="1.27" layer="94"/>
-<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="BS" prefix="L" uservalue="yes">
-<description>&lt;b&gt;INDUCTOR&lt;/b&gt;&lt;p&gt;
-nominal inductance, magnetically screened</description>
-<gates>
-<gate name="G$1" symbol="L" x="0" y="0"/>
-</gates>
-<devices>
-<device name="11" package="BS11">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="75" package="BS75">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="diode">
 <description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
 Based on the following sources:
@@ -10794,6 +10707,93 @@ general purpose rectifier, 1 A</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="inductor-neosid">
+<description>&lt;b&gt;Neosid Chokes and Transformers&lt;/b&gt;&lt;p&gt;
+
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Electronic Component Book, Part 2 : Chokes, Fixed Value Inductors
+&lt;li&gt;Part 3 : Filters, Coil Assemblies, Thermoplastic Parts
+&lt;li&gt;Part 4 : SMD Filters, Coils, Fixed Value Inductors
+&lt;li&gt;www.neosid.de
+&lt;/ul&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="BS11">
+<description>NOMINAL &lt;b&gt;INDUCTANCE&lt;/b&gt;&lt;p&gt;
+grid 5 mm, diameter 10.5 mm, height 13.5 mm</description>
+<circle x="0" y="0" radius="5.15" width="0.2032" layer="21"/>
+<pad name="1" x="-2.5" y="0" drill="0.7" shape="long" rot="R90"/>
+<pad name="2" x="2.5" y="0" drill="0.7" shape="long" rot="R90"/>
+<text x="3.854" y="4.032" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.25" y="-3" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="BS75">
+<description>NOMINAL &lt;b&gt;INDUCTANCE&lt;/b&gt;&lt;p&gt;
+grid 5 mm, 8.5 x 6 x 11.4 mm</description>
+<wire x1="3.75" y1="2.9" x2="-3.75" y2="2.9" width="0.2032" layer="21"/>
+<wire x1="-4.15" y1="2.5" x2="-3.75" y2="2.9" width="0.2032" layer="21" curve="-90"/>
+<wire x1="-4.15" y1="2.5" x2="-4.15" y2="-2.5" width="0.2032" layer="21"/>
+<wire x1="-3.75" y1="-2.9" x2="3.75" y2="-2.9" width="0.2032" layer="21"/>
+<wire x1="4.15" y1="-2.5" x2="4.15" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="3.75" y1="-2.9" x2="4.15" y2="-2.5" width="0.2032" layer="21" curve="90"/>
+<wire x1="-4.15" y1="-2.5" x2="-3.75" y2="-2.9" width="0.2032" layer="21" curve="90"/>
+<wire x1="3.75" y1="2.9" x2="4.15" y2="2.5" width="0.2032" layer="21" curve="-90"/>
+<pad name="1" x="-2.5" y="0" drill="0.6" shape="long" rot="R90"/>
+<pad name="2" x="2.5" y="0" drill="0.6" shape="long" rot="R90"/>
+<text x="-4" y="3.25" size="1.27" layer="25">&gt;NAME</text>
+<text x="-4" y="-4.5" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="L">
+<text x="-3.81" y="1.778" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.556" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-3.81" y1="-1.27" x2="3.81" y2="1.27" layer="94"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BS" prefix="L" uservalue="yes">
+<description>&lt;b&gt;INDUCTOR&lt;/b&gt;&lt;p&gt;
+nominal inductance, magnetically screened</description>
+<gates>
+<gate name="G$1" symbol="L" x="0" y="0"/>
+</gates>
+<devices>
+<device name="11" package="BS11">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="75" package="BS75">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -10807,7 +10807,6 @@ general purpose rectifier, 1 A</description>
 <part name="IC1" library="linear" deviceset="LM2574?-*" device="N" technology="3.3"/>
 <part name="C1" library="rcl" deviceset="CPOL-US" device="E5-8.5"/>
 <part name="C2" library="rcl" deviceset="CPOL-US" device="E5-5"/>
-<part name="L1" library="inductor-neosid" deviceset="BS" device="11"/>
 <part name="D1" library="diode" deviceset="BYV10" device=""/>
 <part name="SL1" library="con-amp-quick" deviceset="M10" device=""/>
 <part name="IC2-12V" library="linear" deviceset="78*" device="TV" technology="6"/>
@@ -10818,6 +10817,7 @@ general purpose rectifier, 1 A</description>
 <part name="C5" library="rcl" deviceset="C-EU" device="050-030X075"/>
 <part name="D3" library="diode" deviceset="1N4004" device=""/>
 <part name="C6" library="rcl" deviceset="C-EU" device="050-030X075"/>
+<part name="L1" library="inductor-neosid" deviceset="BS" device="11"/>
 </parts>
 <sheets>
 <sheet>
@@ -10827,7 +10827,6 @@ general purpose rectifier, 1 A</description>
 <instance part="IC1" gate="G$1" x="38.1" y="48.26"/>
 <instance part="C1" gate="G$1" x="66.04" y="48.26"/>
 <instance part="C2" gate="G$1" x="20.32" y="48.26"/>
-<instance part="L1" gate="G$1" x="58.42" y="53.34"/>
 <instance part="D1" gate="A" x="50.8" y="48.26" rot="R90"/>
 <instance part="SL1" gate="G$1" x="-33.02" y="43.18"/>
 <instance part="IC2-12V" gate="A1" x="38.1" y="86.36"/>
@@ -10838,6 +10837,7 @@ general purpose rectifier, 1 A</description>
 <instance part="C5" gate="G$1" x="-27.94" y="81.28"/>
 <instance part="D3" gate="1" x="-12.7" y="96.52" rot="R180"/>
 <instance part="C6" gate="G$1" x="2.54" y="81.28"/>
+<instance part="L1" gate="G$1" x="58.42" y="53.34"/>
 </instances>
 <busses>
 </busses>
@@ -10949,7 +10949,6 @@ general purpose rectifier, 1 A</description>
 </net>
 <net name="5V" class="0">
 <segment>
-<pinref part="L1" gate="G$1" pin="2"/>
 <wire x1="63.5" y1="53.34" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="+"/>
 <wire x1="66.04" y1="53.34" x2="66.04" y2="50.8" width="0.1524" layer="91"/>
@@ -10959,6 +10958,7 @@ general purpose rectifier, 1 A</description>
 <junction x="66.04" y="53.34"/>
 <wire x1="66.04" y1="53.34" x2="68.58" y2="53.34" width="0.1524" layer="91"/>
 <label x="71.12" y="53.34" size="1.778" layer="95" rot="R90"/>
+<pinref part="L1" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="SL1" gate="G$1" pin="1"/>
@@ -10966,14 +10966,14 @@ general purpose rectifier, 1 A</description>
 <label x="-25.4" y="30.48" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="LM_OUT" class="0">
 <segment>
-<pinref part="L1" gate="G$1" pin="1"/>
 <pinref part="IC1" gate="G$1" pin="OUT"/>
 <wire x1="53.34" y1="53.34" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="D1" gate="A" pin="C"/>
 <wire x1="50.8" y1="53.34" x2="48.26" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="50.8" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="L1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="6V" class="0">
