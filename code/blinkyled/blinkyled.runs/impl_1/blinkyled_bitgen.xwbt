@@ -1,8 +1,0 @@
-INTSTYLE=pa
-INFILE=/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/blinkyled/blinkyled.runs/impl_1/blinkyled_routed.ncd
-OUTFILE=/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/blinkyled/blinkyled.runs/impl_1/blinkyled.bit
-FAMILY=Spartan3A and Spartan3AN
-PART=xc3s50an-4tqg144
-WORKINGDIR=/home/thomas/Documents/CloudStation/Skole/7_Semester/EMB/code/blinkyled/blinkyled.runs/impl_1
-LICENSE=ISE
-USER_INFO=210779069_174157381_210595800_404

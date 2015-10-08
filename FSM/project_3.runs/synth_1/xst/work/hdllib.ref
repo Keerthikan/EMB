@@ -1,6 +1,0 @@
-AR head behavioral /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/head.vhd sub00/vhpl05 1443076996
-EN debounce NULL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd sub00/vhpl00 1443076991
-EN head NULL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/head.vhd sub00/vhpl04 1443076995
-AR fsm behavioral /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd sub00/vhpl03 1443076994
-AR debounce behavioral /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/debounce.vhd sub00/vhpl01 1443076992
-EN fsm NULL /home/student/Embedded/project_3_fsm_working/project_3.srcs/sources_1/imports/new/fsm.vhd sub00/vhpl02 1443076993
