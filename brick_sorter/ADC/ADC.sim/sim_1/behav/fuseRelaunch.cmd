@@ -1,1 +1,0 @@
--intstyle "pa" -incremental -L "work" -o "SPI_TB.exe" --prj "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_6/project_6.sim/sim_1/behav/SPI_TB.prj" -top "work.SPI_TB" 
