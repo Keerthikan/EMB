@@ -82,3 +82,8 @@ xlnx_auto_0_xdb/
 xst/
 _ngo/
 _xmsgs/
+
+brick_sorter/picoblaze/
+
+# eagle project files
+*.epf

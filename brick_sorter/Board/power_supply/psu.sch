@@ -10828,7 +10828,7 @@ nominal inductance, magnetically screened</description>
 <instance part="C1" gate="G$1" x="66.04" y="48.26"/>
 <instance part="C2" gate="G$1" x="20.32" y="48.26"/>
 <instance part="D1" gate="A" x="50.8" y="48.26" rot="R90"/>
-<instance part="SL1" gate="G$1" x="-33.02" y="43.18"/>
+<instance part="SL1" gate="G$1" x="-22.86" y="45.72"/>
 <instance part="IC2-12V" gate="A1" x="38.1" y="86.36"/>
 <instance part="C3" gate="G$1" x="22.86" y="81.28"/>
 <instance part="D2" gate="1" x="38.1" y="96.52" rot="R180"/>
@@ -10878,8 +10878,8 @@ nominal inductance, magnetically screened</description>
 </segment>
 <segment>
 <pinref part="SL1" gate="G$1" pin="5"/>
-<wire x1="-27.94" y1="40.64" x2="-25.4" y2="40.64" width="0.1524" layer="91"/>
-<label x="-25.4" y="40.64" size="1.778" layer="95"/>
+<wire x1="-17.78" y1="43.18" x2="-15.24" y2="43.18" width="0.1524" layer="91"/>
+<label x="-15.24" y="43.18" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -10943,8 +10943,8 @@ nominal inductance, magnetically screened</description>
 </segment>
 <segment>
 <pinref part="SL1" gate="G$1" pin="2"/>
-<wire x1="-27.94" y1="33.02" x2="-25.4" y2="33.02" width="0.1524" layer="91"/>
-<label x="-25.4" y="33.02" size="1.778" layer="95"/>
+<wire x1="-17.78" y1="35.56" x2="-15.24" y2="35.56" width="0.1524" layer="91"/>
+<label x="-15.24" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -10962,8 +10962,8 @@ nominal inductance, magnetically screened</description>
 </segment>
 <segment>
 <pinref part="SL1" gate="G$1" pin="1"/>
-<wire x1="-27.94" y1="30.48" x2="-25.4" y2="30.48" width="0.1524" layer="91"/>
-<label x="-25.4" y="30.48" size="1.778" layer="95"/>
+<wire x1="-17.78" y1="33.02" x2="-15.24" y2="33.02" width="0.1524" layer="91"/>
+<label x="-15.24" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LM_OUT" class="0">
@@ -10990,8 +10990,8 @@ nominal inductance, magnetically screened</description>
 </segment>
 <segment>
 <pinref part="SL1" gate="G$1" pin="10"/>
-<wire x1="-27.94" y1="53.34" x2="-25.4" y2="53.34" width="0.1524" layer="91"/>
-<label x="-25.4" y="53.34" size="1.778" layer="95"/>
+<wire x1="-17.78" y1="55.88" x2="-15.24" y2="55.88" width="0.1524" layer="91"/>
+<label x="-15.24" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="12V" class="0">
@@ -11009,8 +11009,8 @@ nominal inductance, magnetically screened</description>
 </segment>
 <segment>
 <pinref part="SL1" gate="G$1" pin="6"/>
-<wire x1="-27.94" y1="43.18" x2="-25.4" y2="43.18" width="0.1524" layer="91"/>
-<label x="-25.4" y="43.18" size="1.778" layer="95"/>
+<wire x1="-17.78" y1="45.72" x2="-15.24" y2="45.72" width="0.1524" layer="91"/>
+<label x="-15.24" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
