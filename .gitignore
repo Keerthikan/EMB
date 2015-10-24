@@ -87,6 +87,7 @@ brick_sorter/picoblaze/
 
 # eagle project files
 *.epf
+*.b\#\#
 
 #Plan Ahead
 *.bat
