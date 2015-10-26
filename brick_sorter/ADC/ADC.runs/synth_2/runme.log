@@ -1,0 +1,171 @@
+
+*** Running xst
+    with args -ifn pwm.xst -ofn pwm.srp -intstyle ise
+
+Reading design: pwm.prj
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_5/project_5.srcs/sources_1/new/pwm.vhd" in Library work.
+Entity <pwm> compiled.
+Entity <pwm> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <pwm> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <pwm> in library <work> (Architecture <Behavioral>).
+Entity <pwm> analyzed. Unit <pwm> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <pwm>.
+    Related source file is "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_5/project_5.srcs/sources_1/new/pwm.vhd".
+    Found 1-bit register for signal <MOSI>.
+    Found 1-bit register for signal <CS>.
+    Found 4-bit register for signal <tx_debug>.
+    Found 2-bit register for signal <rx_debug>.
+    Found 10-bit register for signal <rx_led>.
+    Found 5-bit register for signal <clockCount>.
+    Found 5-bit adder for signal <clockCount$share0000>.
+    Found 1-bit register for signal <newClock>.
+    Found 26-bit up counter for signal <prescaler_counter>.
+    Found 26-bit comparator less for signal <prescaler_counter$cmp_lt0000> created at line 59.
+    Found 10-bit register for signal <RX>.
+    Found 5-bit comparator greater for signal <rx_debug$cmp_gt0000> created at line 77.
+    Found 5-bit comparator less for signal <rx_debug$cmp_lt0000> created at line 79.
+    Found 5-bit comparator greatequal for signal <rx_led$cmp_ge0000> created at line 79.
+    Found 5-bit register for signal <TX>.
+    Found 5-bit comparator greatequal for signal <TX$cmp_ge0000> created at line 96.
+    Found 5-bit comparator less for signal <tx_debug$cmp_lt0000> created at line 96.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  39 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <pwm> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+# Registers                                            : 9
+ 1-bit register                                        : 3
+ 10-bit register                                       : 2
+ 2-bit register                                        : 1
+ 4-bit register                                        : 1
+ 5-bit register                                        : 2
+# Comparators                                          : 6
+ 26-bit comparator less                                : 1
+ 5-bit comparator greatequal                           : 2
+ 5-bit comparator greater                              : 1
+ 5-bit comparator less                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+# Registers                                            : 39
+ Flip-Flops                                            : 39
+# Comparators                                          : 6
+ 26-bit comparator less                                : 1
+ 5-bit comparator greatequal                           : 2
+ 5-bit comparator greater                              : 1
+ 5-bit comparator less                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <pwm> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+FlipFlop clockCount_3 has been replicated 1 time(s)
+FlipFlop clockCount_4 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <pwm> :
+	Found 5-bit shift register for signal <TX_4>.
+Unit <pwm> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 62
+ Flip-Flops                                            : 62
+# Shift Registers                                      : 1
+ 5-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 27    |
+newClock1                          | BUFG                   | 37    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.892ns (Maximum Frequency: 101.092MHz)
+   Minimum input arrival time before clock: 2.825ns
+   Maximum output required time after clock: 4.394ns
+   Maximum combinational path delay: No path found
+
+=========================================================================

@@ -23,8 +23,8 @@ NET "rx_led[7]" LOC = R4;
 NET "rx_led[8]" LOC = K13;
 NET "rx_led[9]" LOC = L16;
 
-#NET "debug_tx<0>" LOC =  "G15";
-#NET "debug_tx<1>" LOC =  "J16";
-#NET "debug_tx<2>" LOC =  "G13";
-#NET "debug_tx<3>" LOC =  "H16";
+NET "tx_debug[0]" LOC = G15;
+NET "tx_debug[1]" LOC = J16;
+NET "tx_debug[2]" LOC = G13;
+NET "tx_debug[3]" LOC = H16;
 #T17;#R15;#R18;#M13; 
