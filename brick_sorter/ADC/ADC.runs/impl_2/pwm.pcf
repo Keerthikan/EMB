@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Oct 27 00:03:54 2015
+// Written by: Map P.20131013 on Tue Oct 27 13:45:00 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -13,6 +13,8 @@ COMP "tx_debug[3]" LOCATE = SITE "H16" LEVEL 1;
 COMP "MOSI" LOCATE = SITE "R15" LEVEL 1;
 COMP "MISO" LOCATE = SITE "R18" LEVEL 1;
 COMP "SCLK" LOCATE = SITE "M13" LEVEL 1;
+COMP "tx_pwm[0]" LOCATE = SITE "K12" LEVEL 1;
+COMP "tx_pwm[1]" LOCATE = SITE "L17" LEVEL 1;
 COMP "rx_led[0]" LOCATE = SITE "J14" LEVEL 1;
 COMP "rx_led[1]" LOCATE = SITE "J15" LEVEL 1;
 COMP "rx_led[2]" LOCATE = SITE "K15" LEVEL 1;

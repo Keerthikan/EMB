@@ -10,7 +10,7 @@ set PATH=$XILINX/lib/$PLATFORM:$XILINX/bin/$PLATFORM;/opt/Xilinx/14.7/ISE_DS/EDK
 
 set XILINX_PLANAHEAD=/opt/Xilinx/14.7/ISE_DS/PlanAhead
 
-fuse -intstyle pa -incremental -L work -o adc_tb.exe --prj /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_5/project_5.sim/sim_1/behav/adc_tb.prj -top work.adc_tb
+fuse -intstyle pa -incremental -L work -o adc_tb.exe --prj /home/student/Embedded/brick_sorter/ADC/ADC.sim/sim_1/behav/adc_tb.prj -top work.adc_tb
 if errorlevel 1 (
    cmd /c exit /b %errorlevel%
 )

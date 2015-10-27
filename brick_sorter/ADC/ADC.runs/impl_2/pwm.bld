@@ -8,8 +8,7 @@ Executing edif2ngd -quiet "pwm.edf" "_ngo/pwm.ngo"
 Release 14.7 - edif2ngd P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Reading NGO file
-"/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_5/project_5.runs/impl_2/_ngo/pwm.
-ngo" ...
+"/home/student/Embedded/brick_sorter/ADC/ADC.runs/impl_2/_ngo/pwm.ngo" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -31,10 +30,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 394968 kilobytes
+Total memory usage is 395008 kilobytes
 
 Writing NGD file "pwm.ngd" ...
-Total REAL time to NGDBUILD completion:  14 sec
+Total REAL time to NGDBUILD completion:  13 sec
 Total CPU time to NGDBUILD completion:   2 sec
 
 Writing NGDBUILD log file "pwm.bld"...

@@ -17,7 +17,8 @@ architecture arch of adc_tb is
       cs       : out std_logic;
       tx_debug: out std_logic_vector(3 downto 0);
       rx_debug: out std_logic_vector(1 downto 0);
-      rx_led: out std_logic_vector(9 downto 0)
+      rx_led: out std_logic_vector(9 downto 0);
+      tx_pwm: out std_logic_vector(1 downto 0)
       );
   end component;
 
@@ -30,6 +31,8 @@ architecture arch of adc_tb is
   signal tx_debug: std_logic_vector(3 downto 0);
   signal rx_debug: std_logic_vector(1 downto 0) ;
   signal rx_led: std_logic_vector(9 downto 0) ; 
+  signal tx_pwm: std_logic_vector(1 downto 0);
+
   -- Observed signals - signals mapped to the output ports of tested entity
   signal cs       : std_logic;
   signal adc_data : std_logic_vector(9 downto 0);
@@ -38,7 +41,7 @@ architecture arch of adc_tb is
   constant period : time := 20 ns; -- 50 MHz clock
 
   -- constant data set that will be sent back as the ADC data  
-  constant FIXED_DATA : std_logic_vector(9 downto 0) := std_logic_vector(to_unsigned(1023,10));
+  constant FIXED_DATA : std_logic_vector(9 downto 0) := std_logic_vector(to_unsigned(852,10));
 
   -- timing parameters from the datasheet
   constant T_HI   : time := 125 ns;     -- CLK high time
@@ -63,7 +66,8 @@ begin
       cs       => cs,
       rx_led => rx_led,
       tx_debug => tx_debug,
-      rx_debug => rx_debug
+      rx_debug => rx_debug,
+      tx_pwm => tx_pwm
       );
 
   -- generate the clock                     

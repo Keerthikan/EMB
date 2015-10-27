@@ -10,8 +10,7 @@ Executing edif2ngd -quiet "pwm.edf" "_ngo/pwm.ngo"
 Release 14.7 - edif2ngd P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Reading NGO file
-"/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_5/project_5.runs/impl_2/_ngo/pwm.
-ngo" ...
+"/home/student/Embedded/brick_sorter/ADC/ADC.runs/impl_2/_ngo/pwm.ngo" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -34,7 +33,7 @@ NGDBUILD Design Results Summary:
   Number of warnings:   0
 
 Writing NGD file "pwm.ngd" ...
-Total REAL time to NGDBUILD completion:  14 sec
+Total REAL time to NGDBUILD completion:  13 sec
 Total CPU time to NGDBUILD completion:   2 sec
 
 Writing NGDBUILD log file "pwm.bld"...
@@ -55,28 +54,29 @@ Design Summary:
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:            63 out of   9,312    1%
-  Number of 4 input LUTs:                41 out of   9,312    1%
+  Number of Slice Flip Flops:            53 out of   9,312    1%
+  Number of 4 input LUTs:                52 out of   9,312    1%
 Logic Distribution:
-  Number of occupied Slices:             44 out of   4,656    1%
-    Number of Slices containing only related logic:      44 out of      44 100%
-    Number of Slices containing unrelated logic:          0 out of      44   0%
+  Number of occupied Slices:             46 out of   4,656    1%
+    Number of Slices containing only related logic:      46 out of      46 100%
+    Number of Slices containing unrelated logic:          0 out of      46   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:          66 out of   9,312    1%
-    Number used as logic:                40
+  Total Number of 4 input LUTs:          77 out of   9,312    1%
+    Number used as logic:                51
     Number used as a route-thru:         25
     Number used as Shift registers:       1
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                 21 out of     232    9%
+  Number of bonded IOBs:                 23 out of     232    9%
+    IOB Flip Flops:                       2
   Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                2.85
+Average Fanout of Non-Clock Nets:                3.32
 
 Peak Memory Usage:  614 MB
-Total REAL time to MAP completion:  5 secs 
+Total REAL time to MAP completion:  4 secs 
 Total CPU time to MAP completion:   2 secs 
 
 NOTES:
@@ -124,7 +124,7 @@ Device speed data version:  "PRODUCTION 1.27 2013-10-13".
 
 Design Summary Report:
 
- Number of External IOBs                          21 out of 232     9%
+ Number of External IOBs                          23 out of 232     9%
 
    Number of External Input IOBs                  2
 
@@ -132,17 +132,17 @@ Design Summary Report:
         Number of LOCed External Input IBUFs      2 out of 2     100%
 
 
-   Number of External Output IOBs                19
+   Number of External Output IOBs                21
 
-      Number of External Output IOBs             19
-        Number of LOCed External Output IOBs     17 out of 19     89%
+      Number of External Output IOBs             21
+        Number of LOCed External Output IOBs     19 out of 21     90%
 
 
    Number of External Bidir IOBs                  0
 
 
    Number of BUFGMUXs                        2 out of 24      8%
-   Number of Slices                         44 out of 4656    1%
+   Number of Slices                         46 out of 4656    1%
       Number of SLICEMs                      1 out of 2328    1%
 
 
@@ -152,58 +152,60 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 4 secs 
-Finished initial Timing Analysis.  REAL time: 4 secs 
+Starting initial Timing Analysis.  REAL time: 3 secs 
+Finished initial Timing Analysis.  REAL time: 3 secs 
 
 
 Starting Placer
-Total REAL time at the beginning of Placer: 4 secs 
+Total REAL time at the beginning of Placer: 3 secs 
 Total CPU  time at the beginning of Placer: 1 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:503bb2ed) REAL time: 5 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:64516e28) REAL time: 4 secs 
 
 Phase 2.7  Design Feasibility Check
-INFO:Place:834 - Only a subset of IOs are locked. Out of 19 IOs, 17 are locked and 2 are not locked. If you would like
+INFO:Place:834 - Only a subset of IOs are locked. Out of 21 IOs, 19 are locked and 2 are not locked. If you would like
    to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:503bb2ed) REAL time: 5 secs 
+Phase 2.7  Design Feasibility Check (Checksum:64516e28) REAL time: 4 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:503bb2ed) REAL time: 5 secs 
+Phase 3.31  Local Placement Optimization (Checksum:64516e28) REAL time: 4 secs 
 
 Phase 4.2  Initial Clock and IO Placement
-........
-Phase 4.2  Initial Clock and IO Placement (Checksum:7de4b1d5) REAL time: 6 secs 
+.......
+Phase 4.2  Initial Clock and IO Placement (Checksum:b681ecc0) REAL time: 4 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:7de4b1d5) REAL time: 6 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:b681ecc0) REAL time: 4 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:7de4b1d5) REAL time: 6 secs 
+Phase 6.36  Local Placement Optimization (Checksum:b681ecc0) REAL time: 4 secs 
 
 Phase 7.3  Local Placement Optimization
 .......
-Phase 7.3  Local Placement Optimization (Checksum:eba7d6fc) REAL time: 6 secs 
+Phase 7.3  Local Placement Optimization (Checksum:b162509d) REAL time: 4 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:eba7d6fc) REAL time: 6 secs 
+Phase 8.5  Local Placement Optimization (Checksum:b162509d) REAL time: 4 secs 
 
 Phase 9.8  Global Placement
-..................
-...
-.......
-Phase 9.8  Global Placement (Checksum:69fac729) REAL time: 10 secs 
+......
+....
+.....
+....
+....
+Phase 9.8  Global Placement (Checksum:7843bb36) REAL time: 8 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:69fac729) REAL time: 10 secs 
+Phase 10.5  Local Placement Optimization (Checksum:7843bb36) REAL time: 8 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:9673c06) REAL time: 11 secs 
+Phase 11.18  Placement Optimization (Checksum:a3110b94) REAL time: 8 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:9673c06) REAL time: 11 secs 
+Phase 12.5  Local Placement Optimization (Checksum:a3110b94) REAL time: 9 secs 
 
-Total REAL time to Placer completion: 11 secs 
+Total REAL time to Placer completion: 9 secs 
 Total CPU  time to Placer completion: 4 secs 
 Writing design to file pwm_routed.ncd
 
@@ -212,34 +214,34 @@ Writing design to file pwm_routed.ncd
 Starting Router
 
 
-Phase  1  : 296 unrouted;      REAL time: 17 secs 
+Phase  1  : 336 unrouted;      REAL time: 15 secs 
 
-Phase  2  : 251 unrouted;      REAL time: 17 secs 
+Phase  2  : 293 unrouted;      REAL time: 15 secs 
 
-Phase  3  : 44 unrouted;      REAL time: 17 secs 
+Phase  3  : 43 unrouted;      REAL time: 15 secs 
 
-Phase  4  : 54 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
+Phase  4  : 63 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
-
-Updating file: pwm_routed.ncd with current fully routed design.
-
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
-
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 23 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 
 Updating file: pwm_routed.ncd with current fully routed design.
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 24 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 24 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 20 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 24 secs 
+Updating file: pwm_routed.ncd with current fully routed design.
 
-Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 24 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 20 secs 
 
-Total REAL time to Router completion: 24 secs 
-Total CPU time to Router completion: 10 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 20 secs 
+
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 20 secs 
+
+Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 20 secs 
+
+Total REAL time to Router completion: 20 secs 
+Total CPU time to Router completion: 9 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -257,9 +259,9 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           CLK_BUFGP | BUFGMUX_X2Y11| No   |   14 |  0.016     |  0.172      |
+|           CLK_BUFGP | BUFGMUX_X2Y11| No   |   16 |  0.017     |  0.182      |
 +---------------------+--------------+------+------+------------+-------------+
-|            newClock | BUFGMUX_X1Y10| No   |   23 |  0.047     |  0.183      |
+|            newClock | BUFGMUX_X1Y10| No   |   20 |  0.050     |  0.184      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -279,10 +281,10 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net CLK | SETUP       |         N/A|     5.434ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     1.609ns|            |       0|           0
+  Autotimespec constraint for clock net CLK | SETUP       |         N/A|     5.245ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     1.067ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net new | SETUP       |         N/A|     9.812ns|     N/A|           0
+  Autotimespec constraint for clock net new | SETUP       |         N/A|     7.875ns|     N/A|           0
   Clock                                     | HOLD        |     0.815ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
@@ -299,10 +301,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 25 secs 
-Total CPU time to PAR completion: 10 secs 
+Total REAL time to PAR completion: 21 secs 
+Total CPU time to PAR completion: 9 secs 
 
-Peak Memory Usage:  598 MB
+Peak Memory Usage:  606 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
@@ -324,13 +326,13 @@ Loading device for application Rf_Device from file '3s500e.nph' in environment
 /opt/Xilinx/14.7/ISE_DS/ISE/.
    "pwm" is an NCD, version 3.2, device xc3s500e, package fg320, speed -4
 
-Analysis completed Tue Oct 27 00:04:30 2015
+Analysis completed Tue Oct 27 13:45:33 2015
 --------------------------------------------------------------------------------
 
 Generating Report ...
 
 Number of warnings: 0
-Total time: 1 secs 
+Total time: 2 secs 
 
 *** Running xdl
     with args -secure -ncd2xdl -nopips pwm_routed.ncd pwm_routed.xdl

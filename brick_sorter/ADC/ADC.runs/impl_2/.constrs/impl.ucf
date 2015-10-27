@@ -9,8 +9,10 @@ NET "MOSI" LOC = R15;
 NET "CS" LOC = T17;
 
 
-#NET "tx_pwm<0>" LOC = K12;
-#NET "tx_pwm<1>" LOC = L17;
+NET "tx_pwm[0]" LOC = K12;
+NET "tx_pwm[1]" LOC = L17;
+
+
 
 NET "rx_led[0]" LOC = J14;
 NET "rx_led[1]" LOC = J15;

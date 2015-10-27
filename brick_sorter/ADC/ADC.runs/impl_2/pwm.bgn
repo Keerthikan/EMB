@@ -5,7 +5,7 @@ Loading device for application Rf_Device from file '3s500e.nph' in environment
    "pwm" is an NCD, version 3.2, device xc3s500e, package fg320, speed -4
 Opened constraints file pwm.pcf.
 
-Tue Oct 27 00:04:42 2015
+Tue Oct 27 13:45:47 2015
 
 /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -w -intstyle pa pwm_routed.ncd pwm.bit pwm.pcf 
 

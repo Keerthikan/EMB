@@ -34,4 +34,4 @@ ExecStep()
 }
 
 
-ExecStep fuse -intstyle pa -incremental -L work -o adc_tb.exe --prj /opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_5/project_5.sim/sim_1/behav/adc_tb.prj -top work.adc_tb
+ExecStep fuse -intstyle pa -incremental -L work -o adc_tb.exe --prj /home/student/Embedded/brick_sorter/ADC/ADC.sim/sim_1/behav/adc_tb.prj -top work.adc_tb
