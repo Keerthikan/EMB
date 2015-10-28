@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=/home/student/Embedded/brick_sorter/ADC/ADC.runs/impl_2/pwm_routed.ncd
+OUTFILE=/home/student/Embedded/brick_sorter/ADC/ADC.runs/impl_2/pwm.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/home/student/Embedded/brick_sorter/ADC/ADC.runs/impl_2
+LICENSE=ISE
+USER_INFO=210779069_174157381_210595800_267

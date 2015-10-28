@@ -47,8 +47,8 @@ END Component;
 signal forward_i:   std_logic = '0';
 signal reset_i:     std_logic = '0';
 signal clk_50mhz:   std_logic = '0';
-signal result0:      std_logic = '0';
-signal result1:      std_logic = '0';
+signal result0:     std_logic = '0';
+signal result1:     std_logic = '0';
 signal led_o:       std_logic_vector(5 downto 0) = "000000";
 
 constant period : time := 10ns;

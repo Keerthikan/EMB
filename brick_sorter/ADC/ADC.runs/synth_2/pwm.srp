@@ -1,0 +1,423 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: pwm.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "pwm.prj"
+
+---- Target Parameters
+Target Device                      : xc3s500efg320-4
+Output File Name                   : "pwm.ngc"
+
+---- Source Options
+Top Module Name                    : pwm
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 1
+Netlist Hierarchy                  : rebuilt
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/pwm.vhd" in Library work.
+Entity <pwm> compiled.
+Entity <pwm> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <pwm> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <pwm> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:819 - "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/pwm.vhd" line 129: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <busy>
+Entity <pwm> analyzed. Unit <pwm> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <pwm>.
+    Related source file is "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/pwm.vhd".
+    Found 1-bit register for signal <MOSI>.
+    Found 1-bit register for signal <CS>.
+    Found 4-bit register for signal <tx_debug>.
+    Found 2-bit register for signal <rx_debug>.
+    Found 2-bit register for signal <tx_pwm>.
+    Found 1-bit register for signal <busy>.
+    Found 5-bit up counter for signal <clockCount>.
+    Found 5-bit adder for signal <clockCount$add0000> created at line 104.
+    Found 5-bit comparator less for signal <clockCount$cmp_lt0000> created at line 100.
+    Found 5-bit comparator less for signal <MOSI$cmp_lt0000> created at line 107.
+    Found 1-bit register for signal <newClock>.
+    Found 26-bit up counter for signal <prescaler_counter>.
+    Found 26-bit comparator less for signal <prescaler_counter$cmp_lt0000> created at line 59.
+    Found 10-bit register for signal <RX>.
+    Found 5-bit comparator lessequal for signal <RX$cmp_le0000> created at line 80.
+    Found 5-bit comparator greatequal for signal <rx_debug$cmp_ge0000> created at line 78.
+    Found 5-bit comparator greatequal for signal <rx_debug$cmp_ge0001> created at line 84.
+    Found 5-bit comparator greatequal for signal <rx_debug$cmp_ge0002> created at line 77.
+    Found 5-bit comparator greater for signal <rx_debug$cmp_gt0000> created at line 80.
+    Found 5-bit comparator less for signal <rx_debug$cmp_lt0000> created at line 77.
+    Found 5-bit register for signal <TX>.
+    Found 5-bit comparator greatequal for signal <TX$cmp_ge0000> created at line 100.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  27 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 Comparator(s).
+Unit <pwm> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 2
+ 26-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 9
+ 1-bit register                                        : 4
+ 10-bit register                                       : 1
+ 2-bit register                                        : 2
+ 4-bit register                                        : 1
+ 5-bit register                                        : 1
+# Comparators                                          : 10
+ 26-bit comparator less                                : 1
+ 5-bit comparator greatequal                           : 4
+ 5-bit comparator greater                              : 1
+ 5-bit comparator less                                 : 3
+ 5-bit comparator lessequal                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 2
+ 26-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 27
+ Flip-Flops                                            : 27
+# Comparators                                          : 10
+ 26-bit comparator less                                : 1
+ 5-bit comparator greatequal                           : 4
+ 5-bit comparator greater                              : 1
+ 5-bit comparator less                                 : 3
+ 5-bit comparator lessequal                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <pwm> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+FlipFlop clockCount_4 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <pwm> :
+	Found 5-bit shift register for signal <TX_4>.
+Unit <pwm> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 54
+ Flip-Flops                                            : 54
+# Shift Registers                                      : 1
+ 5-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+Top Level Output File Name         : pwm.ngc
+Output Format                      : ngc
+Optimization Goal                  : speed
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 23
+
+Cell Usage :
+# BELS                             : 142
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 25
+#      LUT2                        : 5
+#      LUT2_D                      : 2
+#      LUT3                        : 5
+#      LUT3_D                      : 1
+#      LUT4                        : 36
+#      MUXCY                       : 32
+#      MUXF5                       : 3
+#      VCC                         : 1
+#      XORCY                       : 26
+# FlipFlops/Latches                : 55
+#      FDE                         : 15
+#      FDE_1                       : 1
+#      FDR                         : 31
+#      FDR_1                       : 3
+#      FDRE_1                      : 1
+#      FDRS                        : 1
+#      FDRS_1                      : 1
+#      FDSE_1                      : 2
+# Shift Registers                  : 1
+#      SRL16E_1                    : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 22
+#      IBUF                        : 1
+#      OBUF                        : 21
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       42  out of   4656     0%  
+ Number of Slice Flip Flops:             53  out of   9312     0%  
+ Number of 4 input LUTs:                 80  out of   9312     0%  
+    Number used as logic:                79
+    Number used as Shift registers:       1
+ Number of IOs:                          23
+ Number of bonded IOBs:                  23  out of    232     9%  
+    IOB Flip Flops:                       2
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 29    |
+newClock1                          | BUFG                   | 27    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 8.646ns (Maximum Frequency: 115.660MHz)
+   Minimum input arrival time before clock: 2.825ns
+   Maximum output required time after clock: 4.450ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 5.179ns (frequency: 193.101MHz)
+  Total number of paths / destination ports: 1027 / 54
+-------------------------------------------------------------------------
+Delay:               5.179ns (Levels of Logic = 8)
+  Source:            prescaler_counter_1 (FF)
+  Destination:       prescaler_counter_0 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: prescaler_counter_1 to prescaler_counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.622  prescaler_counter_1 (prescaler_counter_1)
+     LUT3:I0->O            1   0.704   0.000  Mcompar_prescaler_counter_cmp_lt0000_lut<0> (Mcompar_prescaler_counter_cmp_lt0000_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<0> (Mcompar_prescaler_counter_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<1> (Mcompar_prescaler_counter_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<2> (Mcompar_prescaler_counter_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<3> (Mcompar_prescaler_counter_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<4> (Mcompar_prescaler_counter_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<5> (Mcompar_prescaler_counter_cmp_lt0000_cy<5>)
+     MUXCY:CI->O          27   0.331   1.261  Mcompar_prescaler_counter_cmp_lt0000_cy<6> (Mcompar_prescaler_counter_cmp_lt0000_cy<6>)
+     FDR:R                     0.911          prescaler_counter_0
+    ----------------------------------------
+    Total                      5.179ns (3.296ns logic, 1.883ns route)
+                                       (63.6% logic, 36.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'newClock1'
+  Clock period: 8.646ns (frequency: 115.660MHz)
+  Total number of paths / destination ports: 315 / 57
+-------------------------------------------------------------------------
+Delay:               4.323ns (Levels of Logic = 2)
+  Source:            clockCount_0 (FF)
+  Destination:       RX_0 (FF)
+  Source Clock:      newClock1 falling
+  Destination Clock: newClock1 rising
+
+  Data Path: clockCount_0 to RX_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRS:C->Q            15   0.591   1.192  clockCount_0 (clockCount_0)
+     LUT3_D:I0->O          9   0.704   0.824  RX_mux0000<9>1_SW0 (N41)
+     LUT4:I3->O            1   0.704   0.000  RX_mux0000<8>1 (RX_mux0000<8>)
+     FDE:D                     0.308          RX_8
+    ----------------------------------------
+    Total                      4.323ns (2.307ns logic, 2.016ns route)
+                                       (53.4% logic, 46.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'newClock1'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.825ns (Levels of Logic = 2)
+  Source:            MISO (PAD)
+  Destination:       RX_0 (FF)
+  Destination Clock: newClock1 rising
+
+  Data Path: MISO to RX_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.595  MISO_IBUF (MISO_IBUF)
+     LUT4:I0->O            1   0.704   0.000  RX_mux0000<0>2 (RX_mux0000<0>)
+     FDE:D                     0.308          RX_0
+    ----------------------------------------
+    Total                      2.825ns (2.230ns logic, 0.595ns route)
+                                       (78.9% logic, 21.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'newClock1'
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Offset:              4.450ns (Levels of Logic = 1)
+  Source:            RX_8 (FF)
+  Destination:       rx_led<8> (PAD)
+  Source Clock:      newClock1 rising
+
+  Data Path: RX_8 to rx_led<8>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              4   0.591   0.587  RX_8 (RX_8)
+     OBUF:I->O                 3.272          rx_led_8_OBUF (rx_led<8>)
+    ----------------------------------------
+    Total                      4.450ns (3.863ns logic, 0.587ns route)
+                                       (86.8% logic, 13.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              4.394ns (Levels of Logic = 1)
+  Source:            newClock (FF)
+  Destination:       SCLK (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: newClock to SCLK
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.591   0.531  newClock (newClock1)
+     OBUF:I->O                 3.272          SCLK_OBUF (SCLK)
+    ----------------------------------------
+    Total                      4.394ns (3.863ns logic, 0.531ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 4.09 secs
+ 
+--> 
+
+
+Total memory usage is 516756 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

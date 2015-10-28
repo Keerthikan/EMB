@@ -1,0 +1,3 @@
+NET "CLK" LOC = P60;
+NET "PWM" LOC = P42;
+NET "debug_led" LOC = P47;

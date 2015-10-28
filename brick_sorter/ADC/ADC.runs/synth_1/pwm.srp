@@ -1,0 +1,375 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: pwm.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "pwm.prj"
+
+---- Target Parameters
+Target Device                      : xc3s500efg320-4
+Output File Name                   : "pwm.ngc"
+
+---- Source Options
+Top Module Name                    : pwm
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 1
+Netlist Hierarchy                  : rebuilt
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_5/project_5.srcs/sources_1/new/pwm.vhd" in Library work.
+Entity <pwm> compiled.
+Entity <pwm> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <pwm> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <pwm> in library <work> (Architecture <Behavioral>).
+Entity <pwm> analyzed. Unit <pwm> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <pwm>.
+    Related source file is "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_5/project_5.srcs/sources_1/new/pwm.vhd".
+WARNING:Xst:1306 - Output <rx_led> is never assigned.
+WARNING:Xst:646 - Signal <RX<9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <MOSI>.
+    Found 1-bit register for signal <CS>.
+    Found 5-bit up counter for signal <clockCount>.
+    Found 5-bit comparator less for signal <CS$cmp_lt0000> created at line 93.
+    Found 1-bit register for signal <newClock>.
+    Found 26-bit up counter for signal <prescaler_counter>.
+    Found 26-bit comparator less for signal <prescaler_counter$cmp_lt0000> created at line 58.
+    Found 10-bit register for signal <RX>.
+    Found 5-bit comparator greatequal for signal <RX$cmp_ge0000> created at line 74.
+    Found 5-bit register for signal <TX>.
+    Found 5-bit comparator greatequal for signal <TX$cmp_ge0000> created at line 93.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  18 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+Unit <pwm> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 26-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 5
+ 1-bit register                                        : 3
+ 10-bit register                                       : 1
+ 5-bit register                                        : 1
+# Comparators                                          : 4
+ 26-bit comparator less                                : 1
+ 5-bit comparator greatequal                           : 2
+ 5-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 26-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+# Comparators                                          : 3
+ 26-bit comparator less                                : 1
+ 5-bit comparator greatequal                           : 1
+ 5-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <pwm> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+Final Macro Processing ...
+
+Processing Unit <pwm> :
+	Found 5-bit shift register for signal <TX_4>.
+Unit <pwm> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 34
+ Flip-Flops                                            : 34
+# Shift Registers                                      : 1
+ 5-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+Top Level Output File Name         : pwm.ngc
+Output Format                      : ngc
+Optimization Goal                  : speed
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 15
+
+Cell Usage :
+# BELS                             : 105
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 25
+#      LUT2                        : 2
+#      LUT2_D                      : 1
+#      LUT3                        : 3
+#      LUT3_L                      : 1
+#      LUT4                        : 11
+#      MUXCY                       : 32
+#      VCC                         : 1
+#      XORCY                       : 26
+# FlipFlops/Latches                : 35
+#      FD                          : 4
+#      FDE                         : 1
+#      FDE_1                       : 1
+#      FDR                         : 27
+#      FDRE_1                      : 1
+#      FDSE_1                      : 1
+# Shift Registers                  : 1
+#      SRL16E_1                    : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 3
+#      OBUF                        : 3
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       26  out of   4656     0%  
+ Number of Slice Flip Flops:             35  out of   9312     0%  
+ Number of 4 input LUTs:                 46  out of   9312     0%  
+    Number used as logic:                45
+    Number used as Shift registers:       1
+ Number of IOs:                          15
+ Number of bonded IOBs:                   4  out of    232     1%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 27    |
+newClock                           | NONE(MOSI)             | 9     |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.179ns (Maximum Frequency: 193.101MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.532ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 5.179ns (frequency: 193.101MHz)
+  Total number of paths / destination ports: 1027 / 54
+-------------------------------------------------------------------------
+Delay:               5.179ns (Levels of Logic = 8)
+  Source:            prescaler_counter_1 (FF)
+  Destination:       prescaler_counter_0 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: prescaler_counter_1 to prescaler_counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.622  prescaler_counter_1 (prescaler_counter_1)
+     LUT3:I0->O            1   0.704   0.000  Mcompar_prescaler_counter_cmp_lt0000_lut<0> (Mcompar_prescaler_counter_cmp_lt0000_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<0> (Mcompar_prescaler_counter_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<1> (Mcompar_prescaler_counter_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<2> (Mcompar_prescaler_counter_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<3> (Mcompar_prescaler_counter_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<4> (Mcompar_prescaler_counter_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_prescaler_counter_cmp_lt0000_cy<5> (Mcompar_prescaler_counter_cmp_lt0000_cy<5>)
+     MUXCY:CI->O          27   0.331   1.261  Mcompar_prescaler_counter_cmp_lt0000_cy<6> (Mcompar_prescaler_counter_cmp_lt0000_cy<6>)
+     FDR:R                     0.911          prescaler_counter_0
+    ----------------------------------------
+    Total                      5.179ns (3.296ns logic, 1.883ns route)
+                                       (63.6% logic, 36.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'newClock'
+  Clock period: 4.242ns (frequency: 235.738MHz)
+  Total number of paths / destination ports: 51 / 14
+-------------------------------------------------------------------------
+Delay:               4.242ns (Levels of Logic = 2)
+  Source:            clockCount_4 (FF)
+  Destination:       TX_4 (FF)
+  Source Clock:      newClock falling
+  Destination Clock: newClock falling
+
+  Data Path: clockCount_4 to TX_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.591   0.706  clockCount_4 (clockCount_4)
+     LUT2_D:I0->O          3   0.704   0.535  CS_cmp_eq000011 (N2)
+     LUT4:I3->O            2   0.704   0.447  TX_not00011 (TX_not0001)
+     FDE_1:CE                  0.555          TX_4
+    ----------------------------------------
+    Total                      4.242ns (2.554ns logic, 1.688ns route)
+                                       (60.2% logic, 39.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'newClock'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            CS (FF)
+  Destination:       CS (PAD)
+  Source Clock:      newClock falling
+
+  Data Path: CS to CS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDSE_1:C->Q           1   0.591   0.420  CS (CS_OBUF)
+     OBUF:I->O                 3.272          CS_OBUF (CS)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.532ns (Levels of Logic = 1)
+  Source:            newClock (FF)
+  Destination:       SCLK (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: newClock to SCLK
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              6   0.591   0.669  newClock (newClock)
+     OBUF:I->O                 3.272          SCLK_OBUF (SCLK)
+    ----------------------------------------
+    Total                      4.532ns (3.863ns logic, 0.669ns route)
+                                       (85.2% logic, 14.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 3.71 secs
+ 
+--> 
+
+
+Total memory usage is 514992 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

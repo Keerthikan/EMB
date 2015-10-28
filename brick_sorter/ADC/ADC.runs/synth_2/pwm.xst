@@ -1,0 +1,9 @@
+set -loop_iteration_limit 1000
+run
+-ifn pwm.prj
+-top pwm
+-p xc3s500efg320-4
+-ofn pwm.ngc
+-opt_mode speed
+-opt_level 1
+-netlist_hierarchy rebuilt

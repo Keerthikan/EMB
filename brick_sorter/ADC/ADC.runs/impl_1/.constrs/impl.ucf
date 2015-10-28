@@ -1,15 +1,30 @@
-NET "CLK" LOC = P60;
-NET "MOSI" LOC = P45;
-NET "SCLK" LOC = P43;
-NET "CS" LOC = P44;
-NET "MISO" LOC = P71;
-NET "debug_led[0]" LOC = P49;
-NET "debug_led[1]" LOC = P50;
-NET "debug_led[2]" LOC = P51;
-NET "debug_led[3]" LOC = P54;
-NET "debug_led[4]" LOC = P55;
-NET "debug_led[5]" LOC = P57;
-NET "debug_led[6]" LOC = P58;
-NET "debug_led[7]" LOC = P59;
-NET "debug_led[8]" LOC = P68;
-NET "debug_led[9]" LOC = P69;
+NET "CLK" LOC = B8;
+#JB1
+NET "SCLK" LOC = M13;
+#JB2
+NET "MISO" LOC = R18;
+#JB3
+NET "MOSI" LOC = R15;
+#JB4
+NET "CS" LOC = T17;
+
+
+#NET "tx_pwm<0>" LOC = K12;
+#NET "tx_pwm<1>" LOC = L17;
+
+NET "rx_led[0]" LOC = J14;
+NET "rx_led[1]" LOC = J15;
+NET "rx_led[2]" LOC = K15;
+NET "rx_led[3]" LOC = K14;
+NET "rx_led[4]" LOC = E17;
+NET "rx_led[5]" LOC = P15;
+NET "rx_led[6]" LOC = F4;
+NET "rx_led[7]" LOC = R4;
+NET "rx_led[8]" LOC = K13;
+NET "rx_led[9]" LOC = L16;
+
+#NET "debug_tx<0>" LOC =  "G15";
+#NET "debug_tx<1>" LOC =  "J16";
+#NET "debug_tx<2>" LOC =  "G13";
+#NET "debug_tx<3>" LOC =  "H16";
+#T17;#R15;#R18;#M13; 

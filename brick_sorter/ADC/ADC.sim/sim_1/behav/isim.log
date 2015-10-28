@@ -1,0 +1,29 @@
+ISim log file
+Running: adc_tb.exe -intstyle pa -gui -tclbatch isim.cmd -wdb adc_tb.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 100.00us
+at 2070 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 8150 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 14230 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 20310 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 26390 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 32470 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 38550 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 44630 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 50710 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 56790 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 62870 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 68950 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 75030 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 81110 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 87190 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 93270 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 99350 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+# exit 0
