@@ -88,6 +88,8 @@ brick_sorter/picoblaze/
 # eagle project files
 *.epf
 *.b\#\#
+*.b\#1
+*.s\#1
 
 #Plan Ahead
 *.bat
@@ -135,3 +137,23 @@ brick_sorter/picoblaze/
 *.xrpt
 *.xst
 *.xwbt
+
+#uTosNet
+brick_sorter/uTosNet
+
+#Latex
+*.aux
+*.lof
+*.lot
+*.pdf
+*.synctex.gz
+*.tdo
+*.toc
+
+#Matlab
+*.m~
+
+#qtcreator
+*.txt.user
+*.txt.user.*
+brick_sorter/seri_term/build

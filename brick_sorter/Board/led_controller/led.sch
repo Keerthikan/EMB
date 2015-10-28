@@ -3496,6 +3496,7 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="20.32" y1="53.34" x2="17.78" y2="53.34" width="0.1524" layer="91"/>
+<label x="10.16" y="53.34" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="SL1" gate="G$1" pin="4"/>
@@ -3507,6 +3508,7 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="55.88" y1="53.34" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
+<label x="45.72" y="53.34" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="SL1" gate="G$1" pin="5"/>
@@ -3518,6 +3520,7 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="53.34" x2="91.44" y2="53.34" width="0.1524" layer="91"/>
+<label x="83.82" y="53.34" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="SL1" gate="G$1" pin="6"/>
