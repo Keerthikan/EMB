@@ -6,6 +6,7 @@
 
 \usepackage{float}
 \usepackage{epstopdf}
+\usepackage{pdfpages} %Utility to include pdf documents into the report, used to include datasheets in appendices.
 
 \usepackage{tikz}
 \usepackage{circuitikz}
@@ -31,11 +32,12 @@
 
 \input{chapters/led_controller}
 \newpage
-%\input{chapters/chapter}
+\input{chapters/psu}
 \newpage
 \input{bib}
 
+\newpage
 \appendix
-%\input{appendix/trial}
+%\input{appendix/datasheet}
 
 \end{document}

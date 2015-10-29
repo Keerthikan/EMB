@@ -90,6 +90,8 @@ brick_sorter/picoblaze/
 *.b\#\#
 *.b\#1
 *.s\#1
+*.b\#2
+*.s\#2
 
 #Plan Ahead
 *.bat

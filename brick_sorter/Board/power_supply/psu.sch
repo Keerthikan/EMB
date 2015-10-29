@@ -10805,39 +10805,39 @@ nominal inductance, magnetically screened</description>
 </classes>
 <parts>
 <part name="IC1" library="linear" deviceset="LM2574?-*" device="N" technology="3.3"/>
-<part name="C1" library="rcl" deviceset="CPOL-US" device="E5-8.5"/>
-<part name="C2" library="rcl" deviceset="CPOL-US" device="E5-5"/>
-<part name="D1" library="diode" deviceset="BYV10" device=""/>
+<part name="C1" library="rcl" deviceset="CPOL-US" device="E5-8.5" value="330uF"/>
+<part name="C2" library="rcl" deviceset="CPOL-US" device="E5-5" value="22uF"/>
+<part name="D1" library="diode" deviceset="BYV10" device="" value="1N5817"/>
 <part name="SL1" library="con-amp-quick" deviceset="M10" device=""/>
-<part name="IC2-12V" library="linear" deviceset="78*" device="TV" technology="6"/>
-<part name="C3" library="rcl" deviceset="C-EU" device="050-030X075"/>
+<part name="NCP7812TG" library="linear" deviceset="78*" device="TV" technology="6"/>
+<part name="C3" library="rcl" deviceset="C-EU" device="050-030X075" value="330nF"/>
 <part name="D2" library="diode" deviceset="1N4004" device=""/>
-<part name="C4" library="rcl" deviceset="C-EU" device="050-030X075"/>
-<part name="IC2-6V" library="linear" deviceset="78*" device="TV" technology="6"/>
-<part name="C5" library="rcl" deviceset="C-EU" device="050-030X075"/>
+<part name="C4" library="rcl" deviceset="C-EU" device="050-030X075" value="330nF"/>
+<part name="L7806CV" library="linear" deviceset="78*" device="TV" technology="6"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="050-030X075" value="330nF"/>
 <part name="D3" library="diode" deviceset="1N4004" device=""/>
-<part name="C6" library="rcl" deviceset="C-EU" device="050-030X075"/>
-<part name="L1" library="inductor-neosid" deviceset="BS" device="11"/>
+<part name="C6" library="rcl" deviceset="C-EU" device="050-030X075" value="330nF"/>
+<part name="L1" library="inductor-neosid" deviceset="BS" device="11" value="330uH"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="IC1" gate="G$1" x="38.1" y="48.26"/>
-<instance part="C1" gate="G$1" x="66.04" y="48.26"/>
-<instance part="C2" gate="G$1" x="20.32" y="48.26"/>
-<instance part="D1" gate="A" x="50.8" y="48.26" rot="R90"/>
+<instance part="IC1" gate="G$1" x="25.4" y="48.26"/>
+<instance part="C1" gate="G$1" x="53.34" y="48.26"/>
+<instance part="C2" gate="G$1" x="7.62" y="48.26"/>
+<instance part="D1" gate="A" x="38.1" y="45.72" rot="R90"/>
 <instance part="SL1" gate="G$1" x="-22.86" y="45.72"/>
-<instance part="IC2-12V" gate="A1" x="38.1" y="86.36"/>
+<instance part="NCP7812TG" gate="A1" x="38.1" y="86.36"/>
 <instance part="C3" gate="G$1" x="22.86" y="81.28"/>
-<instance part="D2" gate="1" x="38.1" y="96.52" rot="R180"/>
+<instance part="D2" gate="1" x="38.1" y="99.06" rot="R180"/>
 <instance part="C4" gate="G$1" x="53.34" y="81.28"/>
-<instance part="IC2-6V" gate="A1" x="-12.7" y="86.36"/>
+<instance part="L7806CV" gate="A1" x="-12.7" y="86.36"/>
 <instance part="C5" gate="G$1" x="-27.94" y="81.28"/>
-<instance part="D3" gate="1" x="-12.7" y="96.52" rot="R180"/>
+<instance part="D3" gate="1" x="-12.7" y="99.06" rot="R180"/>
 <instance part="C6" gate="G$1" x="2.54" y="81.28"/>
-<instance part="L1" gate="G$1" x="58.42" y="53.34"/>
+<instance part="L1" gate="G$1" x="45.72" y="53.34"/>
 </instances>
 <busses>
 </busses>
@@ -10845,17 +10845,17 @@ nominal inductance, magnetically screened</description>
 <net name="15V" class="0">
 <segment>
 <pinref part="C2" gate="G$1" pin="+"/>
-<wire x1="20.32" y1="50.8" x2="20.32" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="50.8" x2="7.62" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="IN"/>
-<wire x1="20.32" y1="55.88" x2="27.94" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="55.88" x2="12.7" y2="55.88" width="0.1524" layer="91"/>
-<junction x="20.32" y="55.88"/>
-<label x="10.16" y="55.88" size="1.778" layer="95"/>
+<wire x1="7.62" y1="55.88" x2="15.24" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="55.88" x2="0" y2="55.88" width="0.1524" layer="91"/>
+<junction x="7.62" y="55.88"/>
+<label x="-2.54" y="55.88" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="35.56" y1="96.52" x2="22.86" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="96.52" x2="22.86" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="IC2-12V" gate="A1" pin="VI"/>
+<wire x1="35.56" y1="99.06" x2="22.86" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="99.06" x2="22.86" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="NCP7812TG" gate="A1" pin="VI"/>
 <wire x1="22.86" y1="86.36" x2="27.94" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="22.86" y1="86.36" x2="22.86" y2="83.82" width="0.1524" layer="91"/>
@@ -10865,9 +10865,9 @@ nominal inductance, magnetically screened</description>
 <pinref part="D2" gate="1" pin="C"/>
 </segment>
 <segment>
-<wire x1="-15.24" y1="96.52" x2="-27.94" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="-27.94" y1="96.52" x2="-27.94" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="IC2-6V" gate="A1" pin="VI"/>
+<wire x1="-15.24" y1="99.06" x2="-27.94" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="99.06" x2="-27.94" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="L7806CV" gate="A1" pin="VI"/>
 <wire x1="-27.94" y1="86.36" x2="-22.86" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="C5" gate="G$1" pin="1"/>
 <wire x1="-27.94" y1="86.36" x2="-27.94" y2="83.82" width="0.1524" layer="91"/>
@@ -10885,34 +10885,34 @@ nominal inductance, magnetically screened</description>
 <net name="GND" class="0">
 <segment>
 <pinref part="C2" gate="G$1" pin="-"/>
-<wire x1="20.32" y1="43.18" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
-<label x="20.32" y="38.1" size="1.778" layer="95"/>
+<wire x1="7.62" y1="43.18" x2="7.62" y2="40.64" width="0.1524" layer="91"/>
+<label x="7.62" y="38.1" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="!ON/OFF"/>
-<wire x1="33.02" y1="35.56" x2="33.02" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="33.02" x2="35.56" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="35.56" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="33.02" x2="22.86" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="GND@PWR"/>
-<wire x1="35.56" y1="33.02" x2="35.56" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="33.02" x2="22.86" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="GNDSIG"/>
-<wire x1="38.1" y1="35.56" x2="38.1" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="33.02" x2="35.56" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="33.02" x2="35.56" y2="27.94" width="0.1524" layer="91"/>
-<junction x="35.56" y="33.02"/>
-<label x="35.56" y="25.4" size="1.778" layer="95"/>
+<wire x1="25.4" y1="35.56" x2="25.4" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="33.02" x2="22.86" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="33.02" x2="22.86" y2="27.94" width="0.1524" layer="91"/>
+<junction x="22.86" y="33.02"/>
+<label x="22.86" y="25.4" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="-"/>
-<wire x1="66.04" y1="43.18" x2="66.04" y2="40.64" width="0.1524" layer="91"/>
-<label x="66.04" y="38.1" size="1.778" layer="95"/>
+<wire x1="53.34" y1="43.18" x2="53.34" y2="40.64" width="0.1524" layer="91"/>
+<label x="53.34" y="38.1" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="D1" gate="A" pin="A"/>
-<wire x1="50.8" y1="45.72" x2="50.8" y2="40.64" width="0.1524" layer="91"/>
-<label x="50.8" y="40.64" size="1.778" layer="95"/>
+<wire x1="38.1" y1="43.18" x2="38.1" y2="40.64" width="0.1524" layer="91"/>
+<label x="38.1" y="40.64" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC2-12V" gate="A1" pin="GND"/>
+<pinref part="NCP7812TG" gate="A1" pin="GND"/>
 <wire x1="38.1" y1="78.74" x2="38.1" y2="76.2" width="0.1524" layer="91"/>
 <label x="38.1" y="76.2" size="1.778" layer="95"/>
 </segment>
@@ -10927,7 +10927,7 @@ nominal inductance, magnetically screened</description>
 <label x="53.34" y="73.66" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC2-6V" gate="A1" pin="GND"/>
+<pinref part="L7806CV" gate="A1" pin="GND"/>
 <wire x1="-12.7" y1="78.74" x2="-12.7" y2="76.2" width="0.1524" layer="91"/>
 <label x="-12.7" y="76.2" size="1.778" layer="95"/>
 </segment>
@@ -10949,15 +10949,15 @@ nominal inductance, magnetically screened</description>
 </net>
 <net name="5V" class="0">
 <segment>
-<wire x1="63.5" y1="53.34" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="53.34" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="+"/>
-<wire x1="66.04" y1="53.34" x2="66.04" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="53.34" x2="53.34" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="FB"/>
-<wire x1="48.26" y1="55.88" x2="66.04" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="55.88" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
-<junction x="66.04" y="53.34"/>
-<wire x1="66.04" y1="53.34" x2="68.58" y2="53.34" width="0.1524" layer="91"/>
-<label x="71.12" y="53.34" size="1.778" layer="95" rot="R90"/>
+<wire x1="35.56" y1="55.88" x2="53.34" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="55.88" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
+<junction x="53.34" y="53.34"/>
+<wire x1="53.34" y1="53.34" x2="55.88" y2="53.34" width="0.1524" layer="91"/>
+<label x="58.42" y="53.34" size="1.778" layer="95" rot="R90"/>
 <pinref part="L1" gate="G$1" pin="2"/>
 </segment>
 <segment>
@@ -10969,22 +10969,22 @@ nominal inductance, magnetically screened</description>
 <net name="LM_OUT" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="OUT"/>
-<wire x1="53.34" y1="53.34" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="53.34" x2="38.1" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="D1" gate="A" pin="C"/>
-<wire x1="50.8" y1="53.34" x2="48.26" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="50.8" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="53.34" x2="35.56" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="48.26" x2="38.1" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="L1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="6V" class="0">
 <segment>
-<pinref part="IC2-6V" gate="A1" pin="VO"/>
+<pinref part="L7806CV" gate="A1" pin="VO"/>
 <wire x1="-2.54" y1="86.36" x2="2.54" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="C6" gate="G$1" pin="1"/>
 <wire x1="2.54" y1="86.36" x2="2.54" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="D3" gate="1" pin="A"/>
-<wire x1="-10.16" y1="96.52" x2="2.54" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="96.52" x2="2.54" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="99.06" x2="2.54" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="99.06" x2="2.54" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="86.36" x2="5.08" y2="86.36" width="0.1524" layer="91"/>
 <label x="5.08" y="86.36" size="1.778" layer="95"/>
 </segment>
@@ -10996,10 +10996,10 @@ nominal inductance, magnetically screened</description>
 </net>
 <net name="12V" class="0">
 <segment>
-<wire x1="40.64" y1="96.52" x2="53.34" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="IC2-12V" gate="A1" pin="VO"/>
+<wire x1="40.64" y1="99.06" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="NCP7812TG" gate="A1" pin="VO"/>
 <wire x1="48.26" y1="86.36" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="96.52" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="99.06" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
 <junction x="53.34" y="86.36"/>
 <pinref part="C4" gate="G$1" pin="1"/>
 <wire x1="53.34" y1="86.36" x2="53.34" y2="83.82" width="0.1524" layer="91"/>

@@ -9,33 +9,32 @@ The brick sorter relies on the varying reflective properties of different colors
 	\caption{The white region denotes the area in which the LED can safely be driven.}
 	\label{fig:overdrive}
 \end{figure}
-The switching of the LEDs is done using bipolar junction transistors (BJTs). The BJTs are wired as a simple switching circuit similiar to the circuit seen in figure \ref{circ:ledswitch}. 
-Using the FPGA, a control signal, $V_{\text{c}}$ is generated. This signal has an amplitude of 3.3v. 
-In order to achieve the highest possible light intensity from the LEDs they will be overdriven. According to the datasheet, \ref{fig:overdrive}, the LEDs can be driven at 100mA so long as the duty cycle of $V_{\text{PWM}}$ does not exceed 30\%. Driving the LEDs at 100mA implies that $I_c=100\text{mA}$. 
-For a BJT
+The switching of the LEDs is done using bipolar junction transistors (BJTs). The BJTs are wired as a simple switching circuit as in figure \ref{circ:ledswitch}. $V_{\text{c}}$, the switching signal, will be generated using an FPGA.
+In order to achieve the highest possible light intensity from the LEDs they will be overdriven. Figure \ref{fig:overdrive} is an excerpt from \cite{avago}. This graph shows that the LEDs can be safely driven at 100mA so long as the duty cycle of $V_{\text{c}}$ does not exceed 30\%. Driving the LEDs at 100mA implies that $I_c=100\text{mA}$. 
 
+For a BJT:
 \begin{eqnarray}
-&I_c=I_b\cdot h_{\text{FE}}
-	\text{\quad and \quad}
-		V_{\text{be}}\approx&0.7\text{v}\\
-	&I_b=\frac{V_{\text{PWM}}-V_{be}}{R_1}
+I_c=&I_b\cdot h_{\text{FE}}\\
+I_b=&\frac{V_{\text{c}}-V_{be}}{R_1}
 \end{eqnarray}
-According to the datasheet of the BC547b
+Looking at the datasheet of the BC547b the dc current gain of this transistor is found to be
 \begin{eqnarray}
-	h_{\text{FE}}=200 \Rightarrow I_b = 0.0005\text{A}
+	h_{\text{FE}}=200 \Rightarrow I_b = 0.5\text{mA}
 \end{eqnarray}
+Lastly, according to figure \ref{fig:vbe} from the datasheet of the BC547b, when $I_c = 100$mA $V_{be}=0.8$v.
 Since the BJT is used as a switch it is desirable that it is driven to saturation quickly to avoid dissipating power in the component. Therefore, $I_b$ is doubled and 
 \begin{eqnarray}
-	R_1 = \frac{V_{\text{PWM}}-V_{be}}{I_b\cdot 2} = 2.6\text{k}\Omega
+	R_1 = \frac{V_{\text{c}}-V_{be}}{I_b\cdot 2} = 2.5\text{k}\Omega
 \end{eqnarray}
-Finding $R_2$ is done using the datasheet of the LEDs. figure \ref{fig:ledcurrent} shows the voltage drop across the diode as a function of the current through the diode.
+
 \begin{figure}[h!]
-	\begin{center}
+	\centering
+	\begin{subfigure}[b]{.48\linewidth}
 		\begin{circuitikz}
 			\draw (0,0) 
 			node[npn](npn1){}
 			(npn1.base) ++(-2,0) node[name=r1left]{}
-			to[R=$R_1$,o-,i=$I_b$] ++(2,0) ++(-2,0)node[left]{$V_{\text{PWM}}$}
+			to[R=$R_1$,o-,i=$I_b$] ++(2,0) ++(-2,0)node[left]{$V_{\text{c}}$}
 			(npn1.base) ++(0.75,0) node[right]{BC547b}
 			(npn1.emitter) 
 			node[ground](GND){}
@@ -46,16 +45,23 @@ Finding $R_2$ is done using the datasheet of the LEDs. figure \ref{fig:ledcurren
 			;\end{circuitikz}
 		\caption{Switching circuit for single LED}
 		\label{circ:ledswitch}
-	\end{center}
+	\end{subfigure}
+	\begin{subfigure}[b]{.48\linewidth}
+		\includegraphics[width=\linewidth]{images/vbe}
+		\caption{Graph of $I_c$ as a function of $V_be$.}
+		\label{fig:vbe}
+	\end{subfigure}
+	\caption{(a)LED Circuit, three of these are combined to drive the red, green and blue LEDs used in this application. (b) Graph from the datasheet of the BC547p showing the correlation between collector current and base-emitter voltage.}
 \end{figure}
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=0.75\linewidth]{images/redvd}
 	\end{center}
-	\caption{Forward voltage as a function of current.}
+	\caption{Current as a function of forward voltage for the red diode.}
 	\label{fig:ledcurrent}
 \end{figure}
-According to the figures the red LED will have a voltage drop $V_d = 2.3$v and the green and blue LEDs will $V_d = 4$v. This results in 
+Finding $R_2$ is done using the datasheets of the LEDs. figure \ref{fig:ledcurrent} shows the correlation between the voltage drop across the diode and the current through the diode.
+According to these figures the red LED will have a voltage drop $V_d = 2.3$v and the green and blue LEDs will $V_d = 4$v. This results in 
 \begin{eqnarray}
 	R_{2\_\text{red}}=& \frac{V_{cc}-V_d}{I_c} &= 97\Omega \\
 	R_{2\_\text{green}}=&R_{2\_\text{blue}} = \frac{V_{cc}-V_d}{I_c} &= 80\Omega
@@ -117,7 +123,7 @@ This results in $R_f=378\text{k}\Omega$, however, it was found that applying thi
 		}
 		\caption{Filtered version.}
 		\label{circ:filtered}
-	\end{subfigure}	
+	\end{subfigure}
    	\caption{Photo diode amplifier circuit}
    	\label{circ:photodiode}
 \end{figure}
@@ -144,7 +150,7 @@ Table \ref{tab:ledtable} shows the various responses of the photodiode when expo
 \subsubsection{Testing the circuit}
 In testing, a significant amount of oscillation appeared on the output of the op amp. See figure \ref{fig:oscillation}. To avoid issues when digitizing the signal with the ADC, it will be filtered by applying a compensation capacitor in parallel with $R_f$, see figure \ref{circ:filtered}.
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\begin{subfigure}{\linewidth}
 		\includegraphics[width=\linewidth]{images/unfiltered}
