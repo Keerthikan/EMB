@@ -44,9 +44,9 @@ component led_driver
       PWM_green   : out  std_logic;
       PWM_blue    : out std_logic;
       start_adc   : out std_logic;
-      pwm_on      : in std_logic
+      pwm_on      : in std_logic;
       --counter     : out std_logic_vector(3 downto 0);
-      --stateS       : out std_logic_vector(2 downto 0)
+      stateS       : out std_logic_vector(2 downto 0)
       );
   end component;
 
@@ -55,10 +55,10 @@ signal clk:         std_logic   := '0';
 signal PWM_red:     std_logic   ;
 signal PWM_green:   std_logic   ;
 signal PWM_blue:    std_logic   ;
-signal start_adc:   std_logic   := '0';
+signal start_adc:   std_logic   ;
 signal pwm_on:      std_logic   := '1';
 --signal counter:     std_logic_vector(3 downto 0) := "0000";
---signal state:       std_logic_vector(2 downto 0) ;           
+signal state:       std_logic_vector(2 downto 0) ;           
 constant period : time := 20 ns; -- 50 MHz clock
 
 
@@ -73,9 +73,9 @@ UUT: led_driver
     PWM_green => PWM_green, 
     PWM_blue => PWM_blue,
     pwm_on => pwm_on,
-    start_adc => start_adc
+    start_adc => start_adc,
     --counter => counter,
-   -- stateS => state
+    stateS => state
     );
 
 end Behavioral;

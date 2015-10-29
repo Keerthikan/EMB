@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DARoots Version="1" Minor="26">
   <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+    <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sim_1/new/adc_tb.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_5/project_5.srcs/sim_1/new/adc_tb.vhd"/>

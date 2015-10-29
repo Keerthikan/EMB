@@ -1,29 +1,29 @@
 
 *** Running xst
-    with args -ifn pwm.xst -ofn pwm.srp -intstyle ise
+    with args -ifn adc.xst -ofn adc.srp -intstyle ise
 
-Reading design: pwm.prj
+Reading design: adc.prj
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/pwm.vhd" in Library work.
-Entity <pwm> compiled.
-Entity <pwm> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd" in Library work.
+Entity <adc> compiled.
+Entity <adc> (Architecture <Behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <pwm> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <adc> in library <work> (architecture <Behavioral>).
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <pwm> in library <work> (Architecture <Behavioral>).
-WARNING:Xst:819 - "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/pwm.vhd" line 129: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+Analyzing Entity <adc> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:819 - "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd" line 129: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <busy>
-Entity <pwm> analyzed. Unit <pwm> generated.
+Entity <adc> analyzed. Unit <adc> generated.
 
 
 =========================================================================
@@ -32,8 +32,8 @@ Entity <pwm> analyzed. Unit <pwm> generated.
 
 Performing bidirectional port resolution...
 
-Synthesizing Unit <pwm>.
-    Related source file is "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/pwm.vhd".
+Synthesizing Unit <adc>.
+    Related source file is "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd".
     Found 1-bit register for signal <MOSI>.
     Found 1-bit register for signal <CS>.
     Found 4-bit register for signal <tx_debug>.
@@ -61,7 +61,7 @@ Synthesizing Unit <pwm>.
 	inferred  27 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
 	inferred  10 Comparator(s).
-Unit <pwm> synthesized.
+Unit <adc> synthesized.
 
 
 =========================================================================
@@ -117,7 +117,7 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 
-Optimizing unit <pwm> ...
+Optimizing unit <adc> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -125,9 +125,9 @@ FlipFlop clockCount_4 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
-Processing Unit <pwm> :
+Processing Unit <adc> :
 	Found 5-bit shift register for signal <TX_4>.
-Unit <pwm> processed.
+Unit <adc> processed.
 
 =========================================================================
 Final Register Report

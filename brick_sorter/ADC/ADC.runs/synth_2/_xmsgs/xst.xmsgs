@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/pwm.vhd</arg>&quot; line <arg fmt="%d" index="2">129</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd</arg>&quot; line <arg fmt="%d" index="2">129</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;busy&gt;</arg>
 </msg>
 

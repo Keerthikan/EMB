@@ -5,5 +5,11 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="89" delta="unknown" >"/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sim_1/new/adc_tb.vhd" Line 60: &lt;<arg fmt="%s" index="1">pwm</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="Simulator" num="648" delta="unknown" >&quot;<arg fmt="%s" index="1">/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sim_1/new/adc_tb.vhd</arg>&quot; Line <arg fmt="%d" index="2">60</arg>. Instance <arg fmt="%s" index="3">pwm</arg> is unbound
+</msg>
+
 </messages>
 

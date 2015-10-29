@@ -37,69 +37,45 @@ entity led_driver is
            PWM_green: out std_logic;
            PWM_blue: out std_logic;
            start_ADC : out std_logic ;
-           pwm_on: in std_logic
+           pwm_on: in std_logic;
           -- counter: out std_logic_vector(3 downto 0);
-          -- stateS: out std_logic_vector(2 downto 0)
+           stateS: out std_logic_vector(2 downto 0)
          );
 end led_driver;
 
 architecture Behavioral of led_driver is
 type state_type is (red,green,blue);  --type of state machine.
-signal state: state_type := red; 
+signal state: state_type ; 
 begin
  -- Duty cycle -  30 %
 
 PWM_process: process(clk,pwm_on)
-variable pwm_counter: integer range 0 to 10 :=0; 
 begin 
-if pwm_on = '1' then 
-    if rising_edge(clk) then 
-        pwm_counter := pwm_counter +1 ; 
-        if state = red then 
-            if pwm_counter < 7 then    
-                PWM_red<= '0';
-                PWM_green<= '0';
-                PWM_blue<= '0';
-            elsif pwm_counter = 10 then 
-                pwm_counter := 0;
-            else    
+if rising_edge(clk) then
+    if pwm_on = '1' then 
+        case state is 
+            when red =>
                 PWM_red<= '1';
                 PWM_green<= '0';
                 PWM_blue<= '0';
-            end if;        
-        elsif state = green then
-            if pwm_counter < 7 then    
-               PWM_red<= '0';
-               PWM_green<= '0';
-               PWM_blue<= '0';
-            elsif pwm_counter = 10 then 
-                pwm_counter := 0;
-            else   
+                StateS <= "001";
+            when green =>
                 PWM_red<= '0';   
                 PWM_green<= '1';
                 PWM_blue<= '0';
-            end if;       
-        elsif state = blue then 
-            if pwm_counter < 7 then    
-               PWM_red<= '0';
-               PWM_green<= '0';
-               PWM_blue<= '0';
-            elsif pwm_counter = 10 then 
-               pwm_counter := 0;
-            else
+                StateS <= "010";
+            when blue =>
                PWM_red   <= '0';
                PWM_green <= '0';    
                PWM_blue  <= '1';
-            end if;
-         else 
-            pwm_blue <= '0';
-            pwm_red <= '0';
-            pwm_green <= '0';        
-        end if;             
+               StateS <= "100";
+        end case;    
+    else 
+        pwm_blue <= '0';
+        pwm_red <= '0';
+        pwm_green <= '0';        
     end if;
-else
-    pwm_counter := 0;
-end if;
+end if;                 
 end process;
 
 state_changer: process(clk)
@@ -120,7 +96,7 @@ end if;
 
 case state is
     when red =>
-        if prescaler < 650  then  -- 501 ticks for PWM 
+        if prescaler < 650  then 
         -- settling the signal
         start_ADC <= '0';
         
@@ -157,6 +133,7 @@ case state is
                 end if; 
          end if;        
 end case;
-end process;   
+end process;
+   
 
 end Behavioral;
