@@ -1,0 +1,27 @@
+\section{Servo motor}
+The purpose of the servo motor is control the "flipper", which separates the blocks. \\
+
+
+A servo motor consist of an DC motor, potentiometer and a control circuit.  As the motoro rotates, the resistance of the potentiometer changes,  so that the control circuit can precisely movement and the direction.   When the motor shaft is at the desired position the power supplied to the motor will be used stop the motor, such that it doesn't move away from the desired position. \\
+
+The desired position is sent through the sense wire, (often the white wire). The position  itself is defined as PWM signal where the duty cycle defines the position\\
+ 
+
+-- Billede af PWM of duty cycle --  \\
+
+The servo motor used in this project only turn from $0^{\circ}$ to $180^{\circ}$
+
+To rotate the motor to the position 
+\subsection{Interaction with Servo motor}
+The control of the servo motor, is done using the FPGA with the entity named pwm. 
+
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}[font=\sffamily,>=triangle 45]
+  \node [shape=circuit] (item) at (0,0) {pwm};
+  \draw [<-] (item.ina) node [anchor=west,labels] {} -- +(-1,0) node [anchor=east] {CLK};
+  \draw [->] (item.outa) node [anchor=east,labels] {} -- +(1,0) node [anchor=west] {PWM};
+  \draw [<-] (item.inb) node [anchor=west,labels] {} -- +(-1,0) node [anchor=east] {input};
+\end{tikzpicture}
+\caption{Entity of pwm}
+\end{figure}
