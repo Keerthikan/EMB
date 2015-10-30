@@ -18,7 +18,7 @@ private:
 
     const uint32_t baud_rate  = 115200;
     const uint8_t char_size   = 8;
-    const std::string port = "/dev/ttyUSB0";
+    const std::string port = "/dev/ttyUSB1";
 
     std::string read_data();
     void send_data(std::string &msg);
