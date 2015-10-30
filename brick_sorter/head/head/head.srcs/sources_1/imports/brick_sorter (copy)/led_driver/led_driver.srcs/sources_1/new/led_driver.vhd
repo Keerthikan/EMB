@@ -72,8 +72,8 @@ begin
                 led_green <= '0';    
                 led_blue  <= '1'; 
          --       stateS <= "100";   
-          end case; 
-     elsif led_on = '0' then   
+          end case;      
+elsif led_on = '0' then   
           led_blue <= '0';
           led_red <= '0';
           led_green <= '0';

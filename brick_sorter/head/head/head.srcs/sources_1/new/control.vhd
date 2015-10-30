@@ -47,7 +47,10 @@ entity control is
            MAX_LED_g: out std_logic;
            MAX_LED_b: out std_logic; --
            
-           PWM_motor : out std_logic
+           PWM_motor : out std_logic;
+           
+           Out_next_state: out std_logic
+           
 
            --stateS: out std_logic_vector(2 downto 0);
            --nextState: out std_logic;
@@ -209,10 +212,12 @@ begin
         
         if adc_read_sig = '1'  then 
             next_state_sig <= '1'; -- Saying start next state => turn off start_adc... 
-        else  
+        else 
             next_state_sig <= '0'; 
         end if; 
     end if;     
 end process;
+
+out_next_state <=  '0'; 
 
 end Behavioral;
