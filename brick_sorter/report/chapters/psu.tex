@@ -72,20 +72,21 @@ For this design, a 330$\mu$F capacitor is provided, which, while large, does ful
 \\~\\
 
 \subsection{Testing}
-As previously mentioned the 5V rail must be at least 80\% efficient. However, according to the datasheet, the 5V version of the LM2574 is capable only of 77\%. Even though achieving the goal of 80\% efficiency will be difficult, the efficiency of this rail, as well as the others can still be tested and documented. Each rail will be tested for efficiency at 25\%, 50\%, 75\% and 100\% load. The results of this test can be seen in table \ref{tab:efficiency}. 
+As previously mentioned the 5V rail must be at least 80\% efficient. However, according to the datasheet, the 5V version of the LM2574 is capable only of 77\% efficiency. Even though achieving the goal of 80\% efficiency will be difficult, the efficiency of this rail, as well as the others can still be tested and documented. Each rail will be tested for efficiency at 25\%, 50\%, 75\% and 100\% load. The results of this test can be seen in table \ref{tab:efficiency}. 
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{| c | c | c | c | c |}
 		\hline
 		Rail & Eff. 25\% & Eff. 50\% & Eff. 75\% & Eff. 100\% \\
 		\hline
-		12V  & & & &\\
+		12V  & 74.04 & 76.86 & 77.89 & 78.43\\
 		\hline
-		6V   & & & &\\
+		6V   & 37.89 & 38.95 & 39.31 & 39.45\\
 		\hline		
-		5V   & & & &\\
+		5V   & 75.75 & 76.19 & 76.34 & 77.24\\
 		\hline
 	\end{tabular}
 	\caption[Power supply efficiency]{Efficiency of the various rails on the power supply.}
 	\label{tab:efficiency}
 \end{table}
+As expected, the 5v rail peaks at $\approx77\%$ efficiency. The two rails controlled by linear voltage regulators clearly show the deficiencies of this technology. In the case of the 12V rail efficiency seems good, however it turns out that this efficiency is approximately equal to the relation between the input and output of the regulator, the same as for the 6V rail. The higher the difference between the input and output rails, the worse the efficiency. 
