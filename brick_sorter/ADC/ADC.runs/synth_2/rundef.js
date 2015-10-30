@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "xst",
-         "-ifn \"adc.xst\" -ofn \"adc.srp\" -intstyle ise" );
+         "-ifn \"pwm.xst\" -ofn \"pwm.srp\" -intstyle ise" );
 
 
 

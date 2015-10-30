@@ -4,20 +4,20 @@ Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/verilog/src/glbl.v" into library work
+Parsing VHDL file "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd" into library work
 Parsing VHDL file "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sim_1/new/adc_tb.vhd" into library work
 Starting static elaboration
-WARNING:HDLCompiler:89 - "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sim_1/new/adc_tb.vhd" Line 60: <pwm> remains a black-box since it has no binding entity.
 Completed static elaboration
-Fuse Memory Usage: 96556 KB
-Fuse CPU Usage: 1170 ms
-WARNING:Simulator:648 - "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sim_1/new/adc_tb.vhd" Line 60. Instance pwm is unbound
+Fuse Memory Usage: 96592 KB
+Fuse CPU Usage: 1210 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
+Compiling architecture behavioral of entity pwm [pwm_default]
 Compiling architecture arch of entity adc_tb
 Time Resolution for simulation is 1ps.
-Compiled 4 VHDL Units
+Compiled 6 VHDL Units
 Built simulation executable adc_tb.exe
-Fuse Memory Usage: 111688 KB
-Fuse CPU Usage: 1250 ms
-GCC CPU Usage: 1600 ms
+Fuse Memory Usage: 111292 KB
+Fuse CPU Usage: 1290 ms
+GCC CPU Usage: 1740 ms

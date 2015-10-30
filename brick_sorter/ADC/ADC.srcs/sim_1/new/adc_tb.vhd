@@ -41,7 +41,7 @@ architecture arch of adc_tb is
   constant period : time := 20 ns; -- 50 MHz clock
 
   -- constant data set that will be sent back as the ADC data  
-  constant FIXED_DATA : std_logic_vector(9 downto 0) := std_logic_vector(to_unsigned(852,10));
+  constant FIXED_DATA : std_logic_vector(9 downto 0) := std_logic_vector(to_unsigned(917,10));
 
   -- timing parameters from the datasheet
   constant T_HI   : time := 125 ns;     -- CLK high time

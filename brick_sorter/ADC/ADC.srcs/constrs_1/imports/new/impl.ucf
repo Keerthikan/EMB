@@ -5,21 +5,21 @@ NET "MOSI" LOC = R15; #JB3
 NET "CS"   LOC = T17; #JB4
 
 
-NET "tx_pwm<0>" LOC = K12;
-NET "tx_pwm<1>" LOC = L17;
+NET "tx_pwm<0>" LOC = J14;
+NET "tx_pwm<1>" LOC = J15;
 
 
 
-NET "RX_LEd<0>" LOC = J14;
-NET "RX_LEd<1>" LOC = J15;
-NET "RX_LEd<2>" LOC = K15;
-NET "RX_LEd<3>" LOC = K14;
-NET "RX_LEd<4>" LOC = E17;
-NET "RX_LEd<5>" LOC = P15;
-NET "RX_LEd<6>" LOC = F4;
-NET "RX_LEd<7>" LOC = R4;
-NET "RX_LEd<8>" LOC = K13;
-NET "RX_LEd<9>" LOC = L16;
+#NET "RX_LEd<0>" LOC = J14;
+#NET "RX_LEd<1>" LOC = J15;
+#NET "RX_LEd<2>" LOC = K15;
+#NET "RX_LEd<3>" LOC = K14;
+#NET "RX_LEd<4>" LOC = E17;
+#NET "RX_LEd<5>" LOC = P15;
+#NET "RX_LEd<6>" LOC = F4;
+#NET "RX_LEd<7>" LOC = R4;
+#NET "RX_LEd<8>" LOC = K13;
+#NET "RX_LEd<9>" LOC = L16;
 
 NET "tx_debug<0>" LOC =  "G15";
 NET "tx_debug<1>" LOC =  "J16";

@@ -1,29 +1,29 @@
 
 *** Running xst
-    with args -ifn adc.xst -ofn adc.srp -intstyle ise
+    with args -ifn pwm.xst -ofn pwm.srp -intstyle ise
 
-Reading design: adc.prj
+Reading design: pwm.prj
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd" in Library work.
-Entity <adc> compiled.
-Entity <adc> (Architecture <Behavioral>) compiled.
+Entity <pwm> compiled.
+Entity <pwm> (Architecture <Behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <adc> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <pwm> in library <work> (architecture <Behavioral>).
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <adc> in library <work> (Architecture <Behavioral>).
-WARNING:Xst:819 - "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd" line 129: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <busy>
-Entity <adc> analyzed. Unit <adc> generated.
+Analyzing Entity <pwm> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:819 - "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd" line 121: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <RX>
+Entity <pwm> analyzed. Unit <pwm> generated.
 
 
 =========================================================================
@@ -32,36 +32,37 @@ Entity <adc> analyzed. Unit <adc> generated.
 
 Performing bidirectional port resolution...
 
-Synthesizing Unit <adc>.
+Synthesizing Unit <pwm>.
     Related source file is "/home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd".
+WARNING:Xst:737 - Found 2-bit latch for signal <tx_pwm>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 1-bit register for signal <MOSI>.
     Found 1-bit register for signal <CS>.
     Found 4-bit register for signal <tx_debug>.
     Found 2-bit register for signal <rx_debug>.
-    Found 2-bit register for signal <tx_pwm>.
     Found 1-bit register for signal <busy>.
-    Found 5-bit up counter for signal <clockCount>.
-    Found 5-bit adder for signal <clockCount$add0000> created at line 104.
-    Found 5-bit comparator less for signal <clockCount$cmp_lt0000> created at line 100.
-    Found 5-bit comparator less for signal <MOSI$cmp_lt0000> created at line 107.
+    Found 5-bit comparator less for signal <busy$cmp_lt0000> created at line 80.
+    Found 5-bit register for signal <clockCount>.
+    Found 5-bit adder for signal <clockCount$addsub0000> created at line 74.
+    Found 5-bit comparator less for signal <CS$cmp_lt0000> created at line 101.
     Found 1-bit register for signal <newClock>.
     Found 26-bit up counter for signal <prescaler_counter>.
     Found 26-bit comparator less for signal <prescaler_counter$cmp_lt0000> created at line 59.
     Found 10-bit register for signal <RX>.
-    Found 5-bit comparator lessequal for signal <RX$cmp_le0000> created at line 80.
-    Found 5-bit comparator greatequal for signal <rx_debug$cmp_ge0000> created at line 78.
-    Found 5-bit comparator greatequal for signal <rx_debug$cmp_ge0001> created at line 84.
-    Found 5-bit comparator greatequal for signal <rx_debug$cmp_ge0002> created at line 77.
-    Found 5-bit comparator greater for signal <rx_debug$cmp_gt0000> created at line 80.
-    Found 5-bit comparator less for signal <rx_debug$cmp_lt0000> created at line 77.
+    Found 5-bit comparator greatequal for signal <rx_debug$cmp_ge0000> created at line 80.
+    Found 5-bit comparator greatequal for signal <rx_debug$cmp_ge0001> created at line 90.
+    Found 5-bit comparator greatequal for signal <rx_debug$cmp_ge0002> created at line 91.
+    Found 5-bit comparator greater for signal <rx_debug$cmp_gt0000> created at line 84.
+    Found 5-bit comparator lessequal for signal <rx_debug$cmp_le0000> created at line 82.
+    Found 5-bit comparator less for signal <rx_debug$cmp_lt0000> created at line 91.
+    Found 5-bit comparator less for signal <rx_debug$cmp_lt0001> created at line 90.
     Found 5-bit register for signal <TX>.
-    Found 5-bit comparator greatequal for signal <TX$cmp_ge0000> created at line 100.
+    Found 5-bit comparator greatequal for signal <TX$cmp_ge0000> created at line 101.
     Summary:
-	inferred   2 Counter(s).
-	inferred  27 D-type flip-flop(s).
+	inferred   1 Counter(s).
+	inferred  30 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred  10 Comparator(s).
-Unit <adc> synthesized.
+	inferred  11 Comparator(s).
+Unit <pwm> synthesized.
 
 
 =========================================================================
@@ -70,20 +71,21 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  5-bit adder                                           : 1
-# Counters                                             : 2
+# Counters                                             : 1
  26-bit up counter                                     : 1
- 5-bit up counter                                      : 1
 # Registers                                            : 9
  1-bit register                                        : 4
  10-bit register                                       : 1
- 2-bit register                                        : 2
+ 2-bit register                                        : 1
  4-bit register                                        : 1
- 5-bit register                                        : 1
-# Comparators                                          : 10
+ 5-bit register                                        : 2
+# Latches                                              : 1
+ 2-bit latch                                           : 1
+# Comparators                                          : 11
  26-bit comparator less                                : 1
  5-bit comparator greatequal                           : 4
  5-bit comparator greater                              : 1
- 5-bit comparator less                                 : 3
+ 5-bit comparator less                                 : 4
  5-bit comparator lessequal                            : 1
 
 =========================================================================
@@ -99,16 +101,17 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  5-bit adder                                           : 1
-# Counters                                             : 2
+# Counters                                             : 1
  26-bit up counter                                     : 1
- 5-bit up counter                                      : 1
-# Registers                                            : 27
- Flip-Flops                                            : 27
-# Comparators                                          : 10
+# Registers                                            : 30
+ Flip-Flops                                            : 30
+# Latches                                              : 1
+ 2-bit latch                                           : 1
+# Comparators                                          : 11
  26-bit comparator less                                : 1
  5-bit comparator greatequal                           : 4
  5-bit comparator greater                              : 1
- 5-bit comparator less                                 : 3
+ 5-bit comparator less                                 : 4
  5-bit comparator lessequal                            : 1
 
 =========================================================================
@@ -116,25 +119,26 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <tx_debug_2> (without init value) has a constant value of 0 in block <pwm>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tx_debug_3> (without init value) has a constant value of 0 in block <pwm>. This FF/Latch will be trimmed during the optimization process.
 
-Optimizing unit <adc> ...
+Optimizing unit <pwm> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-FlipFlop clockCount_4 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
-Processing Unit <adc> :
+Processing Unit <pwm> :
 	Found 5-bit shift register for signal <TX_4>.
-Unit <adc> processed.
+Unit <pwm> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 54
- Flip-Flops                                            : 54
+# Registers                                            : 49
+ Flip-Flops                                            : 49
 # Shift Registers                                      : 1
  5-bit shift register                                  : 1
 
@@ -160,9 +164,11 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-CLK                                | BUFGP                  | 29    |
-newClock1                          | BUFG                   | 27    |
+CLK                                | BUFGP                  | 27    |
+newClock1                          | BUFG                   | 24    |
+busy                               | NONE(tx_pwm_0)         | 2     |
 -----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -172,7 +178,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 8.646ns (Maximum Frequency: 115.660MHz)
+   Minimum period: 9.188ns (Maximum Frequency: 108.838MHz)
    Minimum input arrival time before clock: 2.825ns
    Maximum output required time after clock: 4.450ns
    Maximum combinational path delay: No path found

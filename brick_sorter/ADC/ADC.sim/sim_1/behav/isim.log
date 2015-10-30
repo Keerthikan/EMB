@@ -9,4 +9,21 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # run 100.00us
-# exit 0
+at 7190 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 10995 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
+at 18070 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 21875 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
+at 28950 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 32755 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
+at 39830 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 43635 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
+at 50710 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 54515 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
+at 61590 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 65395 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
+at 72470 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 76275 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
+at 83350 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 87155 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
+at 94230 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 98035 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted

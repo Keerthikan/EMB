@@ -12,7 +12,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="adc"/>
+      <Option Name="TopModule" Val="pwm"/>
       <Option Name="TopLib" Val="work"/>
       <Option Name="TopArchitecture" Val="Behavioral"/>
       <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/new/adc.vhd"/>

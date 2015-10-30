@@ -6,4 +6,4 @@
 # Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
 #
 
-xst -ifn "adc.xst" -ofn "adc.srp" -intstyle ise
+xst -ifn "pwm.xst" -ofn "pwm.srp" -intstyle ise

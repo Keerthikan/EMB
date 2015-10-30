@@ -2,27 +2,9 @@ Command line:
    adc_tb.exe
      -simmode  gui
      -simrunnum  0
-     -socket  33602
+     -socket  57124
 
-Wed Oct 28 16:39:05 2015
+Fri Oct 30 03:07:16 2015
 
 
- Elaboration Time: 0.02 sec
-
- Current Memory Usage: 227.906 Meg
-
- Total Signals          : 10
- Total Nets             : 33
- Total Signal Drivers   : 2
- Total Blocks           : 3
- Total Primitive Blocks : 3
- Total Processes        : 2
- Total Traceable Variables  : 24
- Total Scalar Nets and Variables : 536
-
- Total Simulation Time: 0.03 sec
-
- Current Memory Usage: 303.407 Meg
-
-Wed Oct 28 16:39:20 2015
-
+ Elaboration Time: 0.05 sec
