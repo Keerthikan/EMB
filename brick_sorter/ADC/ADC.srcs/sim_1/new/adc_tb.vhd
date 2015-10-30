@@ -17,8 +17,8 @@ architecture arch of adc_tb is
       cs       : out std_logic;
       tx_debug: out std_logic_vector(3 downto 0);
       rx_debug: out std_logic_vector(1 downto 0);
-      rx_led: out std_logic_vector(9 downto 0);
-      tx_pwm: out std_logic_vector(1 downto 0)
+      rx_led: out std_logic_vector(9 downto 0)
+  --    tx_pwm: out std_logic_vector(1 downto 0)
       );
   end component;
 
@@ -31,7 +31,7 @@ architecture arch of adc_tb is
   signal tx_debug: std_logic_vector(3 downto 0);
   signal rx_debug: std_logic_vector(1 downto 0) ;
   signal rx_led: std_logic_vector(9 downto 0) ; 
-  signal tx_pwm: std_logic_vector(1 downto 0);
+--  signal tx_pwm: std_logic_vector(1 downto 0);
 
   -- Observed signals - signals mapped to the output ports of tested entity
   signal cs       : std_logic;
@@ -66,8 +66,8 @@ begin
       cs       => cs,
       rx_led => rx_led,
       tx_debug => tx_debug,
-      rx_debug => rx_debug,
-      tx_pwm => tx_pwm
+      rx_debug => rx_debug
+      --tx_pwm => tx_pwm
       );
 
   -- generate the clock                     

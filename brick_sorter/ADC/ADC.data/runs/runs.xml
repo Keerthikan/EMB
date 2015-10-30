@@ -9,7 +9,7 @@
 		<File Type="PA-XSTPRJ" Name="pwm.prj"/>
 		<File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
 	</Run>
-	<Run Id="synth_2" Type="Ft3:Synth" SrcSet="sources_1" Part="xc3s500efg320-4" LaunchPart="xc3s500efg320-4" ConstrsSet="constrs_1" Description="PlanAhead Defaults (XST defaults with hierarchy)" State="current" Dir="$PRUNDIR/synth_2" LaunchTime="1446172231">
+	<Run Id="synth_2" Type="Ft3:Synth" SrcSet="sources_1" Part="xc3s500efg320-4" LaunchPart="xc3s500efg320-4" ConstrsSet="constrs_1" Description="PlanAhead Defaults (XST defaults with hierarchy)" State="current" Dir="$PRUNDIR/synth_2" LaunchTime="1446213632">
 		<File Type="XST-NGC" Name="pwm.ngc"/>
 		<File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_2/synth_2.psg"/>
 		<File Type="XST-SRP" Name="pwm.srp"/>
@@ -44,7 +44,7 @@
 		<File Type="MAP-MRP" Name="pwm.mrp"/>
 		<File Type="MAP-MAP" Name="pwm.map"/>
 	</Run>
-	<Run Id="impl_2" Type="Ft2:EntireDesign" SynthRun="synth_2" Part="xc3s500efg320-4" LaunchPart="xc3s500efg320-4" ConstrsSet="constrs_1" Description="ISE Defaults, including packing registers in IOs off" State="current" Dir="$PRUNDIR/impl_2" LaunchTime="1446172243">
+	<Run Id="impl_2" Type="Ft2:EntireDesign" SynthRun="synth_2" Part="xc3s500efg320-4" LaunchPart="xc3s500efg320-4" ConstrsSet="constrs_1" Description="ISE Defaults, including packing registers in IOs off" State="current" Dir="$PRUNDIR/impl_2" LaunchTime="1446213886">
 		<File Type="PA-EDIF" Name="pwm.edf"/>
 		<File Type="MAP-PSR" Name="pwm.psr"/>
 		<File Type="PA-UCF" Name="pwm.ucf"/>
