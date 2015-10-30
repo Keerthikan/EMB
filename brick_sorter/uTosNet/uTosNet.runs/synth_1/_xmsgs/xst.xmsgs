@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_rx.vhd&quot; line 331:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_rx.vhd&quot; line 254:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/bbfifo_16x8.vhd&quot; line 257:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_tx.vhd&quot; line 270:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_tx.vhd&quot; line 318:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_rx.vhd&quot; line 236:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/bbfifo_16x8.vhd&quot; line 158:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/bbfifo_16x8.vhd&quot; line 215:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/bbfifo_16x8.vhd&quot; line 226:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/bbfifo_16x8.vhd&quot; line 239:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_tx.vhd&quot; line 133:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_tx.vhd&quot; line 281:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_tx.vhd&quot; line 300:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_tx.vhd&quot; line 354:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="2591" delta="new" ><arg fmt="%s" index="1">&quot;/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTN_CTRL/kcuart_rx.vhd&quot; line 141:</arg> <arg fmt="%s" index="2">attribute on instance</arg> &lt;<arg fmt="%s" index="3">INIT</arg>&gt; overrides <arg fmt="%s" index="4">generic/parameter on component</arg>. It is possible that simulator will not take this attribute into account.
+</msg>
+
+<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.srcs/sources_1/imports/SRC/PTNX_top.vhd</arg>&quot; line <arg fmt="%d" index="2">90</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;brick_sig&gt;, &lt;adc_sig&gt;</arg>
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">txHalfFull</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">txFull</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">rxHalfFull</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">rxFull</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">commitWrite</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">commitRead</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">adc</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="1780" delta="new" >Signal &lt;<arg fmt="%s" index="1">freq_gen</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">adc_sig</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0000000000</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">T_data_from_mem_latch</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">T_data_from_mem</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">txData</arg>&lt;<arg fmt="%d" index="2">7</arg>:<arg fmt="%d" index="3">7</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">PseudoTosNet_uart</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">currentCommand_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PseudoTosNet_uart</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">txData_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">PseudoTosNet_uart</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PseudoTosNet_ctrlInst/T_data_from_mem_latch</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">uTosNet</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

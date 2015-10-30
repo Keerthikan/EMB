@@ -1,0 +1,10 @@
+set -loop_iteration_limit 1000
+run
+-ifn uTosNet.prj
+-top uTosNet
+-p xc3s50antqg144-4
+-ofn uTosNet.ngc
+-sd {../../uTosNet.srcs/sources_1/ip/dataRegister}
+-opt_mode speed
+-opt_level 1
+-netlist_hierarchy rebuilt

@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.runs/impl_1/uTosNet_routed.ncd
+OUTFILE=/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.runs/impl_1/uTosNet.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s50an-4tqg144
+WORKINGDIR=/home/thomas/Documents/Git/EMB/brick_sorter/uTosNet/uTosNet.runs/impl_1
+LICENSE=ISE
+USER_INFO=210779069_174157381_210595800_404
