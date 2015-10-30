@@ -19,8 +19,8 @@ NET "MOSI" LOC = R15;
 NET "CS" LOC = T17;
 
 
-NET "tx_pwm[0]" LOC = J14;
-NET "tx_pwm[1]" LOC = J15;
+#NET "tx_pwm<0>" LOC = J14;
+#NET "tx_pwm<1>" LOC = J15;
 
 
 
@@ -35,8 +35,8 @@ NET "tx_pwm[1]" LOC = J15;
 #NET "RX_LEd<8>" LOC = K13;
 #NET "RX_LEd<9>" LOC = L16;
 
-NET "tx_debug[0]" LOC = G15;
-NET "tx_debug[1]" LOC = J16;
-NET "tx_debug[2]" LOC = G13;
-NET "tx_debug[3]" LOC = H16;
+#NET "tx_debug<0>" LOC =  "G15";
+#NET "tx_debug<1>" LOC =  "J16";
+#NET "tx_debug<2>" LOC =  "G13";
+#NET "tx_debug<3>" LOC =  "H16";
 #T17;#R15;#R18;#M13; 

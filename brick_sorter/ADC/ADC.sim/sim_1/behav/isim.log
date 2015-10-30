@@ -8,22 +8,97 @@ Time resolution is 1 ps
 # run 1000ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 100.00us
-at 7190 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
-at 10995 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
-at 18070 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
-at 21875 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
-at 28950 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
-at 32755 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
-at 39830 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
-at 43635 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
-at 50710 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
-at 54515 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
-at 61590 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
-at 65395 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
-at 72470 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
-at 76275 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
-at 83350 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
-at 87155 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
-at 94230 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
-at 98035 ns, Instance /adc_tb/ : Warning: CS needs to be held at '0', not all bits have been transmitted
+# run 1000.00us
+at 14090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 24890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 35690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 46490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 57290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 68090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 78890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 89690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 100490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 111290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 122090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 132890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 143690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 154490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 165290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 176090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 186890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 197690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 208490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 219290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 230090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 240890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 251690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 262490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 273290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 284090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 294890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 305690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 316490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 327290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 338090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 348890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 359690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 370490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 381290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 392090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 402890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 413690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 424490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 435290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 446090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 456890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 467690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 478490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 489290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 500090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 510890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 521690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 532490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 543290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 554090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 564890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 575690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 586490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 597290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 608090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 618890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 629690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 640490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 651290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 662090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 672890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 683690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 694490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 705290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 716090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 726890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 737690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 748490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 759290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 770090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 780890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 791690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 802490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 813290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 824090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 834890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 845690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 856490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 867290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 878090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 888890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 899690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 910490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 921290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 932090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 942890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 953690 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 964490 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 975290 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 986090 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+at 996890 ns(2): Note: sampling in differential mode on channel 0 (/adc_tb/).
+# exit 0

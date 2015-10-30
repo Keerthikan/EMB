@@ -1,8 +1,8 @@
 V3 3
-FL /home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd 2015/10/30.03:30:14 P.20131013
-EN work/pwm 1446172235 \
+FL /home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd 2015/10/30.15:00:27 P.20131013
+EN work/pwm 1446213637 \
       FL /home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd \
-      PB ieee/std_logic_1164 1381692176
-AR work/pwm/Behavioral 1446172236 \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/pwm/Behavioral 1446213638 \
       FL /home/student/Embedded/brick_sorter/ADC/ADC.srcs/sources_1/new/adc.vhd \
-      EN work/pwm 1446172235
+      EN work/pwm 1446213637

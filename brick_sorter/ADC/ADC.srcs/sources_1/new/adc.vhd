@@ -21,7 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use ieee.numeric_std.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -46,17 +46,28 @@ end pwm;
 
 architecture Behavioral of pwm is
 signal newClock : std_logic := '0';
-signal TX :std_logic_vector (4 downto 0) := "11000";--(4 downto 0) := "1000"--"11000";
+signal TX :std_logic_vector(4 downto 0) := "11000";
 signal RX : std_logic_vector(9 downto 0) := "0000000000";
 signal busy: std_logic := '0';
+
+--Falling ClockCount triggers
+constant CS_HIGH_START: integer := 0;
+constant CS_HIGH_END: integer := 1;
+constant DATA_INIT_START: integer  := 1;
+constant DATA_INIT_END: integer := 5;
+
+-- Rising ClockCount triggers
+constant T_sample_start: integer := 6;
+constant T_sample_end:   integer := 8;
+constant data_read_start: integer := 8;
+constant data_read_end: integer := 18; 
+
 begin
-
-
 prescaler01: process(clk)
 variable prescaler_counter : integer range 0 to 50000000 := 0;
 begin
     if rising_edge(clk) then 
-        if prescaler_counter < 7  then --2500000 then -- 14
+        if prescaler_counter < 14  then --2500000 then -- 14
             prescaler_counter := prescaler_counter + 1;
         else
             newClock <= not newClock;
@@ -68,66 +79,51 @@ end process;
 SCLK <= newClock;
 
 SPI_states: process(newClock)
-variable clockCount : integer range 0 to 19 := 0;
+variable clockCount : integer range 0 to 20 := 0;
 begin
-if rising_edge(newClock) then
-    clockCount := clockCount +1;
-   
-    if clockCount = 17 then 
-        clockCount := 0;
-    end if; 
+
+if rising_edge(newClock) then 
+    clocKCount := clockCount + 1;
     
-    if clockCount < 6 then 
-            busy <= '0';
-            rx_debug <= "11";
-    elsif clockCount  > 6 then 
-          if clockCount <= 7 then 
-                RX <= "0000000000"; 
-                busy <= '1';                               -- Nullbit read; 
-                rx_debug <= "01";            
-          end if;
-    end if; 
-    if clockCount < 18 then -- 19
-          if clockCount >= 8 then --9 
-            rx_debug <= "10";
-            RX <= RX(8 downto 0) & MISO; 
-          end if;
-    end if;               
+    if clockCount >= T_sample_start and clockCount <= T_sample_end then 
+        -- MOSI <= '0'; 
+        -- Conversion time 
+        -- MISO would output Null.. => ignore it. 
+        rx_debug <=  "00";
+    end if;
+    
+    if clockCount >= data_read_start and clockCount <= data_read_end then 
+          RX <= RX(8 downto 0) & MISO; 
+          rx_debug <= "01";
+    end if;
+    
+    if clockCount = data_read_end then  
+        clockCount := CS_HIGH_start; 
+        rx_debug <= "10";        
+    end if;    
 end if;
+
 if falling_edge(newClock) then 
-    if clockCount = 0  then 
-        tx_debug <= "0000";
-        CS <= '1';
+
+    if clockCount  >= CS_HIGH_start and ClockCount <= CS_HIGH_END then 
+        CS <= '1'; 
         MOSI <= '0';
-        
-    elsif clockCount < 6 then
-        tx_debug <= "0001";
-        CS <= '0';
+        TX_debug <= "0000";
+    end if;
+    
+    if clockCount >= DATA_init_start and ClockCount <= Data_Init_end then 
+        CS <= '0';    
         TX <= TX(3 downto 0) & TX(4); 
         MOSI <= TX(4);
-        
-    elsif clockCount = 6 then
-        tx_debug <= "0011";
+        TX_debug <= "0001";
+    end if; 
+    
+    if clockCount = T_sample_start then 
         MOSI <= '0';
-        --clockCount := clockCount +1; -- T_sample
-        
-    end if;
-end if;    
+        TX_debug <= "0011";
+    end if;   
+end if;
 end process;
 
-
 rx_led <= rx; 
-
-output: process(busy)
-begin
-    if busy = '0' then
-        if RX = "1111111111" then 
-            tx_pwm <= "11";
-        elsif RX = "0000000000" then 
-            tx_pwm <= "00";
-        else
-            tx_pwm <= "10";
-        end if;
-    end if;  
-end process;           
 end Behavioral;
