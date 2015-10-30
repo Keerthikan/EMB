@@ -1,12 +1,12 @@
-NET "Clk" LOC = B8;
-NET "SCLK" LOC = M13; #JB0
-NET "MISO" LOC = R18; #JB1
-NET "MOSI" LOC = R15; #JB2
-NET "CS"   LOC = T17; #JB3
+NET "Clk" LOC = P60;
+NET "SCLK" LOC = P42; #JB0
+NET "MISO" LOC = P43; #JB1
+NET "MOSI" LOC = P44; #JB2
+NET "CS"   LOC = P45; #JB3
 
-NET "led_red"   LOC = R4; # JB4
-NET "led_green" LOC = F4; # JB5
-NET "led_blue"  LOC = P15; # JB6
+NET "led_red"   LOC = P49; # JB4
+NET "led_green" LOC = P50; # JB5
+NET "led_blue"  LOC = P51; # JB6
 
 #NET "PWM_motor" LOC = M16; # JB7
 
@@ -15,7 +15,7 @@ NET "led_blue"  LOC = P15; # JB6
 #NET "LED_blue"  LOC = K15;
 
 
-NET "MAX_LED_r" LOC = K15; #P15;
-NET "MAX_LED_g" LOC = J15; #F4;
-NET "MAX_LED_b" LOC = J14; #R4;
+NET "MAX_LED_r" LOC = P69;
+NET "MAX_LED_g" LOC = P71;
+NET "MAX_LED_b" LOC = P72;
 
