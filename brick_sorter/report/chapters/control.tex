@@ -1,2 +1,26 @@
 \section{Control}
-This section will explain in detail the code that combines the functionality of the ADC, LEDs and uTosNet(?)
+Control is the top module of this project, which contain the components described above and connect them , makes the decision whether the flipper has to turn left or right based on the value it reads.
+
+Control make 10 readings from the reflection of each color,  30 readings in total. At the end moves the flipper either left or right, or stay at its position based on the 30 readings has performed, and what has been measured. 
+
+\subsection{Implementation of Control}
+
+%Image of the full design
+
+Control has  one process named \texttt{readBlock} which determines the color of the block of the block. \\
+
+
+It start by setting \texttt{led\_on} high.  %Hvorfor gjorde jeg det.. Ikke nødvendigt... 
+
+when the LED\_driver read high  on its \texttt{led\_on} pin, it start the turning on the red led.  when 13 us has passed, it will set \texttt{start\_adc} high.  \\
+
+When the ADC component read \texttt{start\_adc} being high it will start converting the analog value from the photodiode.  When the analog value has been converted to a 10 bit binary value, it will set \texttt{read\_adc} high. When control read \texttt{read\_adc} as high it will read the 10 bit value outputed on \texttt{ADC\_value}. When the the binary value has been intepreted, will either \texttt{redCount}, \texttt{blueCount} or \texttt{greenCount} increment, based on the color that passed the photodiode.  \\
+
+
+When the binary value has been interpret, will the iterator keeping track of the amount of iterations be incremented,  and a signal named \texttt{adc\_read} will be set high, which tells the LED driver reads, and then change its state to the next state.\\
+%igen adc_read = next_state.. dobbelt?
+
+
+After 30 iterations,  will highest value among the variables \texttt{redCount}, \texttt{blueCount} and \texttt{greenCount} be tested, for which the will move the servo motor to the desired position, such that the brick gets sorted based on the color which is detected multiple times. 
+
+
