@@ -1,0 +1,1 @@
+-intstyle "pa" -incremental -L "work" -o "adc_tb.exe" --prj "/home/student/Embedded/brick_sorter/ADC/ADC.sim/sim_1/behav/adc_tb.prj" -top "work.adc_tb" 

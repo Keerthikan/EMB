@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/opt/Xilinx/14.7/ISE_DS/PlanAhead/bin/project_6/project_6.srcs/sources_1/imports/brick_sorter (copy)/led_driver/led_driver.srcs/sources_1/new/led_driver.vhd";
+static const char *ng0 = "/home/student/Embedded/brick_sorter/head/head/head.srcs/sources_1/imports/brick_sorter (copy)/led_driver/led_driver.srcs/sources_1/new/led_driver.vhd";
 extern char *IEEE_P_2592010699;
 
 unsigned char ieee_p_2592010699_sub_2763492388968962707_503743352(char *, char *, unsigned int , unsigned int );

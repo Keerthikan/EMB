@@ -14,7 +14,7 @@ NET "led_blue"  LOC = P51; # JB6
 #NET "LED_green" LOC = J15;
 #NET "LED_blue"  LOC = K15;
 
-
+NET "Out_next_state" LOC = P68;
 NET "MAX_LED_r" LOC = P69;
 NET "MAX_LED_g" LOC = P71;
 NET "MAX_LED_b" LOC = P72;

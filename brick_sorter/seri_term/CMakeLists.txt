@@ -1,5 +1,5 @@
 # Test CMake version
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 2.8.12.2)
 
 project(seri_term LANGUAGES C CXX)
 add_definitions(-std=c++11)
