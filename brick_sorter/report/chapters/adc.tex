@@ -57,8 +57,8 @@ The init states sets up the component for conversion, by sending the init bits ,
 When supplied with 5V, the MCP3008 uses TTL for communication while the FPGA uses 3.3V CMOS. To protect the FPGA it is necessary to translate the logic high of TTL, $V_h=5V$, to logic high of CMOS, $V_h=3.3V$. In order to achieve this a simple circuit was utilized. See figure \ref{circ:logiclevel}. 
 \begin{figure}
 	\begin{circuitikz}
-		\draw(0,0)
-			\to[R] ++(0,2)
+%		\draw(0,0)
+%			\to[R] ++(0,2)
 	;\end{circuitikz}
 \end{figure}  
 \subsection{MCP3008 errors}
