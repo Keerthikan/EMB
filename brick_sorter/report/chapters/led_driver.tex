@@ -1,0 +1,32 @@
+\section{LED driver}
+\subsection{Purpose of the LED driver}
+The LED switch  changes which LED has to be turned on, each LED is turned on seperately such that the reflection of each color can be measured by the photodiode, without it being mixed the reflection of the other colours.  A criteria set by the hardware of the LED driver is that the LED has to be turned on for 13 us such that output of the photodiode can settle, and a steady analog value can be read from the photodiode. 
+\subsection{Implementation of the LED driver}
+
+%\begin{figure}[htb]
+%\centering
+%\begin{tikzpicture}[font=\sffamily,>=triangle 45]
+%  \node [shape=circuit] (item) at (0,0) {led\_driver};
+%  \draw [<-] (item.ina) node [anchor=west,labels] {} -- +(-1,0) node [anchor=east] {CLK};
+%  \draw [->] (item.outa) node [anchor=east,labels] {} -- +(1,0) node [anchor=west] {led\_red};
+%  \draw [->] (item.outb) node [anchor=east,labels] {} -- +(1,0) node [anchor=west] {led\_green};
+%  \draw [->] (item.outc) node [anchor=east,labels] {} -- +(1,0) node [anchor=west] {led\_blue};
+%  \draw [->] (item.outd) node [anchor=east,labels] {} -- +(1,0) node [anchor=west] {start\_ADC};
+%  \draw [<-] (item.inb) node [anchor=west,labels] {} -- +(-1,0) node [anchor=east] {led\_on};
+%  \draw [<-] (item.inc) node [anchor=west,labels] {} -- +(-1,0) node [anchor=east] {next\_state};
+%\end{tikzpicture}
+%\caption{Entity of led\_driver}
+%\end{figure}
+
+The LED driver is implemented with 2 process , \texttt{state\_changer} and \texttt{LED\_process}. 
+
+\texttt{State\_changer} consists of an  FSM which has three states , \texttt{Red}, \texttt{Green}, \texttt{Blue} which each turn on their respective LED, and turn off the others.  The FSM start at \texttt{Red}.  At this state the \texttt{led\_red} is set to be high.\\
+
+
+In \texttt{LED\_process}  is  variable named \texttt{count} incremented for each \texttt{rising\_edge} of the CLK..  When \texttt{count} goes above 650, will 13 us have passed, and  \texttt{start\_ADC} wil be set high, which the component ADC will use to know when it can start to convert the analog value of the photodiode. While count is below it \texttt{start\_adc} kept low.  \\
+
+The FSM changes state when \texttt{next\_state} is read as high,  when it is read as low it will stay at the same state. 
+
+%% May have to remove LED_on.. Don't have to turn them off.. 
+
+
