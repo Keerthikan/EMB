@@ -75,8 +75,24 @@ The output voltage of this circuit is determined by:
 \end{eqnarray}
 When an LED is flashed onto a same-colored brick, the output of the op-amp is expected to be $V_{\text{out}} = V_{\text{sat}}$, the saturation voltage. By experimentation this was found to be $V_{\text{sat}}=3.78$v.
 
-$I_{\text{in}}$ was determined by making the circuit as seen in figure \ref{circ:iinmeasure}. By reflecting the light from the LEDs off of the bricks and onto the photodiode, the maximum current to be expected generated from the photodiode was found to be $I_{\text{in}}=10\mu$A.
-This results in $R_f=378\text{k}\Omega$, however, it was found that applying this resistor causes the blue brick to also saturate the op amp when shining the green LED. Additionally, when mounting the LED assembly to the acrylic slide, the slide itself was found to enlarge $I_{\text{in}}$ by a significant margin. Due to these factors $R_f$ was finally dimensioned using a 1M$\Omega$ potentiometer. 
+$I_{\text{in}}$ was determined by making the circuit as seen in figure \ref{circ:iinmeasure}. By reflecting the light from the LEDs off of the bricks and onto the photodiode, a current is induced in the circuit and a voltage drop can be measured across the 1k$\Omega$ resistor the maximum current to be expected generated from the photodiode was found to be $I_{\text{in}}=10\mu$A.
+\begin{figure}[h!]
+	\centering
+	\begin{circuitikz}
+		\draw(0,0) 
+			to[short] ++(2,0)
+				to[R=1k$\Omega$] ++(0,-2)
+					to[short] ++(-2,0) 
+						to[pD] ++(0,2) coordinate(d_right)
+			(d_right) ++(-1.5,0) to[short,-o] ++(-1,0)
+			(d_right) ++(-1.5,0) to[lamp] ++(0,-2)
+				to[short,-o] ++(-1,0)
+	;\end{circuitikz}
+	\caption{Circuit used for measuring the max current expected to be generated from the photo diode when in operation.}
+	\label{circ:iinmeasure}
+\end{figure}
+
+This results in $R_f=378\text{k}\Omega$, however, it was found that applying this resistor causes the blue brick to also saturate the op amp when shining the green LED. Additionally, when mounting the LED assembly to the acrylic slide, the slide itself was found to enlarge $I_{\text{in}}$ by a significant margin. Due to these factors $R_f$ was finally dimensioned using a 1M$\Omega$ potentiometer. \todo{And final value is?!}
 
 \begin{figure}[h!]
   	\centering
@@ -166,11 +182,26 @@ In testing, a significant amount of oscillation appeared on the output of the op
 \end{figure}
 
  According to \cite{mec} the compensation capacitor is dimensioned using
-$$f_c=\frac{1}{2\Pi R C}$$
-The oscillation happens at $\approx 138\text{kHz}$ and $R = R_f = 240\text{k}$ this results in 
-$$C = 4.8\text{pF}$$
+\begin{equation}
+	\label{eq:rcfilter}
+	f_c=\frac{1}{2\pi R C}
+\end{equation}
+The oscillation happens at $\approx 138\text{kHz}$ and $R = R_f = 160\text{k}$ this results in 
+$$C = 7.2\text{pF}$$ \todo{verify capacitor value}
 The filtered signal can be seen in figure \ref{fig:nooscillation}. After filtering there is still a significant settling time, $T_{\text{s}}$, before the signal can be safely digitized. $T_{\text{s}}$ varies with the amplitude of the final signal, therefore a conservative time before sampling with the ADC must be set. 
-On figure \ref{fig:settletime} it can be seen that the settling time is an expected $T_{\text{s}}=12.65\mu$s.
+On figure \ref{fig:settletime} it can be seen that the worst case settling time is an expected $T_{\text{s}}=12.65\mu$s.
+\\
+Later sources \cite{maxim} suggest that, in the case of dimensioning the compensation capacitor for a transimpedance amplifier, TIA, one should apply the following formula:
+\begin{equation}
+	c_f=\frac{1}{4\pi R_\text{F}f_\text{GBWP}}(1+\sqrt{1+8\pi R_\text{F}C_if_\text{GBWP}})
+\end{equation}
+Here, $f_\text{GBWP}$ is the unity gain band width of the op amp and $C_i$ is the capacitance of the photodiode. 
+The resultant capacitance should result in the optimal value such that oscillation is minimized whilst not impeding on the performance of the op amp. In the case of the circuit of this design the capacitance should be:
+\begin{gather}
+	R_F = 165\text{k}\Omega \quad \text{,} \quad f_\text{GBWP}=0.7\text{MHz} \quad \text{,} \quad C_i=11\text{pF}\\
+	c_f = 4.725 \text{pF}
+\end{gather}
+Using the value found by equation \ref{eq:rcfilter} would overcompensate the system and could potentially hinder the slew rate of the circuit. Since the entire reasoning behind dampening the oscillation in the first place was to decrease $T_\text{s}$, a 4.8pF, the nearest available size, capacitor was chosen as the compensation capacitor.  
 \begin{figure}[h!]
 	\includegraphics[width=\linewidth]{images/settle}
 	\caption{Worst case settling time. When LED signal goes high, the photo diode is expected to have settled after $T_{\text{s}}=12.65\mu$s.}

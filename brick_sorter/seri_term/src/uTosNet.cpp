@@ -12,20 +12,25 @@ using namespace boost::algorithm;
 
 uTosNet::uTosNet() : serial(io)
 {
+    open();
+}
+
+uTosNet::~uTosNet()
+{
+    serial.close();
+}
+
+void uTosNet::open()
+{
     serial.open(port);
     serial.set_option(serial_port_base::baud_rate(baud_rate));
     serial.set_option(serial_port_base::flow_control(serial_port::flow_control::none));
     serial.set_option(serial_port_base::parity(serial_port::parity::none));
     serial.set_option(serial_port_base::stop_bits(serial_port::stop_bits::one));
     serial.set_option(serial_port_base::character_size(char_size));
-
-    if(serial.is_open())
-    {
-        cout << "Serial connection established!" << std::endl;
-    }
 }
 
-uTosNet::~uTosNet()
+void uTosNet::close()
 {
     serial.close();
 }
@@ -38,10 +43,12 @@ void uTosNet::writeln(std::string &addr, std::string &msg)
 
 string uTosNet::readln(std::string &addr)
 {
+    //open();
     string buffer = "r" + addr;
 
     send_data(buffer);
 
+    //close();
     return read_data();
 }
 
@@ -89,4 +96,16 @@ void uTosNet::interface()
         }
     }
     cout << "Program terminated" << endl;
+}
+
+void uTosNet::poll()
+{
+    string red = "20", green = "21", blue = "22";
+    while(true)
+    {
+       sleep(1);
+       cout << "red     : " << stoi(readln(red),0,16) << endl;
+       cout << "green   : " << stoi(readln(green),0,16) << endl;
+       cout << "blue    : " << stoi(readln(blue),0,16) << endl << endl;
+    }
 }
