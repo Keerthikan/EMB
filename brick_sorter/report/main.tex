@@ -5,8 +5,9 @@
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{changes}
+\usepackage{rotating}
 
-
+\def\arraystretch{1.2}
 %\usepackage{framed}
 %\usepackage{amsfonts}
 
@@ -102,6 +103,10 @@
 }
 
 \usepackage{todonotes}
+
+\newcommand{\dout}{D$_\text{out}$ }
+\newcommand{\din}{D$_\text{in}$ }
+\newcommand{\cs}{$\overline{\text{CS}}$ }
 %opening
 \title{Brick Sorter}
 \author{Thomas Søndergaard Christensen, Keerthikan Ratnarajah}
@@ -130,6 +135,8 @@
 \input{chapters/led_driver}
 \newpage
 \input{chapters/control}
+\newpage
+\input{chapters/utosnet}
 \newpage
 \input{bib}
 
