@@ -209,31 +209,21 @@ Using the value found by equation \ref{eq:rcfilter} would overcompensate the sys
 
 \subsection{LED Driver}
 The LED driver is the VHDL component that contains the logic that determines which LED is on at any given time.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{images/LED_ent}
+	\caption{heading}
+	\label{fig:pinoutled}
+\end{figure}
 Only one LED is on at a time such that the reflection of each color can be measured by the photodiode individually.
 As mentioned in the previous section the LED has to be turned on for 13 $\mu$s such that output of the photodiode can settle such that the voltage is steady for the ADC conversion.
 \subsection{Implementation of the LED driver}
-
-%\begin{figure}[htb]
-%\centering
-%\begin{tikzpicture}[font=\sffamily,>=triangle 45]
-%  \node [shape=circuit] (item) at (0,0) {led\_driver};
-%  \draw [<-] (item.ina) node [anchor=west,labels] {} -- +(-1,0) node [anchor=east] {CLK};
-%  \draw [->] (item.outa) node [anchor=east,labels] {} -- +(1,0) node [anchor=west] {led\_red};
-%  \draw [->] (item.outb) node [anchor=east,labels] {} -- +(1,0) node [anchor=west] {led\_green};
-%  \draw [->] (item.outc) node [anchor=east,labels] {} -- +(1,0) node [anchor=west] {led\_blue};
-%  \draw [->] (item.outd) node [anchor=east,labels] {} -- +(1,0) node [anchor=west] {start\_ADC};
-%  \draw [<-] (item.inb) node [anchor=west,labels] {} -- +(-1,0) node [anchor=east] {led\_on};
-%  \draw [<-] (item.inc) node [anchor=west,labels] {} -- +(-1,0) node [anchor=east] {next\_state};
-%\end{tikzpicture}
-%\caption{Entity of led\_driver}
-%\end{figure}
 
 The LED driver is implemented with 2 processes , \texttt{state\_changer} and \texttt{LED\_process}. 
 
 \texttt{State\_changer} consists of a finite state machine, FSM, which has three states , \texttt{Red}, \texttt{Green}, \texttt{Blue} which each turn on their respective LED, and turn off the others.  The FSM start at \texttt{Red}.  At this state \texttt{led\_red} is set to high.\\
 
-
-In \texttt{LED\_process} \texttt{count} is incremented for each \texttt{rising\_edge} of \texttt{CLK}.  When \texttt{count} goes above 650, 13 $\mu$s have passed, and  \texttt{start\_ADC} is set high. 
+In \texttt{LED\_process}, \texttt{count} is incremented for each \texttt{rising\_edge} of \texttt{CLK}.  When \texttt{count} goes above 650, 13 $\mu$s have passed, and  \texttt{start\_ADC} is set high. 
 \texttt{start\_ADC} is used to signal to the ADC component that a conversion is needed.
 Once the conversion is completed, this will be signalled to the control module, see section \ref{sec:control}, which in turn will set \texttt{next\_state} high.
 When \texttt{next\_state} goes high, \texttt{count} is reset, \texttt{start\_ADC} is set low  and the state machine progresses to the next state.

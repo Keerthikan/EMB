@@ -4,13 +4,23 @@ The digital logic used to determine the color of a brick requires that the analo
 As mentioned, the MCP3008 is an ADC, it is capable of converting an analog value ranging from 0 to V$_{\text{ref}}$ into a 10 bit value. It is rated to have a conversion rate of 200 ksps at V$_{\text{dd}} = 5$V. 
 
 \begin{figure}[h!]
-	\centering
-	\includegraphics[scale = 0.5]{images/MPC3008.png}
-	\caption{Pinout diagram of the MCP3008 ADC.}
-	\label{fig:pinout}
+	\begin{subfigure}[b]{.48\linewidth}
+		\centering
+		\includegraphics[width=.5\linewidth]{images/MPC3008.png}
+		\caption{Pinout diagram of the MCP3008 ADC.}
+		\label{fig:pinout}
+	\end{subfigure}
+	\begin{subfigure}[b]{.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/ADC_ent}
+		\caption{The ADC component pinout}
+		\label{fig:adcpinout}
+	\end{subfigure}
 \end{figure}
 As can be seen on figure \ref{fig:pinout}, The chip is a 16 pin dip package. Pins 1 through 8 consist of eight seperate input ports for analog voltages. Pins 9 through 16 are, in descending order: V\textsubscript{dd}, V\textsubscript{ref}, AGND , CLK, \dout,  \din, \cs and GND. 
-The ADC uses an SPI-based interface to communicate with the FPGA. For this communication four of the previously mentioned pins are utilized: CLK, \cs, \dout, \din. The purpose of these four pins will be explained in more detail in the following paragraphs
+The ADC uses an SPI-based interface to communicate with the FPGA. 
+For this communication four of the previously mentioned pins are utilized: CLK, \cs, \dout, \din. Additional pins of the ADC component can be seen in figure \ref{fig:adcpinout}. 
+The purpose of these four pins will be explained in more detail in the following paragraphs.
 
 
 \paragraph{CLK:}

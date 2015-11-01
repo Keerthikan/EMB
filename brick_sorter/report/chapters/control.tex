@@ -3,7 +3,12 @@
 Control is the VHDL component that acts as top module of this project. 
 It contains the components described in previous sections and connects them.
 This is also where the sorting of the bricks is done.
-
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.4]{images/ent_control}
+	\caption{Pinout of the control component.}
+	\label{fig:pinoutcontrol}
+\end{figure}
 Control makes 10 readings from the reflection of each color, 30 readings in total. 
 At the end the flipper is moved to either the left or right position, based on the 30 readings that were performed.
 
