@@ -1,13 +1,17 @@
 \documentclass[12pt]{article}
 \usepackage{fullpage}
 \usepackage{tikz}
+\usepackage{fullpage}
 \usepackage{rotating}
+
 \begin{document}
+\begin{figure}
 \begin{turn}{90}
 \begin{tikzpicture}[scale=0.2]
 \tikzstyle{every node}+=[inner sep=0pt]
 \draw [black] (36.2,-13.3) circle (3);
 \draw (36.2,-13.3) node {$start$};
+\draw [black] (36.2,-13.3) circle (2.4);
 \draw [black] (24,-23.3) circle (3);
 \draw (24,-23.3) node {$init$};
 \draw [black] (26.7,-43.6) circle (3);
@@ -17,9 +21,9 @@
 \draw [black] (54.6,-33.6) circle (3);
 \draw (54.6,-33.6) node {$read$};
 \draw [black] (50.9,-20.5) circle (3);
-\draw (50.9,-20.5) node {$output\_adc$};
+\draw (50.9,-20.5) node {$output_adc$};
 \draw [black] (35.257,-10.464) arc (226.1237:-61.8763:2.25);
-\draw (42.54,-4.58) node [above] {$clockCount\mbox{ }=>\mbox{ }0\mbox{ }and\mbox{ }\mbox{ }clockCount\mbox{ }<=1$};
+\draw (42.54,-4.58) node [above] {$clockCount\mbox{ }=>\mbox{ }0\mbox{ }and\mbox{ }\mbox{ }clock_clount\mbox{ }<=1$};
 \fill [black] (37.88,-10.83) -- (38.79,-10.6) -- (38.07,-9.9);
 \draw [black] (25.539,-20.728) arc (144.62852:114.05252:19.217);
 \fill [black] (25.54,-20.73) -- (26.41,-20.37) -- (25.59,-19.79);
@@ -56,4 +60,5 @@
 \fill [black] (53.88,-20.26) -- (54.63,-20.83) -- (54.72,-19.83);
 \end{tikzpicture}
 \end{turn}
+\end{figure}
 \end{document}

@@ -1,0 +1,20 @@
+\documentclass[12pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,positioning,calc,shapes.geometric}
+
+\begin{document}
+\begin{figure}
+\begin{tikzpicture}[scale=0.2]
+\node (rect) at (4,2) [draw,thick,minimum width=2cm,minimum height=2cm] (ADC) {ADC};
+\node (rect) at (34,2) [draw,thick,minimum width=2cm,minimum height=2cm] (LED) {LED};
+\node (rect) at (19,-20) [draw,thick,minimum width=8cm,minimum height=2cm] (Control){Control};
+\node (rect) at (19,-40) [draw,thick,minimum width=2cm,minimum height=2cm] (PWM) {PWM};
+%----%
+\draw [->](LED) -- node[midway,above] {\texttt{start\_adc}}(ADC) ;
+\draw [->](ADC) -- node[midway, right] {\texttt{read\_adc} } (ADC |- Control.north);
+\draw [<-](LED) --node[midway, right] {\texttt{next\_state} } (LED |- Control.north);
+\draw [->](Control) -- node[midway, right] {\texttt{direc} }(PWM);
+\draw [->] (ADC.west) -- (-10,2) --  node[midway, right] {\texttt{adc\_value} }(-10,-20) --  (Control);
+\end{tikzpicture}
+\end{figure}
+\end{document}
