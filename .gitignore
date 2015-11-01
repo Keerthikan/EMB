@@ -152,6 +152,7 @@ brick_sorter/uTosNet
 *.tdo
 *.toc
 *.out
+*.soc
 
 #Matlab
 *.m~
