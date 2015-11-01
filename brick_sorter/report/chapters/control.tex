@@ -12,7 +12,7 @@ Control has  one process named \texttt{readBlock} which determines the color of 
 
 %It start by setting \texttt{led\_on} high.  %Hvorfor gjorde jeg det.. Ikke nødvendigt... 
 
-The process start by turning from the component LED_driver, which turns on the red LED, and wait 13 us, after which it set \texttt{start\_adc} high.
+The process start by turning from the component \texttt{LED\_driver}, which turns on the red LED, and wait 13 us, after which it set \texttt{start\_adc} high.
 
 When the ADC component read \texttt{start\_adc} being high it will start converting the analog value from the photodiode.  When the analog value has been converted to a 10 bit binary value, it will set \texttt{read\_adc} high. When control read \texttt{read\_adc} as high it will read the 10 bit value outputed on \texttt{ADC\_value}. When the the binary value has been intepreted, will either \texttt{redCount}, \texttt{blueCount} or \texttt{greenCount} increment, based on the color that passed the photodiode.  \\
 

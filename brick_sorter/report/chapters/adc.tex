@@ -1,64 +1,89 @@
 \section{ADC}
-\subsection{Purpose of the ADC}
-An ADC converter is needed for this project to convert the analog voltages which the photo diode create into an digital value which the digital logic need to determine the color of the block.   
-The ADC component being used for this process will be the MCP3008, which is an 10 bit ADC converter.  
-\subsection{MCP3008}
-The MCP3008 is an ADC component, it is capable of converting an analog value from the ranging from 2.7 - 5.5 into an 10 bit value. It is rated to have an conversion rate of 200 ksps at an $V_{dd} = 5V$
+The digital logic used to determine the color of a brick requires that the analog voltage is converted to a digital value. To this end, an analog to digital converter, ADC, is used. Specifically an MCP3008 \cite{mcp3008} which is a 10 bit ADC.
+\subsection{The ADC: MCP3008}
+As mentioned, the MCP3008 is an ADC, it is capable of converting an analog value ranging from 0 to V$_{\text{ref}}$ into a 10 bit value. It is rated to have a conversion rate of 200 ksps at V$_{\text{dd}} = 5$V. 
 
-
-\todo[inline]{\textbf{-- Billede af komponentn\\
-}}
-
-\begin{figure}[H]
-\center
-\includegraphics[scale = 0.5]{images/MPC3008.png}
-\caption{}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.5]{images/MPC3008.png}
+	\caption{Pinout diagram of the MCP3008 ADC.}
+	\label{fig:pinout}
 \end{figure}
-The chip has 16 pins, at which the pins to the left consist of 8 seperate input ports for analog voltages, and the right side consist of V\textsubscript{dd}, V\textsubscript{ref}, AGND , CLK, CS, Dout,  Din.   The FPGA interfaces the with ADC using the pins CLK, CS, DOUT, DIN. 
-The ADC uses an SPI-based interface to communicate with the FPGA. \\
+As can be seen on figure \ref{fig:pinout}, The chip is a 16 pin dip package. Pins 1 through 8 consist of eight seperate input ports for analog voltages. Pins 9 through 16 are, in descending order: V\textsubscript{dd}, V\textsubscript{ref}, AGND , CLK, \dout,  \din, \cs and GND. 
+The ADC uses an SPI-based interface to communicate with the FPGA. For this communication four of the previously mentioned pins are utilized: CLK, \cs, \dout, \din. The purpose of these four pins will be explained in more detail in the following paragraphs
 
 
-The CLK consist of the clock frequency at which data will be sent to the ADC and read from the ADC. According to the datasheet is the max frequency for the comunication 3.57 mHz, which the FPGA provides it with at that port. The datasheet states that the min. clock rate has to be 10Khz as this will affect the linearity performance of the ADC,  and especially as different temperatures. \\
+\paragraph{CLK:}
+This pin, perhaps not surprisingly, will receive the clock signal. According to the datasheet the max frequency for communication is 3.57 MHz, which is provideded by the FPGA at that port.
+
+\paragraph{D$_\text{in}$:}
+This is the input port which the FPGA sends the five init bits to. 
+bit five is the start bit ,  bit four determines whether the system should perform a single ended or differential conversion. 
+Single ended conversion converts the input from one port and differential conversion converts the difference between two ports. 
+The three LSBs determines from which input port the conversion should be done.
+The init bits can be sent at either the rising, or the falling edge of the clock.\\
+
+In this application, only one value needs to be converted, namely the signal from the photo diode amplifier. 
+This signal is connected to CH0.
+Additionally conversion will always be single ended, therefore the init bits will always be of the same form: "11000".
+
+\paragraph{D$_\text{out}$:}
+This is the output port from which the FPGA reads the converted signal as a 10 bit binary number. 
+When a conversion has been performed,  the first bit which will be read from \dout will be the a null bit.
+Following the null bit are the 10 bits outputted from MSB to LSB. 
+\dout will stay undefined until the init bits have been provided on \din and the sample and hold period has passed. 
+The sample and hold period is 1.5 clock cycles as per the datasheet. 
+Due to this sample and hold period, the output is given on the inverse clock edge as the init bits were received.
+It is custom to send init bits on the falling edge and read the output on the rising edge.
 
 
-Din is the input port which the FPGA sends the init bits to. 
-As the component is only going to read an analog value from CHO, and convert into a digital value,  will the init bits send to the ADC be "11000".  The first '1' is the start bit ,  The next '1' bit bit determines whether the system should perform a single ended or differential conversion. Single ended conversion converts the input from one port, and differential conversion converts the difference between two ports. '1' declares the conversion as an single ended conversion. The last 3 bits "000" determines the port at which it has to read from, in this case it is always from CH0. The init bits can either be send at either the rising or falling edge of the clock.   \\
-  
-
-Dout is the output port which the FPGA reads the converted analog value as an 10 bit digital binary number. When a conversion has been performed,  the first bit the which will be read from the Dout port will be the a null bit, and afterwards will each bit of the 10 bit be outputted from MSB to LSB. Dout will stay undefined, until the init bits has been provided to the port, and the sample and hold period has passed being 1.5 clockcycle according to the datasheet. Due to this sample and hold period, will the output be clocked out,  on the inverse clockevent of the init bits were sent.\\
-
-
-CS is chip select. It is used to initiate communication between ADC and FPGA, when it is pulled low, when it is pulled high, it will end the conversion and put the ADC in a standby mode.  It must be pulled high between each new conversions. 
+\paragraph{$\overline{\textbf{CS}}:$}
+This pin acts as chip select. It is used to initiate communication between the ADC and FPGA.
+Pulling \cs low initiates communication mode. Pulling \cs high ends the communication and puts the ADC in low-power standby mode.  
+\cs must be toggled between each new conversion. 
  
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{images/timing}
+	\caption{Diagram showing the timings of a single communication.}
+	\label{fig:timing}
+\end{figure}
 
-
-\todo[inline]{\textbf{-- diagram viser timing tingen -- \\
-}}
+The entire communication process done to read a single conversion is depicted in figure \ref{fig:timing}. As can be seen, when \cs goes low, \din receives the five init bits. The sample and hold time is passed and a NULL bit followed by the result of the conversion is output on \dout. Throughout the period t$_\text{data}$ the chip is powering down and \dout reaches a high impedance state.
 \subsection{Implementation of communication}
+The communication between the MPC3008 and the FPGA is implemented as a VHDL component named ADC. 
+The communication is implemented based on the timing diagram as showed in \ref{fig:timing}.  
 
-The communication between MPC3008 and the FPGA is implemented as an entity named ADC. The communication is implemented based on the timing diagram as showed in \ref{fig:ADC_diagram} .  A conversion  consist of 17 rising edge clock event.  \\
+\begin{figure}[h!]
+	\centering
+	\centerline{\includegraphics[width=18cm]{images/statemachine}}
+	\caption{Program flow of the ADC component.}
+	\label{fig:statemachine}
+\end{figure}
 
-As the component operates on a lower clock frequency than the FPGA provides. A process named \texttt{prescaler01}, changes the state of the signal \texttt{newClock} with an frequency of $3.57$ Mhz. \\
-
-Within another process called \texttt{ADC\_states},  a variable named \texttt{clockCount} is incremented for each rising edge of \texttt{newClock}.  Within this process  both \texttt{falling\_edge} and \texttt{rising\_edge} of \texttt{newClock} is detected. \\
-
-When \texttt{clockCount} is between 0 and 1 on a \texttt{falling\_edge} of the \texttt{newClock}, the \texttt{CS} is set high, \texttt{MOSI} is set low, and \texttt{read\_adc} is low such that other components connected that the binary output is not ready to be read. \\
-
-When \texttt{clockCount} is between 1 and 5 on a \texttt{falling\_edge} of the \texttt{newClock}, will the \texttt{CS} be set low, and send  these bits "11000" from msb to lsb while \texttt{clockCount} is between 1 and 5, using  the MOSI.  \\
-
-When \texttt{clockCount} is 6 on a \texttt{falling\_edge} of the \texttt{newClock} will MOSI  set to low. At this state MPC3008 start its sample and time. \\
-
+As the MCP3008 operates at a clock frequency lower than what the FPGA provides. 
+A process named \texttt{prescaler01} is designed to downscale the 50MHz external clock to the 3.57MHz required by the ADC. 
+The downscaled clock is routed to \texttt{newClock}.
 
 
-When \texttt{clockCount} is between 6 and 8 on a \texttt{rising\_edge} of the \texttt{newClock} will MOSI still be low, MPC3008  will still be sampling and at the eight clockCount it would have outputted  a NULL bit. \\
+The process \texttt{ADC\_states}, increments \texttt{clockCount} for each rising edge on \texttt{newClock}.
+This process detects both the falling and rising edges of \texttt{newClock}.
 
-When \texttt{clockCount} is between 8  and 18 on a \texttt{rising\_edge} of the \texttt{newClock}, is RX concatenated 10 times with MISO, which read the each bit the MCP3008 outputs.\\
+The progression of the state machine is based on the value of \texttt{clockCount}. 
+This progression can be seen in figure \ref{fig:statemachine} and is explained below.\\
 
-When \texttt{clockCount} is 18 on a \texttt{falling\_edge} of the \texttt{newClock} is \texttt{read\_adc} set high, such that other component conected that that pin will know that the adc value is ready to be read from. \\
+When \texttt{clockCount} is:
+\begin{itemize}
+	\item \textbf{0-1:} on the \texttt{falling\_edge} of \texttt{newClock}, \cs is set high, \texttt{MOSI} is set low and \texttt{read\_adc} is set low, signalling that conversion is not yet complete.\\
+	\item \textbf{1-5:}on the \texttt{falling\_edge} of \texttt{newClock}, \cs is set low and the init bits are transmitted on \texttt{MOSI}, MSB first.
+	\item \textbf{6:} on the \texttt{falling\_edge} of \texttt{newClock}, \texttt{MOSI} is set low. At this state MCP3008 starts sample and hold.
+	\item \textbf{6-8:} on the \texttt{falling\_edge} of \texttt{newClock}, \texttt{MOSI} is kept low while the conversion is running. At \texttt{clockCount}=8 the MCP3008 outputs the NULL bit.
+	\item \textbf{8-18:} on the \texttt{falling\_edge} of \texttt{newClock}, all 10 bits of the conversion are shifted from \texttt{MISO} into RX, a \texttt{std\_logic\_vector} containing the result of the conversion.
+	\item \textbf{18:} on the \texttt{falling\_edge} of \texttt{newClock}, \texttt{read\_adc} is set high, signalling that conversion is complete and the result is ready.
+	\item \textbf{19:} on the \texttt{falling\_edge} of \texttt{newClock}, \texttt{clockCount} is reset and the process starts over.
+\end{itemize}
 
-When \texttt{clockCount} is 19 on \texttt{rising\_edge} of the \texttt{newClock} is \texttt{clockCount} set to zero, everything start all over again. \\
-
-The conversion itself take up 17 \texttt{rising\_edges} and one \texttt{clockCount} is used to set \texttt{CS} high ,  and one \texttt{clockCount} is used to make sure that it read the 10 bit value. 
+The conversion itself takes up only 17 \texttt{rising\_edges}, however one \texttt{clockCount} is used to set \cs high  and one \texttt{clockCount} is used to make sure that it read the 10 bit value. 
 
 
 %begin{figure}[htb]
@@ -79,17 +104,17 @@ The conversion itself take up 17 \texttt{rising\_edges} and one \texttt{clockCou
 
 \subsection{Logic Level Converters}
 When supplied with 5V, the MCP3008 uses TTL for communication while the FPGA uses 3.3V CMOS. To protect the FPGA it is necessary to translate the logic high of TTL, $V_h=5V$, to logic high of CMOS, $V_h=3.3V$. In order to achieve this a simple circuit was utilized. See figure \ref{circ:logiclevel}. 
-<<<<<<< HEAD
-%\begin{figure}
-%	\begin{circuitikz}
-%		\draw(0,0)
-%			\to[R] ++(0,2)
-%	;\end{circuitikz}
-%\end{figure}  
-=======
+
 \begin{figure}
+	\centering
 	\begin{circuitikz}
-%		\draw(0,0)
-%			\to[R] ++(0,2)
+		\draw(0,0)
+			 node[above]{V$_\text{TTL}$}
+				to[short,o-] ++(1,0)
+					to[R=$R_1$] ++(2,0) node[circ]{} coordinate(junc)
+							to[zDo=$D_1$] ++(0,-2)
+								node[ground](){}
+					(junc) to[short,-o] ++(1,0) node[above]{V$_\text{CMOS}$}
 	;\end{circuitikz}
+	\caption{Uni-directional logic level converter.}
 \end{figure}  

@@ -1,8 +1,9 @@
 \documentclass[12pt]{article}
+\usepackage{fullpage}
 \usepackage{tikz}
+\usepackage{rotating}
 \begin{document}
-\begin{figure}[H]
-\begin{center}
+\begin{turn}{90}
 \begin{tikzpicture}[scale=0.2]
 \tikzstyle{every node}+=[inner sep=0pt]
 \draw [black] (36.2,-13.3) circle (3);
@@ -54,7 +55,5 @@
 \draw (57.33,-15.77) node [right] {$clockCount\mbox{ }\mbox{ }=\mbox{ }18$};
 \fill [black] (53.88,-20.26) -- (54.63,-20.83) -- (54.72,-19.83);
 \end{tikzpicture}
-\end{center}
-\end{figure}
-
+\end{turn}
 \end{document}
