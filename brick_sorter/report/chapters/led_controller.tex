@@ -1,5 +1,5 @@
 \section{LED Driver}
-The brick sorter relies on the varying reflective properties of different colors. Using a variety of different color LEDs will enable the sorter to detect different color bricks. This section will describe in detail the decisions made in designing the circuit used for the LEDs and the photo diode as well as presenting the code responsible for driving the LEDs. 
+The brick sorter relies on the varying reflective properties of different colours. Using a variety of different colour LEDs will enable the sorter to detect different colour bricks. This section will describe in detail the decisions made in designing the circuit used for the LEDs and the photo diode as well as presenting the code responsible for driving the LEDs. 
 
 \subsection{Circuit Design}
 \begin{figure}[h!]
@@ -73,7 +73,7 @@ The output voltage of this circuit is determined by:
 	V_{\text{out}}=&I_{\text{in}}\cdot R_f\\
 	R_f =& R_1+R_{\text{pot}}
 \end{eqnarray}
-When an LED is flashed onto a same-colored brick, the output of the op-amp is expected to be $V_{\text{out}} = V_{\text{sat}}$, the saturation voltage. By experimentation this was found to be $V_{\text{sat}}=3.78$v.
+When an LED is flashed onto a same-coloured brick, the output of the op-amp is expected to be $V_{\text{out}} = V_{\text{sat}}$, the saturation voltage. By experimentation this was found to be $V_{\text{sat}}=3.78$v.
 
 $I_{\text{in}}$ was determined by making the circuit as seen in figure \ref{circ:iinmeasure}. By reflecting the light from the LEDs off of the bricks and onto the photodiode, a current is induced in the circuit and a voltage drop can be measured across the 1k$\Omega$ resistor the maximum current to be expected generated from the photodiode was found to be $I_{\text{in}}=10\mu$A.
 \begin{figure}[h!]
@@ -158,7 +158,7 @@ Table \ref{tab:ledtable} shows the various responses of the photodiode when expo
 		B & 1.78 & 2.00 & 3.86 & 2.38\\
 		\hline
 	\end{tabular}
-	\caption[Response from photodiode circuit.]{Response from photodiode circuit. Each color LED; red, green and blue is flashed while each color brick is used as the reflective surface.}
+	\caption[Response from photodiode circuit.]{Response from photodiode circuit. Each colour LED; red, green and blue is flashed while each colour brick is used as the reflective surface.}
 	\label{tab:ledtable}
 \end{table}
 \subsection{Circuit Testing}
@@ -215,7 +215,7 @@ The LED driver is the VHDL component that contains the logic that determines whi
 	\caption{heading}
 	\label{fig:pinoutled}
 \end{figure}
-Only one LED is on at a time such that the reflection of each color can be measured by the photodiode individually.
+Only one LED is on at a time such that the reflection of each colour can be measured by the photodiode individually.
 As mentioned in the previous section the LED has to be turned on for 13 $\mu$s such that output of the photodiode can settle such that the voltage is steady for the ADC conversion.
 \subsection{Implementation of the LED driver}
 
