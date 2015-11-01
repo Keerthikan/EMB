@@ -1,20 +1,27 @@
 \section{Servo motor}
-The purpose of the servo motor is control the "flipper", which separates the blocks. \\
+The purpose of the servo motor is to control the "flipper", which separates the bricks. \\
 
 
-A servo motor consist of an DC motor, potentiometer and a control circuit.  As the motor rotates, the resistance of the potentiometer changes,  which the the control circuit  uses and  regulate its movement and the direction based on it.   When the motor shaft is at the desired position the power supplied to the motor will be used stop the motor, such that it doesn't move away from the desired position. \\
+A servo motor consist of a DC motor, a potentiometer and a control circuit.
+As the motor rotates, the resistance of the potentiometer changes,  which the control circuit uses to regulate its movement.
+When the motor is at the desired position it is blocked to avoid movement.\\
 
-The desired position is sent through the sense wire, (often the white wire). The position itself is defined as the duty cycle of the PWM signal that it is provided with, as seen on \ref{fig:Servo_position}. 
+
+Which position the servo locks to is decided by the signal on the control wire.
+The control signal resembles PWM in that it consists of periodic pulses, in fact, it can be implemented as PWM. 
+It is the width of these pulses that determines the position of the motor.
+See figure \ref{fig:servoposition}. Varying the pulse width between one and two ms will vary the position of the motor between 0$^\circ$ to 180$^\circ$.
  
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{images/servocontrol.jpg}
-\label{fig:Servo_position}
+\caption{Control of a servo motor.}
+\label{fig:servoposition}
 %http://www.societyofrobots.com/actuators_servos.shtml
 \end{figure}
 
 \subsection{Interaction with Servo motor}
-The control of the servo motor, is done using the FPGA with the entity named pwm. 
+The control of the servo motor is done using the FPGA with the VHDL component named pwm. See figure \ref{fig:pwmcomp}
 
 \begin{figure}[htb]
 \centering
@@ -25,17 +32,26 @@ The control of the servo motor, is done using the FPGA with the entity named pwm
   \draw [<-] (item.inb) node [anchor=west,labels] {} -- +(-1,0) node [anchor=east] {direc};
 \end{tikzpicture}
 \caption{Entity of pwm}
+\label{fig:pwmcomp}
 \end{figure}
 
-\texttt{PWM\_motor} is connected to servo motor, and provides the PWM signal that sets the position of it. 
-\texttt{direc} is an input signal, which tells the entity which direction the servo motor has to move to, and thereby deciding the duty cycle of the PWM signal. \texttt{CLK} is the clock frequency of the FPGA. \\
+\texttt{PWM\_motor} is connected to the control wire of the servo motor, and provides the signal that sets the position. 
+\texttt{direc} is a 2 bit \texttt{std\_logic\_vector}, which tells the entity which direction the servo motor has to move in. \texttt{CLK} is the clock signal of the FPGA. \\
 
-The component has only one process, that generates 3 different pwm signals based on the value of \texttt{direc}. If \texttt{direc} is "11" it moves to the right, if it is "00" it moves to the left, and if it has  other value it will stay neutral . \\
+The component has only one process. It generates one of three different PWM signals based on the value of \texttt{direc}. 
+
+If the value of direc is: 
+\begin{itemize}
+\item \textbf{"11"}: Motor moves to the right position.
+\item \textbf{"00"}: Motor moves to the left position.
+\item \textbf{Any other value}: Motor moves to the neutral position.
+\end{itemize}
 
 
-The period of the pwm signal of \texttt{PWM\_motor} is set to  20 ms, which the servo motors requires. 
-For each  \texttt{rising\_edge} of the \texttt{CLK} a variable named \texttt{count} is incremented.  To make the motor move to left, will \texttt{PWM\_motor} stay zero until \texttt{count} is below 950000 and when it above 950000  and below 1000000 it will stay high, as 50000 \texttt{rising\_edge} equate to 1 ms. When count has reached 1000000 will it be reset again. \\
-
+The period of the PWM signal of \texttt{PWM\_motor} is set to  20 ms, as required by the servo motor.
+For each  \texttt{rising\_edge} of \texttt{CLK}, \texttt{count} is incremented.
+\texttt{count} is reset at 1.000.000. This results in a period of 20ms at a frequency of 50MHz. 
+To generate the PWM that will turn the motor to the leftmost position, \texttt{PWM\_motor} is set high when \texttt{count} is above 950.000 and is set low when \texttt{count} is reset. Increasing the number of rising edges where \texttt{PWM\_motor} is high will gradually move the motor towards the rightmost position generated at 100.000 rising edges.
 
 
 

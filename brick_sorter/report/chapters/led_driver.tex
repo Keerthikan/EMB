@@ -1,6 +1,7 @@
 \section{LED driver}
-\subsection{Purpose of the LED driver}
-The LED switch  changes which LED has to be turned on, each LED is turned on seperately such that the reflection of each color can be measured by the photodiode, without it being mixed the reflection of the other colours.  A criteria set by the hardware of the LED driver is that the LED has to be turned on for 13 us such that output of the photodiode can settle, and a steady analog value can be read from the photodiode. 
+The LED driver determines which LED is on at any given time.
+Only one LED is on at a time such that the reflection of each color can be measured by the photodiode, without.
+A criteria set by the hardware of the LED driver is that the LED has to be turned on for 13 $\mu$s such that output of the photodiode can settle, and a steady analog value can be read from the photodiode. 
 \subsection{Implementation of the LED driver}
 
 %\begin{figure}[htb]

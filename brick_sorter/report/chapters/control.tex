@@ -1,7 +1,11 @@
 \section{Control}
-Control is the top module of this project, which contain the components described above and connect them , makes the decision whether the flipper has to turn left or right based on the value it reads.
+\label{sec:control}
+Control is the VHDL component that acts as top module of this project. 
+It contains the components described in previous sections and connects them.
+This is also where the sorting of the bricks is done.
 
-Control make 10 readings from the reflection of each color,  30 readings in total. At the end moves the flipper either left or right, or stay at its position based on the 30 readings has performed, and what has been measured. 
+Control makes 10 readings from the reflection of each color, 30 readings in total. 
+At the end the flipper is moved to either the left or right position, based on the 30 readings that were performed.
 
 \subsection{Implementation of Control}
 
@@ -9,18 +13,15 @@ Control make 10 readings from the reflection of each color,  30 readings in tota
 
 Control has  one process named \texttt{readBlock} which determines the color of the block of the block. \\
 
-
 %It start by setting \texttt{led\_on} high.  %Hvorfor gjorde jeg det.. Ikke nødvendigt... 
 
-The process start by turning from the component \texttt{LED\_driver}, which turns on the red LED, and wait 13 us, after which it set \texttt{start\_adc} high.
+The process starts signalling the component \texttt{LED\_driver} to turn on the red LED. 
+After 13$\mu$s the \texttt{LED\_driver} sets \texttt{start\_adc} high. 
+When the ADC component reads \texttt{start\_adc} as high it will start converting the voltage from the photodiode.  
+When the voltage is, it will set \texttt{read\_adc} high. 
+When control reads \texttt{read\_adc} as high it will read the 10 bit value output on \texttt{ADC\_value}. When the the binary value has been intepreted, either \texttt{redCount}, \texttt{blueCount} or \texttt{greenCount} is incremented, depending on the color that passed the photodiode.
+Now, \texttt{adc\_read} is set high. This signals the LED driver to change its state to the next state.
 
-When the ADC component read \texttt{start\_adc} being high it will start converting the analog value from the photodiode.  When the analog value has been converted to a 10 bit binary value, it will set \texttt{read\_adc} high. When control read \texttt{read\_adc} as high it will read the 10 bit value outputed on \texttt{ADC\_value}. When the the binary value has been intepreted, will either \texttt{redCount}, \texttt{blueCount} or \texttt{greenCount} increment, based on the color that passed the photodiode.  \\
-
-
-When the binary value has been interpret, will the iterator keeping track of the amount of iterations be incremented,  and a signal named \texttt{adc\_read} will be set high, which tells the LED driver reads, and then change its state to the next state.\\
-%igen adc_read = next_state.. dobbelt?
-
-
-After 30 iterations,  will highest value among the variables \texttt{redCount}, \texttt{blueCount} and \texttt{greenCount} be tested, for which the will move the servo motor to the desired position, such that the brick gets sorted based on the color which is detected multiple times. 
-
+After 30 iterations, the counter, \texttt{redCount}, \texttt{blueCount} and \texttt{greenCount}, with the highest value will dictate which position the servo motor will move to.
+This "voting system" will minimize the effect of failed readings.
 

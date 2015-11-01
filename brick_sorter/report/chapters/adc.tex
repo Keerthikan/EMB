@@ -103,18 +103,28 @@ The conversion itself takes up only 17 \texttt{rising\_edges}, however one \text
 %\end{figure}
 
 \subsection{Logic Level Converters}
-When supplied with 5V, the MCP3008 uses TTL for communication while the FPGA uses 3.3V CMOS. To protect the FPGA it is necessary to translate the logic high of TTL, $V_h=5V$, to logic high of CMOS, $V_h=3.3V$. In order to achieve this a simple circuit was utilized. See figure \ref{circ:logiclevel}. 
+When supplied with 5V, the MCP3008 uses TTL for communication while the FPGA uses 3.3V CMOS. To protect the FPGA it is necessary to translate the logic high of TTL, $V_h=5V$, to logic high of CMOS, $V_h=3.3V$. In order to achieve this, a simple circuit was utilized. See figure \ref{circ:logiclevel}. 
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\begin{circuitikz}
 		\draw(0,0)
 			 node[above]{V$_\text{TTL}$}
-				to[short,o-] ++(1,0)
+				to[short,o-] ++(0.5,0)
 					to[R=$R_1$] ++(2,0) node[circ]{} coordinate(junc)
-							to[zDo=$D_1$] ++(0,-2)
-								node[ground](){}
+						to[short,i=$i_c$] ++(0,-1)
+							 ++(0,-1) node[ground](){}
+							 	to[zDo=$D_1$] ++(0,1)
 					(junc) to[short,-o] ++(1,0) node[above]{V$_\text{CMOS}$}
 	;\end{circuitikz}
 	\caption{Uni-directional logic level converter.}
+	\label{circ:logiclevel}
 \end{figure}  
+
+This circuit is a uni-directional logic level converter, LLC. It will only allow for TTL to be converted to CMOS, not opposite. Ideally a bi-directional LLC should be created. This was not possible due to time constraints.
+
+The zener diode chosen to clamp the voltage is the BZX79C3V3 \cite{bzx79c3v3}. 
+This diode has a breakdown voltage of 3.3V. 
+The current required to fully open the diode, $i_c$ is given in the datasheet as I$_\text{z}=5$mA.
+As long as the input impedance of the FPGA is very high compared to $R_1$ it is reasonable to assume that V$_\text{CMOS}$ is open circuit.
+By this assumption: $$R_1=\frac{\text{V}_\text{TTL}-\text{V}_\text{CMOS}}{i_c}=340\Omega$$
