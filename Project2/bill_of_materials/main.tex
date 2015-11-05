@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{rotating}
 
 \usepackage{todonotes}
 
@@ -22,15 +23,28 @@
 		\item \textbf{$\mu$TosNet:} $\mu$TosNet will be used for debugging purposes.
 		Potentially, it will also be used to send a string to display as an image.
 	\end{itemize}
-	Initially, the goal of the project will be to display the image shown in figure \ref{fig:circle}
+	Initially, the goal of the project will be to display the image shown in figure \ref{fig:circle}. 
+	By displaying this image stably and with the 90 degree angles intact a descent foundation for further graphics display is laid.
 	
-	\begin{figure}
+	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=.5\linewidth]{images/circle}
+		\includegraphics[width=.25\linewidth]{images/circle}
 		\caption{Initial test image of the rotating display}
-		\label{key}
+		\label{fig:circle}
 	\end{figure}
-	\begin{table}
+	
+	The initial model of the system can be seen in figure \ref{fig:initmodel}. As can be seen, the led board which contains the driver circuit receives information about the state of the LEDs from the communication component in the FPGA. The graphics to be displayed is generated in the graphics component, potentially based on input from $\mu$TosNet. Additionally, the graphics component is given information about the speed of the motor in order to correctly display the image.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=.7\linewidth]{images/init_model}
+		\caption{Simple block diagram showing the different components of the system, and their interactions.}
+		\label{fig:initmodel}
+	\end{figure}
+		
+	\newpage
+	
+	\begin{sidewaystable}[h!]
 		\begin{tabular}{l|c|c|c|c}
 			Company & Order Number & Quantity & Name & Price/1\\
 			\hline
@@ -41,6 +55,7 @@
 			RS-Components & 238-9709 & 1 & DC motor, Speed: 7800 o/min., 1,6 W, 15 - 3 V=, 0,85 A & 47.74Dkk\\
 			\hline
 			Sparkfun & & 1 & Slip Ring - 12 Wire (2A) & 19.95\$
+			& & & &
 		\end{tabular}
-	\end{table}
+	\end{sidewaystable}
 \end{document}
