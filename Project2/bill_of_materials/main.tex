@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{rotating}
+\usepackage{subcaption}
 
 \usepackage{todonotes}
 
@@ -27,21 +28,22 @@
 	By displaying this image stably and with the 90 degree angles intact a descent foundation for further graphics display is laid.
 	
 	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=.25\linewidth]{images/circle}
-		\caption{Initial test image of the rotating display}
-		\label{fig:circle}
+		\begin{subfigure}[b]{.38\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{images/circle}
+			\caption{Initial test image of the rotating display}
+			\label{fig:circle}	
+		\end{subfigure}
+		\begin{subfigure}[b]{.58\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{images/init_model}
+			\caption{Simple block diagram showing the different components of the system, and their interactions.}
+			\label{fig:initmodel}	
+		\end{subfigure}		
 	\end{figure}
 	
 	The initial model of the system can be seen in figure \ref{fig:initmodel}. As can be seen, the led board which contains the driver circuit receives information about the state of the LEDs from the communication component in the FPGA. The graphics to be displayed is generated in the graphics component, potentially based on input from $\mu$TosNet. Additionally, the graphics component is given information about the speed of the motor in order to correctly display the image.
 	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=.7\linewidth]{images/init_model}
-		\caption{Simple block diagram showing the different components of the system, and their interactions.}
-		\label{fig:initmodel}
-	\end{figure}
-		
 	\newpage
 	
 	\begin{sidewaystable}[h!]
@@ -55,7 +57,6 @@
 			RS-Components & 238-9709 & 1 & DC motor, Speed: 7800 o/min., 1,6 W, 15 - 3 V=, 0,85 A & 47.74Dkk\\
 			\hline
 			Sparkfun & & 1 & Slip Ring - 12 Wire (2A) & 19.95\$
-			& & & &
 		\end{tabular}
 	\end{sidewaystable}
 \end{document}
