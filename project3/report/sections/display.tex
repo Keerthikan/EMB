@@ -138,3 +138,11 @@ By driving the green diodes from the same driver, the current for these could be
 Using this technique would increase complexity on the FPGA.
 Third: By setting the current equal to the highest requirement set by the LED, resistors could be set in series with the other LEDs in order to limit current.
 Unfortunately, due to time constraints, it was not possible to determine which method would be best suited for this project.
+
+\paragraph{Motor:}
+In order to actually have a rotating display, it is necessary to somehow rotate the display.
+This is done, for the sake of simplicity, using a simple DC motor.
+A motor was chosen such that it could be driven from a 12 V supply.
+This would allow for reusing the power supply from the Lego Brick Sorter.
+This power supply however, is rated only for 1 A continuous operation whereas this motor, when in operation, draws in excess of that.
+A, rather significant, detail that was not considered when ordering the components.
