@@ -4,6 +4,13 @@ Namely, the display.
 The choice of electronics components for the display is presented along with the reasoning behind each choice.
 Additionally, some compromises that were made are explained.
 
+\subsection{Persistence of Vision}
+A rotating display such as the one of this report can function due to a phenomena called persistence of vision, POV.
+POV is the theory that an image viewed by the human eye is retained for a short period of time. 
+This is believed to be the cause of a movie not seeming like consecutive images but fluid motion.
+The frequency at which a part of an image should be displayed on the display in this project is based on the framerate of cinema movies, 24 frames per second.
+This is approximately 0.04 seconds between each frame.
+
 \subsection{The Components}
 The components were chosen based on a series of requirements.
 These are mentioned as they become relevant in the following paragraphs.
@@ -145,5 +152,89 @@ This is done, for the sake of simplicity, using a simple DC motor.
 A motor was chosen such that it could be driven from a 12 V supply.
 This would allow for reusing the power supply from the Lego Brick Sorter.
 The motor chosen is the Como Drills RE540.
-The power supply however, is rated only for 1 A continuous operation whereas this motor is rated
-A, rather significant, detail that was not considered when ordering the components.
+This motor can be driven at 4.5 V to 15 V and is rated at 2.85 A.
+The power supply however, is rated only for 1 A continuous operation.
+A rather significant detail that was not considered when ordering the components.
+As a result, it was decided to drive the motor using two channels of a laboratory power supply in parallel.
+Another complication to deal with is the rated speed of the motor.
+The RE540 is rated at 13360 RPM.
+This is far more than what is wanted in this application.
+Undervolting the motor could potentially lead to an uneven speed due to the lowered torque of the motor.
+For this reason a gearing was made.
+See figure \ref{fig:gearing}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim={10cm 0 10cm 0},clip,width=.6\linewidth]{images/gearing}
+	\caption{Rendered image of the 3D model of the gearing assembly made for the RE540.}
+	\label{fig:gearing}
+\end{figure}
+Mainly for convenience, the gearing is made up of $2\times3:1$ gearings.
+Ideally, this would result in approximately 2200 RPM.
+In practice however, the speed is significantly lower.
+This is caused by the amount of friction caused by the inaccuracies of the 3D printed parts.
+In fact, it took some amount of filing and sanding on the gears before the motor could turn the assembly.
+Through the first minutes of running the motor it was both audibly and visibly picking up speed as the parts were being ground to size.
+An unfortunate side effect to designing parts in an ideal environment and not leaving enough tolerance for the mistakes of the 3D printer.
+
+While gearing is the main purpose of this assembly, it does provide a good platform to mount an encoder disc.
+This encoder disc has 16 notches which will pass through an optical sensor. 
+Specifically a TCST2103.
+This will generate a signal with 16 rising edges per revolution which can then be used to regulate the motor speed.
+Additionally it will provide information about the position such that the correct line of pixels can be shown at any one time.
+
+\subsection{Displaying an Image}
+Displaying an image is done by first converting it to a matrix of size 40$\times$40, twice the size of the number of LEDs.
+Each entry in the matrix consists of $3\times4$ bits. 4 bits to represent each colour channel.
+These 12 bits will be used to indicate the duty cycle of each channel to reproduce the colour of that pixel.
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.3\textwidth]{images/stop}
+		\caption{Image of rasterized}
+		\label{fig:}
+\end{figure}
+
+Using the encoders it is possible to always be aware of the approximate angular position.
+As previously mentioned, the encoder provides 16 rising edges per revolution, this results in one rising edge per 22.5 degrees.
+By measuring the time between pulses it is possible to interpolate between the two, thus making it possible to estimate the angular position with a greater resolution.
+This knowledge is then used to determine which pixels are to be displayed at that time.
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.3\textwidth]{images/stop}
+		\caption{Image rasterized and with the propellor pointing at a certain angle}
+		\label{fig:}
+\end{figure}
+
+This problem, determining which pixels to display, is essentially: how is a straight line drawn from the centre of the image to an endpoint.
+This is done using the angle as provided by the encoder.
+An endpoint can be found using the trigonometric identities.
+In addition the position of each pixel affected by the line should be recorded.
+This is done using a modified version of the Bresenham line algorithm \cite{bresenham}.
+The original algorithm works only for lines with a slope from 0 to 45$^circ$, the modification allows the algorithm to draw lines from origin to any endpoint.
+
+The Bresenham line algorithm is used for determining the points between two points in a raster grid.
+Initially the change in x and y between the startpoint and endpoint is calculated.
+This is used to define a major axis.
+This is the axis along which the greatest change occurs.
+The major axis is used define which direction the algorithm should move along. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width = 0.6\textwidth]{images/bresenham}
+\caption{Bresenham line algorithm applied on a simple case}
+\label{fig:bresenham_line}
+\end{figure}
+
+An example of the algorithm is given in figure \ref{fig:bresenham_line}.
+In this example the x-axis is the major axis.
+The variable x will be continuously incremented by one.
+For each increment a value $m = \frac{dy}{dx}$ is added to y.
+Simultaneously, an error $\epsilon$ is calculated.
+$\epsilon$ represents the negative distance between the real line and the top edge of the current pixel.
+$m$ is added to $\epsilon$ on each increment.
+This way, when $\epsilon>0$ the next pixel has been reached.
+At this point, y is incremented by one and $\epsilon$ is set $\epsilon^{i+1}=1-\epsilon^i$.
+While $\epsilon<0$ the y coordinate will increment only in steps of $m$.
+
+Using this algorithm it is possible to calculate which pixels are to be lit at any given angle and thereby display the image while the motor is spinning.
