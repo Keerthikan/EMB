@@ -175,6 +175,7 @@ This is caused by the amount of friction caused by the inaccuracies of the 3D pr
 In fact, it took some amount of filing and sanding on the gears before the motor could turn the assembly.
 Through the first minutes of running the motor it was both audibly and visibly picking up speed as the parts were being ground to size.
 An unfortunate side effect to designing parts in an ideal environment and not leaving enough tolerance for the mistakes of the 3D printer.
+For the sake of this report, the speed is assumed to be 2200 RPM.
 
 While gearing is the main purpose of this assembly, it does provide a good platform to mount an encoder disc.
 This encoder disc has 16 notches which will pass through an optical sensor. 
@@ -193,7 +194,7 @@ These 12 bits will be used to indicate the duty cycle of each channel to reprodu
 		\caption{Image of rasterized}
 		\label{fig:}
 \end{figure}
-
+\todo{figures needs referencing!}
 Using the encoders it is possible to always be aware of the approximate angular position.
 As previously mentioned, the encoder provides 16 rising edges per revolution, this results in one rising edge per 22.5 degrees.
 By measuring the time between pulses it is possible to interpolate between the two, thus making it possible to estimate the angular position with a greater resolution.
@@ -202,7 +203,7 @@ This knowledge is then used to determine which pixels are to be displayed at tha
 \begin{figure}[H]
 		\centering
 		\includegraphics[width =0.3\textwidth]{images/stop}
-		\caption{Image rasterized and with the propellor pointing at a certain angle}
+		\caption{Image rasterized and with the propeller pointing at a certain angle}
 		\label{fig:}
 \end{figure}
 
