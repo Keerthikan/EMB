@@ -1,0 +1,34 @@
+\section{Display controller}
+The display controller entails the communication between the the matrix image, and the PWM signal that PWM generator. 
+
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width = 0.5\textwidth]{images/Image_controller_setup.png}
+	\caption{}
+	\label{fig:Image_controller_setup}
+\end{figure}
+
+The encoder outputs an angle which the matrix uses to determine the line which it has to be outputted.  The line contains 20 "pixel description" that determines how the LED should be lid.  Each "pixel description" contains 12 bit, 3 set of 4 bits, which determines the duty cycle of each of the RGB channel on the LED Diode.  \\
+
+The PWM retrieves these 20 "pixel description" and convert it to a bit stream of 64 bit.  
+The first 60 bit is divided into PWM streams. The last four bit are set to ground,  these bits are redundant, but will be set to avoid floating pins. \\
+
+These PWM streams will be updated such, such that they create seperate PWM signal for each LED.  The frequency of the signal is set based on the motor, and the LED driver component, as a faster PWM frequency or slower pwm frequency could lead to an outcome. 
+
+The motor with gearing rotates with 2200 RPM which gives an frequency of 37 Hz.	
+For each second it would be expected to be 180 updates, and thereby will give 
+$$37 \cdot 180 = 6660 ~\text{updates/sec}$$
+
+Each update should occur with an time step of $\frac{1}{6660} = 0.00015s$ Which provide a lower limit for what the PWM frequency shall be.  \\
+
+As the LED driver component (CAT4016) has an limit of 25 Mhz, and each update consists of latching  64 bits to the LED,  creates an possible bandwidth of $$\frac{25000000}{64} =  390625 Hz$$. As the LED itself cannot process 64 bit faster than this, will this be set as upper limit for the PWM frequency.    
+$$6667 \text{Hz}  \leq \text{PWM - Frequency}  \leq 390625 \text{Hz}  $$
+
+It was determined to use a pwm - frequency of 20 kHz, as this lies within the range, and allow for some deviations within this range.  \\
+
+The Pwm period is sent 
+
+
+
+
