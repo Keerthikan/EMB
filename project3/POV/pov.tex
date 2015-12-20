@@ -1,23 +1,30 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{framed}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{float}
+\usepackage{amssymb}
+\setlength{\parindent}{0pt}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\begin{document}
 \section{Image display}
 The intention was to rotate the motor at a given speed, such that POV would occurs. POV also called persistence of vision, is the phenomenon that states that the human eye  
-always retains images for a fraction of a second (around 0.04 second). \cite{pov}
+always retains images for a fraction of a second (around 0.04 second). \todo[inline]{ref til \url{http://www.mediacollege.com/glossary/p/persistence-of-vision.html}}. 
 
-\begin{figure}[H]
-		\centering
-		\includegraphics[width =0.3\textwidth]{images/stop}
-		\caption{Image of rasterized}
-		\label{fig:}
-\end{figure}
+\todo[inline]{image... Image in a raster grid}
+The image that had to be displayed, was drawn in a raster grid. Using the encoders , would it be  possible to provide some form of information of the angular position of the LED strips, and thereby which pixels had to be displayed. 
 
-The image that had to be displayed, was converted into matrix of size 40x40 with each an entry of 21 bits, 3 sets of 7 bit. The 7 bits indicate a duty cycle value for each channel of the RGB diode, thereby will each diode receive three pwm signals, that combined will emit a wanted color from the diode.  \\
-Using the encoders , would it be  possible to provide some form of information of the angular position of the LED strips, and thereby which pixels had to be displayed. 
+\todo[inline]{image in raster grid , and the propellor placed in angle..}
 
-\begin{figure}[H]
-		\centering
-		\includegraphics[width =0.3\textwidth]{images/stop}
-		\caption{Image rasterized and with the propellor pointing at a certain angle}
-		\label{fig:}
-\end{figure}
 A problem faced here was on how to determine which pixel had to be displayed, in a discrete image description. The problem here is given an angle and a endpoint on how to draw a straight line within these two points, and how to determine the in between pixel positions. \\
 Finding the endpoint and angle was pretty easy, the angle was given by the encoders, and the endpoint could easily be calculated trig identities. \\
 
@@ -30,19 +37,20 @@ The major axis is used define the direction which the algorithm should move alon
 
 \begin{figure}[H]
 \center
-\includegraphics[width = 0.6\textwidth]{images/bresenham}
+\includegraphics[width = 0.6\textwidth]{bresenhamline}
 \caption{Bresenham line algorithm applied on a simple case}
 \label{fig:bresenham_line}
 \end{figure}
 \todo[inline]{http://www.idav.ucdavis.edu/education/GraphicsNotes/Bresenhams-Algorithm.pdf}
 
 in the example given in figure \ref{fig:bresenham_line} the major axis is X. In a main loop will the variable x be incremented by one, and for each incrementation will the y coordinate be incremented with an value $m$ which is defined as $$m = \frac{dy}{dx}$$ while incrementing the y value is an the error bound $\epsilon$  kept which represent the the negative distance between the real line and top edge pixel.  The value is incremented with m for each time the major axis coordinate is incremented by one. \\
-$\epsilon$ becomes greater than zero  if the real line has moved upwards according to the previous x value, when it occurs will the y value  be incremented with one, and $\epsilon$ will be recomputed to its new value as 1 - $\epsilon$. \\
+$\epsilon$ becomes greater than zero  if the real line has moved upwards according to the previous x value, when it occurs will the y value  be incremented with one, and $epsilon$ will be recomputed to its new value as 1 - $epsilon$. \\
 
-As long as the  value  epsilon  is below 0, will the y coordinate only increment in steps of m. 
+As long the epsilon value is below 0, will the y coordinate only increment in steps of m. 
 
-Using the method would it be possible to output line at the different angles, and thereby display the image when the motors was spinning. 
+ 
 
 
 
 %This means that everything we see is a subtle blend of what is happening now and what happened a fraction of a second ago.
+\end{document}
