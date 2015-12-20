@@ -27,7 +27,7 @@ $$6667 \text{Hz}  \leq \text{PWM - Frequency}  \leq 390625 \text{Hz}  $$
 
 It was determined to use a pwm - frequency of 20 kHz, as this lies within the range, and allow for some deviations within this range.  \\
 
-The Pwm period is sent 
+The PWM signal consist of ten PWM streams , which make up a period. Thereby will each PWM stream be sent to the LED driver with an time displacement of $5 \cdot 10^{-5} s$.   Only ten streams are sent as a higher number of PWM streams would lead to higher update rate on the LED driver, and would need a higher bandwidth than its available.  
 
 
 
