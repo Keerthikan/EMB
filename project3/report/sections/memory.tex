@@ -1,4 +1,4 @@
-\section{Memory}
+\subsection{Memory}
 The image going to be stored consist of 40 x 40 pixel descriptions, each pixel description consist of $4 \cdot 3 = 12$ bits,  which makes it require 40 x 40 x 12   =  19,200 kb.  As the matrix is only going to used for logic, would it create unnessary logic if it was stored as an 2d array representation on the FPGA. As the matrix is only going to used for lookups , and is at all time kept constant, it could save a considered amount of logic by storing it on the ram. 	\\
 It would be desirable to use a block ram to store the image.  The Information stored in the ram can be accessed given the address of the memory. Block ram are synchronous with the clock, such that when a write or read is requested, will it be executed when clock event has occurred. Reading and writing synchrounous with the clock is not an issue, as the FPGA provides a clock frequency of 50 Mhz, and thereby will the read and write delay created by using a block ram, wont be an issue. 
 

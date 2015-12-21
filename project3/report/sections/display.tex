@@ -44,7 +44,7 @@ The footprint created for the component can be seen in figure
 	\end{subfigure}
 	\begin{subfigure}[t]{.49\linewidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{images/stop}
+		\includegraphics[width=.8\linewidth]{images/footprint_real}
 		\caption{Reduced size footprint.}
 		\label{fig:finalfootprint}
 	\end{subfigure}
@@ -188,31 +188,25 @@ Displaying an image is done by first converting it to a matrix of size 40$\times
 Each entry in the matrix consists of $3\times4$ bits. 4 bits to represent each colour channel.
 These 12 bits will be used to indicate the duty cycle of each channel to reproduce the colour of that pixel.
 
-\begin{figure}[H]
-		\centering
-		\includegraphics[width =0.3\textwidth]{images/stop}
-		\caption{Image of rasterized}
-		\label{fig:}
-\end{figure}
-\todo{figures needs referencing!}
-Using the encoders it is possible to always be aware of the approximate angular position.
+Using the encoders it is possible to always be aware of the approximate angular position, $\theta$.
 As previously mentioned, the encoder provides 16 rising edges per revolution, this results in one rising edge per 22.5 degrees.
 By measuring the time between pulses it is possible to interpolate between the two, thus making it possible to estimate the angular position with a greater resolution.
 This knowledge is then used to determine which pixels are to be displayed at that time.
 
 \begin{figure}[H]
 		\centering
-		\includegraphics[width =0.3\textwidth]{images/stop}
-		\caption{Image rasterized and with the propeller pointing at a certain angle}
-		\label{fig:}
+		\includegraphics[width =0.5\textwidth]{images/rasterized_image}
+		\caption{Rasterized image.}
+		\label{fig:rasterized}
 \end{figure}
 
 This problem, determining which pixels to display, is essentially: how is a straight line drawn from the centre of the image to an endpoint.
-This is done using the angle as provided by the encoder.
+See figure \ref{fig:rasterized} for a depiction of the propeller image used to verify the stability of the display.
+This is done using the angle, $\theta$ as provided by the encoder.
 An endpoint can be found using the trigonometric identities.
 In addition the position of each pixel affected by the line should be recorded.
 This is done using a modified version of the Bresenham line algorithm \cite{bresenham}.
-The original algorithm works only for lines with a slope from 0 to 45$^circ$, the modification allows the algorithm to draw lines from origin to any endpoint.
+The original algorithm works only for lines with a slope from 0 to 45$^\circ$, the modification allows the algorithm to draw lines from origin to any endpoint.
 
 The Bresenham line algorithm is used for determining the points between two points in a raster grid.
 Initially the change in x and y between the startpoint and endpoint is calculated.

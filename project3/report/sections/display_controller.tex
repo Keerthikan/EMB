@@ -1,6 +1,5 @@
-\section{Display controller}
-The display controller entails the communication between the the matrix image, and the PWM signal that PWM generator. 
-
+\subsection{Display controller}
+This block converts the information stored in the matrix image to PWM signals necessary to drive the LEDs.
 
 \begin{figure}[H]
 	\center
@@ -9,26 +8,34 @@ The display controller entails the communication between the the matrix image, a
 	\label{fig:Image_controller_setup}
 \end{figure}
 
-The encoder outputs an angle which the matrix uses to determine the line which it has to be outputted.  The line contains 20 "pixel description" that determines how the LED should be lid.  Each "pixel description" contains 12 bit, 3 set of 4 bits, which determines the duty cycle of each of the RGB channel on the LED Diode.  \\
+The encoder outputs the current angular position of the motor.
+The matrix uses this position to determine which line should be generated.
+A line contains 20 pixels.
+Each pixel is described with 12 bits, 4 bits for each colour channel.
+These 4 bits determine the duty cycle of the PWM used to drive that channel.
 
-The PWM retrieves these 20 "pixel description" and convert it to a bit stream of 64 bit.  
-The first 60 bit is divided into PWM streams. The last four bit are set to ground,  these bits are redundant, but will be set to avoid floating pins. \\
+The controller retrieves these 20 "pixel descriptions" and converts them to packets of 64 bits.
+In each packet the 4 LSBs are redundant but will be set to zero to avoid floating pins.
+The remaining 60 bits contain information about the state of each channel at that time.
+By continuously updating these sets, each bit will create a PWM for its respective LED.
+The frequency of the signal is set based on the rotational velocity of the motor.
 
-These PWM streams will be updated such, such that they create seperate PWM signal for each LED.  The frequency of the signal is set based on the motor, and the LED driver component, as a faster PWM frequency or slower pwm frequency could lead to an unwanted outcome. 
+The motor with gearing rotates at 2200 RPM which gives a frequency of 37 Hz.	
+For each revolution the display controller is expected to provide 180 updates, an update per 2$^\circ$.
+This results in:
 
-The motor with gearing rotates with 2200 RPM which gives an frequency of 37 Hz.	
-For each second it would be expected to be 180 updates, and thereby will give 
 $$37 \cdot 180 = 6660 ~\text{updates/sec}$$
 
-Each update should occur with an time step of $\frac{1}{6660} = 0.00015s$ Which provide a lower limit for what the PWM frequency shall be.  \\
+Each update should therefore occur with a time step of $\frac{1}{6660} = 0.00015s$ Which provides aa lower limit for what the PWM frequency should be.  \\
 
-As the LED driver component (CAT4016) has an limit of 25 Mhz, and each update consists of latching  64 bits to the LED,  creates an possible bandwidth of $$\frac{25000000}{64} =  390625 Hz$$. As the LED itself cannot process 64 bit faster than this, will this be set as upper limit for the PWM frequency.    
+As the LED driver component (CAT4016) has a limit of 25 Mhz, and each update consists of latching 64 bits to the LED, this creates a possible bandwidth of $$\frac{25000000}{64} =  390625 Hz$$. 
+As the LED itself cannot process 64 bits faster than this, this will be set as the upper limit for the PWM frequency.    
 $$6667 \text{Hz}  \leq \text{PWM - Frequency}  \leq 390625 \text{Hz}  $$
 
-It was determined to use a pwm - frequency of 20 kHz, as this lies within the range, and allow for some deviations within this range.  \\
+It was determined to use a PWM - frequency of 20 kHz, as this lies within the range, and allow for some deviations within the range.  \\
 
-The PWM signal consist of ten PWM streams , which make up a period. Thereby will each PWM stream be sent to the LED driver with an time displacement of $5 \cdot 10^{-5} s$.   Only ten streams are sent as a higher number of PWM streams would lead to higher update rate on the LED driver, and would need a higher bandwidth than its available.  
-
-
-
-
+Each duty cycle of the PWM signal consists of 10$\times$64 bit packets.
+Thereby each packet is sent with an interval of $5 \cdot 10^{-6}$
+While a higher resolution would be desirable, this would lead to a higher bandwidth requirement than what is available.
+At $10\times64$ bit packets per duty cycle, allowing for 10\% resolution on the PWM frequency, a total of 51\% of the available bandwidth is used.
+Having 5\% resolution, for instance, would require 102.4\% of the available bandwidth.

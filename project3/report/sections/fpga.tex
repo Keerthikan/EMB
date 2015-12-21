@@ -38,3 +38,49 @@ The block will read the $t_d$ output from the enc. count block and adjust the PW
 \subsection{Control}
 This block is the connection point between all of the other blocks.
 In an effort to simplify communication between blocks it was decided to create this block as a mediator.
+
+\subsection{Memory}
+The image to be stored consists of 40$\times$40 pixels, Each pixel consist of $4 \cdot 3 = 12$ bits.
+An image therefore requires 40$\times$40$\times$12   =  19,200 kb to store.  
+Since this memory block will be used only for lookups, it would use unnecessary amounts of logic to create a 2D array representation on the FPGA.
+For this reason, it would be desirable to store the image in block RAM.
+The information stored in RAM can then be accessed given the address location.
+Block RAM is synchronous such that when a write or read is requested, it will be executed on the next clock event.
+The delay involved with reading and writing to and from memory is insignificant in this application, as the FPGA provides a 50 MHz clock, which is significantly higher than the rate at which a new line is to be displayed.
+The block RAM on the FPGA used for this project is 54 kb, which is more than enough to store the image. \cite{FPGA}
+
+\subsection{Display controller}
+This block converts the information stored in the matrix image to PWM signals necessary to drive the LEDs.
+
+The encoder outputs the current angular position of the motor.
+The matrix uses this position to determine which line should be generated.
+A line contains 20 pixels.
+Each pixel is described with 12 bits, 4 bits for each colour channel.
+These 4 bits determine the duty cycle of the PWM used to drive that channel.
+
+The controller retrieves these 20 "pixel descriptions" and converts them to packets of 64 bits.
+In each packet the 4 LSBs are redundant but will be set to zero to avoid floating pins.
+The remaining 60 bits contain information about the state of each channel at that time.
+By continuously updating these sets, each bit will create a PWM for its respective LED.
+The frequency of the signal is set based on the rotational velocity of the motor.
+
+The motor with gearing rotates at 2200 RPM which gives a frequency of 37 Hz.	
+For each revolution the display controller is expected to provide 180 updates, an update per 2$^\circ$.
+This results in:
+
+$$37 \cdot 180 = 6660 ~\text{updates/sec}$$
+
+Each update should therefore occur with a time step of $\frac{1}{6660} = 0.00015s$ Which provides aa lower limit for what the PWM frequency should be.  \\
+
+As the LED driver component (CAT4016) has a limit of 25 Mhz, and each update consists of latching 64 bits to the LED, this creates a possible bandwidth of $$\frac{25000000}{64} =  390625 Hz$$. 
+As the LED itself cannot process 64 bits faster than this, this will be set as the upper limit for the PWM frequency.    
+$$6667 \text{Hz}  \leq \text{PWM - Frequency}  \leq 390625 \text{Hz}  $$
+
+It was determined to use a PWM - frequency of 20 kHz, as this lies within the range, and allow for some deviations within the range.  \\
+
+Each duty cycle of the PWM signal consists of 10$\times$64 bit packets.
+Thereby each packet is sent with an interval of $5 \cdot 10^{-6}$
+While a higher resolution would be desirable, this would lead to a higher bandwidth requirement than what is available.
+At $10\times64$ bit packets per duty cycle, allowing for 10\% resolution on the PWM frequency, a total of 51\% of the available bandwidth is used.
+Having 5\% resolution, for instance, would require 102.4\% of the available bandwidth.
+
