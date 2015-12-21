@@ -90,18 +90,20 @@ The five pinouts that are concerned with communication are:
 
 \texttt{SOUT} is the reason the CAT4016 can be cascaded.
 By connecting \texttt{SOUT} of one chip to \texttt{SIN} of the next, the shift register is effectively doubled.
-\texttt{BLANK}, \texttt{LATCH} and \texttt{CLK} are all connected to the same signals from the FPGA.
+\texttt{BLANK}, \texttt{LATCH} and \texttt{CLK} are all connected to the same signals from the FPGA.\todo[inline]{Sooo... Blank and latch, and CLK react on the same signal??..}
 A view of this can be seen in figure \ref{fig:simpledriver}.
 Cascading four of these means that each cycle requires 64 clock cycles before \texttt{LATCH} can be pulled high.
 At 25 MHz this is an update frequency of about 390 kHz.
 An overview of the method used for generating a 1 kHz PWM for the LEDs can be seen in figure \ref{fig:pwmsequence}. 
 Here, each cycle of the PWM is split into 100 time slices.
+\todo[inline]{PWM frequency = 20 khz and 10 time slices.}
 During each slice a new packet of 64 bits is clocked into the shift register.
 Each bit in a packet represents the state of its corresponding channel at that time.
 This scheme can be seen in figure \ref{fig:bitone}.
 If the first bit in the first 25 sequences is high, then the duty cycle of channel 64 will be 25\%.
 Notice that bit 0 corresponds to channel 64 and vice versa.
 Using this technique allows for 1\% resolution on the PWM duty cycle.
+\todo[inline]{PWM resolution = 10 \% }
 
 
 \begin{figure}[H]
@@ -126,6 +128,8 @@ Using this technique allows for 1\% resolution on the PWM duty cycle.
 	\caption{Generation of the 1 kHz PWM signal used to drive the LEDs.}
 	\label{fig:pwmsequence}
 \end{figure}
+
+\todo[inline]{Period time not 1 ms anymore as the PWM frequency is 20khz.. }
 
 \subparagraph{Choice of Current:}
 The CAT4016 is a constant current driver.
