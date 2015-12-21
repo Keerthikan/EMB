@@ -96,6 +96,7 @@ Cascading four of these means that each cycle requires 64 clock cycles before \t
 At 25 MHz this is an update frequency of about 390 kHz.
 An overview of the method used for generating a 1 kHz PWM for the LEDs can be seen in figure \ref{fig:pwmsequence}. 
 Here, each cycle of the PWM is split into 100 time slices.
+\todo[inline]{PWM frequency = 20 khz and 10 time slices.}
 During each slice a new packet of 64 bits is clocked into the shift register.
 Each bit in a packet represents the state of its corresponding channel at that time.
 This scheme can be seen in figure \ref{fig:bitone}.
