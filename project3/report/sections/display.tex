@@ -90,7 +90,7 @@ The five pinouts that are concerned with communication are:
 
 \texttt{SOUT} is the reason the CAT4016 can be cascaded.
 By connecting \texttt{SOUT} of one chip to \texttt{SIN} of the next, the shift register is effectively doubled.
-\texttt{BLANK}, \texttt{LATCH} and \texttt{CLK} are all connected to the same signals from the FPGA.
+\texttt{BLANK}, \texttt{LATCH} and \texttt{CLK} are all connected to the same signals from the FPGA.\todo[inline]{Sooo... Blank and latch, and CLK react on the same signal??..}
 A view of this can be seen in figure \ref{fig:simpledriver}.
 Cascading four of these means that each cycle requires 64 clock cycles before \texttt{LATCH} can be pulled high.
 At 25 MHz this is an update frequency of about 390 kHz.
