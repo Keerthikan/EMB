@@ -14,7 +14,7 @@ The encoder outputs an angle which the matrix uses to determine the line which i
 The PWM retrieves these 20 "pixel description" and convert it to a bit stream of 64 bit.  
 The first 60 bit is divided into PWM streams. The last four bit are set to ground,  these bits are redundant, but will be set to avoid floating pins. \\
 
-These PWM streams will be updated such, such that they create seperate PWM signal for each LED.  The frequency of the signal is set based on the motor, and the LED driver component, as a faster PWM frequency or slower pwm frequency could lead to an outcome. 
+These PWM streams will be updated such, such that they create seperate PWM signal for each LED.  The frequency of the signal is set based on the motor, and the LED driver component, as a faster PWM frequency or slower pwm frequency could lead to an unwanted outcome. 
 
 The motor with gearing rotates with 2200 RPM which gives an frequency of 37 Hz.	
 For each second it would be expected to be 180 updates, and thereby will give 
